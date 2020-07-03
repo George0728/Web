@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax获取本地文件</title>
+
+</head>
+<body>
+<script type="text/javascript" src="ajaxrequest.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+
+<div>des:</div>
+<div id="des"></div>
+<script type="text/javascript">
+//方法1：
+//     $("#des").load("ces1.html .a1"); //读取html文件中class为 a1 的元素
+    $("#des").load("ces1.html #left"); //读取html文件中id为 left 的元素
+    console.log($("#des")[0]);
+
+//方法2：
+//读取html文件
+//     $.ajax({
+//         url: "ces1.html",           //文件位置
+//         type: "GET",                //请求方式为get
+//         dataType: "html",           //返回数据格式
+//         success: function(data) {   //请求成功完成后要执行的方法
+//             console.log(data)
+//             document.getElementById("des").innerHTML = data;
+//         }
+//     })
+
+//读取json文件
+
+// $.ajax({
+//     url: "ces.json",//文件位置
+//     type: "GET",//请求方式为get
+//     dataType: "json", //返回数据格式
+//     success: function(result) {//请求成功完成后要执行的方法
+//         console.log(result);
+//         document.querySelector("#des").innerHTML = result;
+//         //each循环 使用$.each方法遍历返回的数据date
+//         $.each(result.first, function(i, item) {
+//             var str = '<div>姓名:' + item.name + '性别：' + item.sex + '</div>';
+//             $("#des").append(str);
+//         })
+//     }
+// })
+
+
+
+
+
+   //
+   //  var ajaxobj=new AJAXRequest; // 创建AJAX对象,类在刚刚那个文件里了
+   //
+   //  ajaxobj.method="GET"; // 设置请求方式为GET
+   //
+   //  ajaxobj.url="ces.xml" // 响应的URL,以后可以改为一些动态处理页,会用Ajax的都知道，这在页里可以有目的返回不同的数据
+   //
+   //  // 设置回调函数，输出响应内容,因为是静态页（这是我的需求嘛）所以所有内容都过来了
+   //  ajaxobj.callback=function(xmlobj) {
+   //      alert(xmlobj.status);
+   //      document.getElementById('des').innerHTML = xmlobj.responseText; //可要看好这句话哦
+   //      console.log(xmlobj);
+   //  }
+   //
+   // ajaxobj.send(); // 发送请求
+
+    // var ajax = new AJAXRequest({
+    //     url: "ces.xml",
+    //     method: "GET",
+    //     oncomplete : function (result,status) {
+    //         alert(status);
+    //
+    //     },
+    //     success :function (res) {
+    //         document.getElementById("des").innerHTML  = res.responseText;
+    //
+    //     }
+    //
+    // });
+
+</script>
+</body>
+</html>
