@@ -1,0 +1,81 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+<head>
+    <title>网上书店</title>
+
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+            height: 100%;
+            max-height: 100%;
+        }
+
+        #frameTop
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        #frameContentLeft
+        {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            height: 100%;
+            width: 150px;
+            overflow: hidden;
+            vertical-align: top;
+            background-color: #D2E6FA;
+        }
+
+        #frameContentRight
+        {
+            position: absolute;
+            left: 150px;
+            top: 100px;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            background: #fff;
+        }
+    </style>
+</head>
+<%--<frameset id="frame" frameborder="0" framespacing="0"--%>
+    <%--rows="100,*" border="false" scrolling="yes">--%>
+
+    <%--<frame name="topframe" scrolling="auto" marginheight="0" marginwidth="0"--%>
+    <%--src="header.jsp" noresize>--%>
+    <%--<frameset  framespacing="0" border="false" cols="200,*" frameborder=--%>
+    <%--"0" scrolling="yes">--%>
+    <%--<frame name="leftFrame" scrolling="no" marginheight="0" marginwidth="0"--%>
+    <%--src="index.jsp" noresize>--%>
+    <%--<frame name="rightFrame" scrolling="auto"  src="rightFrame.jsp"marginheight="0" marginwidth="0"--%>
+    <%-->--%>
+    <%--</frameset>--%>
+    <%--</frameset>--%>
+
+<body>
+
+<div>
+    <iframe id="frameTop" src="header.jsp"></iframe>
+</div>
+
+<div>
+    <iframe id="frameContentLeft" src="index.jsp"></iframe>
+    <iframe id="frameContentRight" src="rightFrame.jsp"></iframe>
+</div>
+
+</body>
+</html>

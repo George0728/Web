@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax读取本地文件</title>
+    <script>
+        window.onload =function(){
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function(){
+                //创建XHR对象
+                var xhr = new XMLHttpRequest();
+
+                //请求的方式，地址，是否异步
+                xhr.open('get','ces.txt',true);
+
+                //请求的确定操作，初始化，相当于搜索时，敲击的回车
+                xhr.send(null);
+
+                //请求的readyState每变化一次就执行一次onreadystatechange函数
+                //其中readyState表示的是：请求/响应过程的当前活动阶段
+                //readyState有如下取值
+                /*
+                *  0：未初始化，尚未调用send()方法
+                *  1: 启动
+                *  2：发送
+                *  3：接收
+                *  4：完成
+                */
+                xhr.onreadystatechange =function(){
+                    if(xhr.readyState ==4){
+                        alert(xhr.responseText);
+                        console.log(xhr);
+                    }
+                }
+            };
+
+
+        };
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="show">
+</body>
+</html>

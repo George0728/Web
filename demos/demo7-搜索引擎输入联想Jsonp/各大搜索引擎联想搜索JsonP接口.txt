@@ -1,0 +1,67 @@
+
+各大搜索引擎智能提示API(jsonp实现跨域自动补全建议)
+
+守护大白菜 2016-09-27 18:48:32 
+
+分类专栏： jsonp
+转自:http://www.cnblogs.com/woider/p/5805248.html
+各大搜索引擎智能提示API（JSONP跨域实现自动补全搜索建议）
+---------------------------------------搜索引擎JSONP接口---------------------------------------------
+提示：URL中的 #content# 为搜索的 关键字
+谷歌（Google）
+http://suggestqueries.google.com/complete/search?client=youtube&q=#content#&jsonp=window.google.ac.h
+callback：window.google.ac.h
+window.google.ac.h(["关键字",[["关键字",0],["关键字 歌词",0],["关键字参数",0],["关键字 lyrics",0],["关键字过滤",0],["关键字排名",0],["关键字查询",0],["关键字提取算法",0],["关键字规划师可通过以下哪种方式帮助您制作新的搜索网络广告系列",0],["关键字优化",0]],{"k":1,"q":"uhaB8ZMjzJay-BACee_C0eVdUCA"}])
+ 
+必应（Bing）
+http://api.bing.com/qsonhs.aspx?type=cb&q=#content#&cb=window.bing.sug
+ callback：window.bing.sug
+if(typeof window.bing.sug == 'function') window.bing.sug({"AS":{"Query":"关键字","FullResults":0}} /* pageview_candidate */);
+ 
+百度（Baidu）
+http://suggestion.baidu.com/su?wd=#content#&cb=window.baidu.sug
+callback：window.baidu.sug
+window.baidu.sug({q:"关键字",p:false,s:["关键字搜索排名","关键字怎么优化","关键字查询工具","关键字推广","关键词优化","关键词排名","关键字 英文","关键词挖掘","关键词查询","关键词搜索"]});
+ 
+好搜（So）
+https://sug.so.360.cn/suggest?encodein=utf-8&encodeout=utf-8&format=json&word=#content#&callback=window.so.sug
+callback：window.so.sug
+window.so.sug({"query":"关键字","result":[{"word":"关键字查询"},{"word":"关键字工具"},{"word":"关键字查询工具"},{"word":"关键字挖掘"},{"word":"关键字搜索"},{"word":"关键字英文"},{"word":"关键字是什么"},{"word":"关键字广告"},{"word":"关键字分析"},{"word":"关键字规划师"}],"version":"b","rec":""});
+ 
+搜狗（Sogou）
+ https://www.sogou.com/suggnew/ajajjson?type=web&key=#content#
+ callback：window.sogou.sug
+window.sogou.sug(["关键字",["关键字查询","关键字搜索","关键字优化","关键字规划师","关键字查询lol","关键字是什么意思","关键字搜索工具","关键字广告图片","关键字排名查询","关键字生成器"],["0;0;0;0","1;0;0;0","2;0;0;0","3;0;0;0","4;0;0;0","5;0;0;0","6;0;0;0","7;0;0;0","8;0;0;0","9;0;0;0"],["","","","","","","","","",""],["0"],"","suglabId_1"],-1);
+ 
+ 淘宝（Taobao）
+ https://suggest.taobao.com/sug?code=utf-8&q=#content#&callback=window.taobao.sug
+ callback：window.taobao.sug
+window.taobao.sug({"result":[["关键字推广","204"],["关键字seo","198"],["关键字 网站","182"],["关键字搜索","119"],["关键字软件","44"],["关键字首页","50"],["关键字收录","35"],["关键字采集","16"],["关键字采集器","10"],["网站关键字","180"]]})
+ 
+---------------------------------------搜索建议使用方式---------------------------------------------
+ 以百度为例，API返回的是JSONP数据，JSONP是跨域访问的一种方式。由于服务器返回的JavaScript代码可以直接引用，通过回调函数的方式就可以间接的获取服务器的数据。
+ 下面是一个回调搜索建议的例子，window.baidu.sug 返回的是一个json对象
+
+        <script type="text/javascript">
+            window.onload = function() {
+
+                //组装查询地址
+                var sugurl = "http://suggestion.baidu.com/su?wd=#content#&cb=window.baidu.sug";
+                var content = "关键字";
+                sugurl = sugurl.replace("#content#", content);
+//定义回调函数
+                window.baidu = {
+                    sug: function(json) {
+                        console.log(json)
+                    }
+                }
+//动态添加JS脚本
+                var script = document.createElement("script");
+                script.src = sugurl;
+                document.getElementsByTagName("head")[0].appendChild(script);
+}
+        </script>
+
+来自 <https://blog.csdn.net/qq_34625397/article/details/52683705>
+
+

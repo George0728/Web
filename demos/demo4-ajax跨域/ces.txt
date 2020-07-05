@@ -1,0 +1,13 @@
+Name: AJAXRequest
+Author: xujiwei
+Site: http://www.xujiwei.com/
+Blog: http://www.xujiwei.com/blog/
+Copyright (c) 2006-2009, All Rights Reserved
+
+名称：AJAXRequest
+版本：0.8.10 Patch 4
+日期：2008-12-27
+介绍：AJAXRequest是一个轻量级的AJAX应用程序开发框架，兼容Firefox、IE、Opera、Safari，可以方便地进行一些AJAX中经常需要用到的操作，从而简化开发步骤，减少重复代码编写量。
+
+AJAXRequest开发者手册：http://ajax.xujiwei.com/
+AJAXRequest开发示例：http://www.xujiwei.com/demo/ajaxrequest/

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>使用AJAX读取bai外部文件</title>
+</head>
+<body>
+<div id="txt">外部文件内容</div>
+<script src="../view.js"></script>
+<script>
+    if ( window.ActiveXObject )         // windows 系统
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    else if ( window.XMLHttpRequest )   // 其它系统，及非IE6系统
+        xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.onreadystatechange = Callback;
+    xmlHttp.open("GET", "https://baidu.com", true ); // 读取mytxt.txt内容
+    xmlHttp.send(null);
+
+    function Callback()
+    {
+        if ( xmlHttp.readyState == 4 ) {
+            if ( xmlHttp.status == 200 ) {
+                xml = xmlHttp.responseText;  // 读取返回值即文件内容
+
+                document.getElementById("txt").innerHTML = xml;
+
+//测试正则表达式
+                // var script  = document.createElement("script");
+                // var patt = new RegExp("ssr://[a-zA-Z0-9_]*","g");
+                // while (patt.exec(xml.toString()) !== null) {
+                //     view(patt.exec(xml.toString()));
+                //     script.innerHTML += "<li>"+patt.exec(xml)+"</li>";
+                // }
+                // view(script);
+            }
+        }
+    }
+</script>
+</body>
+</html>

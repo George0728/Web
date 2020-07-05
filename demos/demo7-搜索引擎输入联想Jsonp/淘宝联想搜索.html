@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+<a href="https://blog.csdn.net/qq_40641010/article/details/89225921">淘宝搜索联想Api 博客</a>
+<br/>
+<br/>
+<input type="text" id="val" placeholder="输入搜的关键字">
+<button onclick="btnonclick()">获取联想搜索(回调函数alert)</button>
+<div id="des">显示结果：</div>
+<script>
+
+    function view(data){
+        console.log("|============================================"+data+"====================================|");
+        console.log(data);
+        console.log("|============================================"+data+"====================================|");
+
+    }
+
+
+    function callbackD(response){
+        var oUl = document.getElementById('ulList');
+        var html='';
+        if(response.s.length !=0){
+            oUl.style.display='block';
+            for(var i = 0;i<response.s.length;i++){
+                html+='<li>'+response.s[i]+'</li>'
+            }
+        }
+        oUl.innerHTML = html;
+    }
+    function search_data(response) {
+        alert("search_data");
+        alert(response);
+    }
+
+    // KISSY.Suggest ={
+    //
+    //     callback:function (result) {
+    //         alert("KISSY.Suggest");
+    //
+    //     }
+    //
+    // }
+
+    function btnonclick() {
+
+
+//测试发现：无论怎么设置回调函数，都不执行，只执行success
+        function getSearchData(search_str) {
+            $.ajax({
+                type: "GET",
+                url: "https://suggest.taobao.com/sug?area=etao&code=utf-8&q=" + search_str,
+                dataType: "jsonp",
+                 // jsonpCallback: "search_data",
+                success: function (data) {
+                    alert("success: function");
+                    view(data.result);
+                    //do something...
+                    var html = "";
+                    if(data.result.length !=0){
+                        document.getElementById("des").display='block';
+                        for(var i = 0;i<data.result.length;i++){
+                            html+='<li>'+data.result[i]+'</li>'
+                        }
+                    }
+                    document.getElementById("des").innerHTML = html;
+                }
+            });
+
+        }
+        var val = document.getElementById("val").value;
+        alert("输入值为："+val);
+        getSearchData(val); //当定义 var getSearchData = function(search_str){}时为什么不能动态赋值？？？？？？？？？？
+                            // （document.getElementById("val").innerText）？？？？？？？？？
+                            //非要定义为function getSearchData(search_str) {}
+
+
+    }
+</script>
+
+</body>
+</html>

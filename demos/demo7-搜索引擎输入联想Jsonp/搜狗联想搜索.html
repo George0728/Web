@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 300px;
+            height: 30px;
+            border: 1px solid lightgray;
+            margin-top: 150px;
+            margin-left: 200px;
+            padding-left: 5px;
+        }
+
+        ul {
+            width: 307px;
+            list-style: none;
+            margin-left: 200px;
+            display: none;
+        }
+
+        li {
+            height: 30px;
+            border: 1px solid lightgray;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+    </style>
+    <script src="../jquery.min.js"></script>
+
+</head>
+<body>
+<input type="text" id="inputSearch" placeholder="搜狗联想搜索">
+<ul id="ulList">
+    <li>123</li>
+</ul>
+
+<script>
+    //获取DOM
+    var oData = document.getElementById("inputSearch");
+    var oUl = document.getElementById('ulList');
+
+    //回调函数
+    //搜狗联想搜索
+    window.sogou = {
+        sug: function (json) {
+            console.log(json[1]);
+            var html = "";
+
+            if (json[1].length != 0) {
+                oUl.style.display = "block"; //一定要显示出来
+                for (var i = 0; i < json[1].length; i++) {
+                    html += "<li>" + json[1][i] + "</li>";
+                }
+
+            }
+            oUl.innerHTML = html;
+
+
+            // return true;
+        }
+    }
+
+    window.onload = function () {
+        //键盘按下后抬起触发事件(onkeyup)
+        oData.onkeyup = function () {
+
+            if (oData.value != '') {
+                var script1 = document.createElement("script");
+                $.ajax({
+                    url: 'http://w.sugg.sogou.com/sugg/ajaj_json.jsp?key=' + this.value + '&type=web',
+                    type: "GET",
+                    // async: false,
+                     dataType: 'jsonp',
+                    success: function (result) {
+
+                        alert('请求成功！');
+
+                    },
+                    error: function (result) {
+
+                        alert(result.status);
+                    }
+                });
+            }else{
+                oUl.style.display = "none";
+            }
+
+
+            // if (oData.value != '') {
+            //     //创建标签(createElement)
+            //     var script = document.createElement("script");
+            //     //添加地址
+            //     // script.src='http://unionsug.baidu.com/su?wd='+this.value+'&p=3&json=1&cb=callbackD';
+            //     script.src = 'http://w.sugg.sogou.com/sugg/ajaj_json.jsp?key=' + this.value + '&type=web&suguuid=callbackD';
+            //     //添加给body的(成为body包涵的孩子)
+            //     // alert(script);
+            //     console.log(script);
+            //     document.body.appendChild(script);
+            // } else {
+            //     oUl.style.display = 'none';
+            // }
+
+        }
+
+    };
+</script>
+</body>
+</html>

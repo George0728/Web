@@ -1,0 +1,50 @@
+label{
+    line-height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right:15px;
+    color: #777;
+}
+.radio-sousou{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    position: relative;
+}
+.radio-sousou:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #7d7d7d;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.radio-sousou:checked:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c59c5a;
+    background:#c59c5a;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.radio-sousou:checked:after{
+    content: '';
+    width: 10px;
+    height:5px;
+    border: 2px solid white;
+    border-top: transparent;
+    border-right: transparent;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left:5px;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+}
+.radio-sousou:checked+label{
+    color: #c59c5a;
+}

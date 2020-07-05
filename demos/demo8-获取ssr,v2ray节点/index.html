@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jquery.min.js"></script>
+
+<button type="button" onclick="getssr()" > 获取ssr节点</button>
+<div id="ssrid"></div>
+<!--<iframe id="iframessr" src="https://api.free-ssr.xyz/ssr">
+
+</iframe>
+<iframe id="iframessr2" src="https://free-ssr.xyz/">
+
+</iframe>-->
+
+
+
+<script>
+    function cb() {
+        alert(1231231);
+
+    }
+    // var url = url.replace("watch?v=", "v/");
+    var url= "https://api.free-ssr.xyz/ssr"
+    function view(data){
+        console.log("======"+data+"======");
+        console.log(data);
+        console.log("======"+data+"======");
+    }
+
+    function getssr() {
+        var ssrnotes ="";
+        var script = document.createElement("script");
+        var ssrdiv = document.getElementById("ssrid")
+         script.src = "notes.js";
+        view(script);
+        ssrdiv.innerHTML= script;
+        view(ssrdiv)
+    }
+
+
+
+
+
+    $.getJSON(url, function(data) {
+        $.each(data.services, function(index, service) {
+            processService(service);
+        });
+    });
+
+</script>
+
+</body>
+</html>
