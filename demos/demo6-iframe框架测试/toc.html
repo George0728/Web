@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inner-container {
+            /*position: absolute; left: 0;*/
+            overflow-y: auto; //滚动条是否显示（即滚动是否生效）
+        }
+        /* 隐藏滚动条，for Chrome 只针对谷歌浏览器，safari等webkit浏览器*/
+        .inner-container::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="inner-container">
+<h3>Table of Contents</h3>
+<ul>
+    <li><a href="pref.html" target="view_window">Preface</a></li>
+    <li><a href="chap1.html" target="view_window">Chapter 1</a></li>
+    <li><a href="chap2.html" target="view_window">Chapter 2</a></li>
+    <li><a href="chap3.html" target="view_window">Chapter 3</a></li>
+</ul>
+</body>
+</html>

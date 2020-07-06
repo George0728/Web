@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .frame {
+            /*border: 0px;*/
+            min-width: 500px;
+            width: 49%;
+            height: 22vw;
+        }
+        body {
+            margin: 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+<!--frameborder="0"-->
+<iframe class="frame" src="toc.html" id="dizhi">frame——toc</iframe>
+<!--<iframe class="frame" src="http://baidu.com"></iframe>-->
+<iframe class="frame" src="toc.html" >frame——toc</iframe>
+<iframe class="frame" src="toc.html">frame——toc</iframe>
+<script>
+    function setIframeHeight(obj) {
+        //方法一
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        // alert(obj.style.height);
+        var content =obj.contentDocument; //以html形式获取iframe中的内容
+        content.body.style.background = "green";
+        console.log(content.body);
+
+        //方法二:兼容性考虑
+    //     if (obj) {
+    //         var iframeWin = obj.contentWindow || obj.contentDocument.parentWindow;
+    //         console.log(iframeWin.document); //html文档
+    //         if (iframeWin.document.body) {
+    //             var x = iframeWin.document.documentElement.scrollHeight;
+    //             alert(x);
+    //             obj.style.height = (iframeWin.document.body.scrollHeight || 12) +'px';
+    //
+    //
+    //     }
+    // };
+
+
+    window.onload = function () {
+        setIframeHeight(document.getElementById('dizhi'));
+
+    };}
+
+//
+// ————————————————
+// 版权声明：本文为CSDN博主「baidu_38027860」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+// 原文链接：https://blog.csdn.net/baidu_38027860/article/details/80269991
+</script>
+
+</body>
+</html>

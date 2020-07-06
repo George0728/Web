@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .divleft{
+            width: 800px;
+        }
+        .divright{
+            width: 800px;
+        }
+
+        .frame {
+            /*border: 0px;*/
+            overflow: hidden;
+            min-width: 320px;
+            width: 49%;
+            height: 22vw;
+        }
+
+        /*.frame::-webkit-scrollbar {*/
+        /*    display: none;*/
+        /*}*/
+
+
+        body {
+            /*border: 0px;*/
+            /*padding: 0px;*/
+            margin: 0px;
+            /*overflow-x: hidden;*/
+            /*overflow-y: hidden;*/
+        }
+
+        /*　　 html {*/
+        /*    overflow-y: hidden;*/
+        /*    overflow-x: hidden;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+
+<div class="divleft">
+    <!--    <span>窗口A</span>-->
+    <iframe class="frame" src="toc.html">frame——toc</iframe>
+</div>
+
+<div class="divleft">
+    <!--    <span>窗口B</span>-->
+    <iframe class="frame" src="toc.html">frame——toc</iframe>
+</div>
+
+<div class="divright">
+    <!--    <span>窗口C</span>-->
+    <iframe class="frame" src="toc.html">frame——toc</iframe>
+</div>
+
+<div class="divright">
+    <!--    <span>窗口D</span>-->
+    <iframe class="frame" src="toc.html">frame——toc</iframe>
+</div>
+</body>
+</html>

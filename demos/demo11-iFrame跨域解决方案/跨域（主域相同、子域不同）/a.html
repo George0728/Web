@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>A</title>
+</head>
+<body>
+<pre>
+    （占无测试条件）
+    跨域时:
+    主域相同、子域不同
+    a.html (http://a.xxx.com/js/crossdomain/demo/a.htm)
+    b.html ((http://b.xxx.com/com/js/crossdomain/demo/b.htm ))
+    方法：两个域都设置：document.domain=‘jiaju.com’
+        1.document.domain = "jiaju.com";（这之后的操作就相当于不跨域了）
+        2.document.getElementByI d("iframe").contentWindow.document.getElementByI d("message").value
+
+
+</pre>
+<hr/>
+<textarea id="message">这是高层的密码！</textarea><br/>
+<button id="test">看看员工在说什么</button><br/><br/><br/>员工们：<br/>
+<iframe src="http://b.xxx.com/js/crossdomain/demo/b.htm" width="500" height="300" id="iframe"></iframe>
+<script>
+    document.domain = "jiaju.com";
+    document.getElementById("test").onclick = function(){
+        alert(document.getElementById("iframe").contentWindow.document.getElementById("message").value);
+    }
+</script>
+</body>
+</html>

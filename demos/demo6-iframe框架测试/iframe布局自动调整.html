@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .frame {
+            /*border: 0px;*/
+            min-width: 320px;
+            width: 49%;
+            height: 22vw;
+        }
+        body {
+            margin: 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+<script>
+    //获取,修改iframe中的元素
+    function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        // alert(obj.style.height);
+        var content =obj.contentDocument; //以html形式获取iframe中的内容
+        content.body.style.background = "green";
+        console.log(content.body);
+
+    }
+    function f(obj) {
+
+        var content =obj.contentDocument;
+        alert(content);
+    }
+
+    function mainFrameLoaded(t)
+    {
+        //debugger;
+        // alert(t.contentWindow.document.body.offsetHeight);
+        t.style.height = t.contentWindow.document.body.offsetHeight + 'px';
+        alert(123);
+
+        // ct.contentWindow.document.body.style.background = "green";
+    }
+</script>
+<!--frameborder="0"-->
+<iframe class="frame" src="toc.html" onload="resizeIframe(this)">frame——toc</iframe>
+<iframe class="frame" id="mainFrame" onload="mainFrameLoaded(this)" scrolling="no" src="https://www.2345.com/"></iframe>
+<iframe class="frame" src="http://baidu.com" onload="f(this)" >frame——toc</iframe>
+<iframe class="frame" src="toc.html">frame——toc</iframe>
+
+
+</body>
+</html>
