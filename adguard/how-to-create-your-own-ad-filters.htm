@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset=UTF-8"utf-8" />
+    <title>How to create your own ad filters | AdGuard Knowledgebase</title>
+    <meta name="description" content="AdGuard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="alternate" type="application/atom+xml" href="https://kb.adguard.com/en/feed:atom" title="Atom Feed" />
+    <link rel="alternate" type="application/rss+xml" href="https://kb.adguard.com/en/feed:rss" title="RSS Feed" />
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon.ico">
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-16x16.png" sizes=16x16>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-32x32.png" sizes=32x32>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-48x48.png" sizes=48x48>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-64x64.png" sizes=64x64>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-96x96.png" sizes=96x96>
+
+                                            
+        <link href="de169b0899efa746da86846e3e151b09.css" tppabs="https://kb.adguard.com/assets/de169b0899efa746da86846e3e151b09.css" type="text/css" rel="stylesheet">
+
+    
+                                                                    <script src="3bd2bf6338b9e2865e4262c3227fc79f.js" tppabs="https://kb.adguard.com/assets/3bd2bf6338b9e2865e4262c3227fc79f.js"></script>
+<script>
+$(document).ready(function() {
+                                anchors.options = {
+                                    visible: 'hover',
+                                    placement: 'right',
+                                    
+                                    
+                                    truncate: 64
+                                };
+                                anchors.add('#body h2, #body h3, #body h4, #body h5');
+                             });
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+    
+    </head>
+<body class="searchbox-hidden " data-url="/general/how-to-create-your-own-ad-filters">
+        <nav id="sidebar">
+        <div id="header-wrapper">
+            <div id="header">
+                <div class=wrap>
+                    <a id="logo" href="en.htm" tppabs="https://kb.adguard.com/en"><svg width="147" height="33" viewBox="0 0 147 33" xmlns="http://www.w3.org/2000/svg"><title>Group 10</title><g fill="none" fill-rule="evenodd"><path d="M115.2 23.244l-1.117-2.867h-5.565l-1.056 2.867h-3.777l6.031-14.602h3.372l5.97 14.602H115.2zm-3.86-10.704l-1.828 5.012h3.615l-1.787-5.012zm-8.224 5.198c0 .88-.146 1.68-.437 2.402a5.227 5.227 0 0 1-1.249 1.857 5.745 5.745 0 0 1-1.96 1.206c-.765.289-1.614.433-2.548.433-.948 0-1.801-.144-2.56-.433a5.546 5.546 0 0 1-1.929-1.206 5.244 5.244 0 0 1-1.218-1.857c-.285-.722-.427-1.522-.427-2.402V8.642h3.453v8.807c0 .399.05.777.152 1.134.102.358.257.677.467.96.21.281.488.504.833.67.345.165.762.247 1.249.247.487 0 .904-.082 1.249-.247.345-.166.626-.389.843-.67.216-.283.372-.602.467-.96a4.41 4.41 0 0 0 .142-1.134V8.642h3.473v9.096zm-14.25 4.62c-.704.37-1.527.673-2.468.907-.94.234-1.966.35-3.077.35-1.15 0-2.21-.185-3.178-.556a7.318 7.318 0 0 1-2.498-1.568 7.152 7.152 0 0 1-1.635-2.423c-.393-.942-.589-1.99-.589-3.145 0-1.17.2-2.228.6-3.177a7.057 7.057 0 0 1 1.654-2.423 7.312 7.312 0 0 1 2.478-1.537 8.618 8.618 0 0 1 3.067-.536c1.137 0 2.193.175 3.168.526.975.35 1.767.821 2.376 1.413l-2.193 2.537c-.339-.4-.785-.726-1.34-.98-.556-.254-1.185-.382-1.89-.382a4.053 4.053 0 0 0-3.026 1.29 4.31 4.31 0 0 0-.883 1.443 5.136 5.136 0 0 0-.315 1.826c0 .673.095 1.292.285 1.856.19.564.47 1.048.843 1.454a3.84 3.84 0 0 0 1.38.949c.549.226 1.175.34 1.88.34.405 0 .791-.031 1.157-.093a4.267 4.267 0 0 0 1.015-.299v-2.66h-2.742v-2.847h5.93v7.735zm57.4-6.456c0 1.279-.234 2.382-.7 3.31-.468.928-1.084 1.691-1.849 2.29a7.66 7.66 0 0 1-2.59 1.32 10.36 10.36 0 0 1-2.924.422h-5.361V8.642h5.199c1.015 0 2.017.12 3.005.36.989.241 1.869.64 2.64 1.197.772.557 1.395 1.303 1.87 2.238.473.935.71 2.09.71 3.465zm-3.615 0c0-.825-.132-1.51-.396-2.052a3.443 3.443 0 0 0-1.056-1.3 4.194 4.194 0 0 0-1.503-.69 7.279 7.279 0 0 0-1.736-.207h-1.727v8.539h1.645c.623 0 1.222-.072 1.798-.217a4.219 4.219 0 0 0 1.523-.711c.44-.33.792-.77 1.056-1.32s.396-1.23.396-2.042zm-68.753 0c0 1.279-.234 2.382-.7 3.31-.468.928-1.084 1.691-1.849 2.29a7.66 7.66 0 0 1-2.59 1.32 10.36 10.36 0 0 1-2.924.422h-5.361V8.642h5.199c1.015 0 2.017.12 3.005.36.989.241 1.869.64 2.64 1.197.772.557 1.395 1.303 1.87 2.238.473.935.71 2.09.71 3.465zm-3.615 0c0-.825-.132-1.51-.396-2.052a3.443 3.443 0 0 0-1.056-1.3 4.194 4.194 0 0 0-1.503-.69 7.279 7.279 0 0 0-1.736-.207h-1.727v8.539h1.645c.623 0 1.222-.072 1.798-.217a4.219 4.219 0 0 0 1.523-.711c.44-.33.792-.77 1.056-1.32s.396-1.23.396-2.042zm-14.765 7.342l-1.117-2.867h-5.564l-1.057 2.867h-3.777l6.032-14.602h3.371l5.97 14.602h-3.858zM51.66 12.54l-1.827 5.012h3.615L51.66 12.54zm76.192 10.704l-3.107-5.795h-1.178v5.795h-3.412V8.642h5.484c.69 0 1.364.072 2.02.216a5.209 5.209 0 0 1 1.767.733c.522.343.938.797 1.25 1.36.31.565.466 1.266.466 2.105 0 .99-.264 1.821-.792 2.495-.528.674-1.259 1.155-2.193 1.444l3.757 6.25h-4.062zm-.142-10.127c0-.343-.07-.622-.213-.835a1.469 1.469 0 0 0-.548-.495 2.356 2.356 0 0 0-.752-.237 5.459 5.459 0 0 0-.802-.062h-1.848v3.403h1.645c.284 0 .575-.024.873-.072.298-.048.569-.134.813-.258.243-.124.443-.302.599-.536.155-.234.233-.536.233-.908z" fill="#FFF"/><path d="M15.75 0C10.827 0 4.889 1.18 0 3.778c0 5.61-.067 19.589 15.75 29.14C31.568 23.366 31.5 9.387 31.5 3.777 26.613 1.18 20.674 0 15.75 0z" fill="#68BC71"/><path d="M15.734 0C10.814.003 4.884 1.183 0 3.778c0 5.609-.067 19.58 15.734 29.13V0z" fill="#67B279"/><path d="M15.176 21.964L24.7 8.876c-.698-.57-1.31-.167-1.647.144l-.013.001-7.94 8.423-2.993-3.671c-1.427-1.682-3.368-.4-3.821-.06l6.89 8.25" fill="#FFF"/></g></svg></a>
+                </div>
+                <div class="searchbox">
+                    <label for="search-by"><i class="fa fa-search"></i></label>
+                    <input id="search-by" type="text" placeholder="Search Documentation"
+                           data-search-input="/en/search.json/query"/>
+                    <span data-search-clear><i class="fa fa-close"></i></span>
+                </div>
+            </div>
+        </div>
+        
+
+<div class="scrollbar-inner">
+    <div class="highlightable">
+                    <ul class="topics">
+                                                                        <li class="dd-item parent" data-nav-id="/">
+            <a href="en.htm" tppabs="https://kb.adguard.com/en" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>1. </b>General questions</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/general/adguard-ad-filters">
+            <a href="adguard-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/adguard-ad-filters" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Ad Filters</span>
+            </a>
+                    </li>
+                            <li class="dd-item active" data-nav-id="/general/how-to-create-your-own-ad-filters">
+            <a href="how-to-create-your-own-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to create your own ad filters</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-filter-policy">
+            <a href="adguard-filter-policy.htm" tppabs="https://kb.adguard.com/en/general/adguard-filter-policy" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Filter Policy</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/userscripts">
+            <a href="userscripts.htm" tppabs="https://kb.adguard.com/en/general/userscripts" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Userscripts</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/how-ad-blocking-works">
+            <a href="how-ad-blocking-works.htm" tppabs="https://kb.adguard.com/en/general/how-ad-blocking-works" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How ad blocking works</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/how-malware-protection-works">
+            <a href="how-malware-protection-works.htm" tppabs="https://kb.adguard.com/en/general/how-malware-protection-works" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How malware protection works</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/license-key">
+            <a href="license-key.htm" tppabs="https://kb.adguard.com/en/general/license-key" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard license key</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/why-is-adguard-better">
+            <a href="why-is-adguard-better.htm" tppabs="https://kb.adguard.com/en/general/why-is-adguard-better" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Why is AdGuard better than other adblockers</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/https-filtering">
+            <a href="https-filtering.htm" tppabs="https://kb.adguard.com/en/general/https-filtering" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>HTTPS filtering</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/general/https-filtering/https-filtering-known-issues">
+            <a href="https-filtering-known-issues.htm" tppabs="https://kb.adguard.com/en/general/https-filtering/https-filtering-known-issues" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>HTTPS filtering: known issues</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/search-ads-and-self-promotion">
+            <a href="search-ads-and-self-promotion.htm" tppabs="https://kb.adguard.com/en/general/search-ads-and-self-promotion" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Search ads and self-promotion</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-beta-testing-program">
+            <a href="adguard-beta-testing-program.htm" tppabs="https://kb.adguard.com/en/general/adguard-beta-testing-program" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard beta testing program</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/filter-rules-statistics">
+            <a href="filter-rules-statistics.htm" tppabs="https://kb.adguard.com/en/general/filter-rules-statistics" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Tracking filter rules statistics</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/dns-filtering-android">
+            <a href="dns-filtering-android.htm" tppabs="https://kb.adguard.com/en/general/dns-filtering-android" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>DNS filtering</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-translations">
+            <a href="adguard-translations.htm" tppabs="https://kb.adguard.com/en/general/adguard-translations" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard translations</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/dns-providers">
+            <a href="dns-providers.htm" tppabs="https://kb.adguard.com/en/general/dns-providers" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Known DNS Providers</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/stealth-mode">
+            <a href="stealth-mode.htm" tppabs="https://kb.adguard.com/en/general/stealth-mode" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Stealth Mode</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/dns-filtering-syntax">
+            <a href="dns-filtering-syntax.htm" tppabs="https://kb.adguard.com/en/general/dns-filtering-syntax" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>DNS filtering rules syntax</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/2fa">
+            <a href="2fa.htm" tppabs="https://kb.adguard.com/en/general/2fa" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Two-factor authentication</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows">
+            <a href="windows.htm" tppabs="https://kb.adguard.com/en/windows" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>2. </b>AdGuard for Windows</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/overview">
+            <a href="overview.htm" tppabs="https://kb.adguard.com/en/windows/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/installation">
+            <a href="installation.htm" tppabs="https://kb.adguard.com/en/windows/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Install/Uninstall</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features">
+            <a href="features.htm" tppabs="https://kb.adguard.com/en/windows/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/features/ad-blocker">
+            <a href="ad-blocker.htm" tppabs="https://kb.adguard.com/en/windows/features/ad-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Ad Blocker</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/browsing-security">
+            <a href="browsing-security.htm" tppabs="https://kb.adguard.com/en/windows/features/browsing-security" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Browsing Security</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/parental-control">
+            <a href="parental-control.htm" tppabs="https://kb.adguard.com/en/windows/features/parental-control" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Parental Control</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/extensions">
+            <a href="extensions.htm" tppabs="https://kb.adguard.com/en/windows/features/extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Extensions</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems">
+            <a href="solving-problems.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/solving-problems/wfp-driver">
+            <a href="wfp-driver.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/wfp-driver" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>WFP driver</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/connection-not-trusted">
+            <a href="connection-not-trusted.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/connection-not-trusted" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>"Potential Security Risk" error</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/adguard-logs">
+            <a href="adguard-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/adguard-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find AdGuard logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/system-logs">
+            <a href="system-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/system-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find Windows logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/ie-edge-filtering">
+            <a href="ie-edge-filtering.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/ie-edge-filtering" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Internet Explorer and Edge filtering</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/installation-logs">
+            <a href="installation-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/installation-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find AdGuard installation logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/yandex-warning">
+            <a href="yandex-warning.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/yandex-warning" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Yandex.Browser certificate warning</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/common-installer-errors">
+            <a href="common-installer-errors.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/common-installer-errors" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Common AdGuard installer errors</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/documentation-for-admins">
+            <a href="documentation-for-admins.htm" tppabs="https://kb.adguard.com/en/windows/documentation-for-admins" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Documentation for administrators</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos">
+            <a href="macos.htm" tppabs="https://kb.adguard.com/en/macos" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>3. </b>AdGuard for macOS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/overview">
+            <a href="overview-1.htm" tppabs="https://kb.adguard.com/en/macos/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/installation">
+            <a href="installation-1.htm" tppabs="https://kb.adguard.com/en/macos/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Install/Uninstall</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features">
+            <a href="features-1.htm" tppabs="https://kb.adguard.com/en/macos/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/features/ad-blocker">
+            <a href="ad-blocker-1.htm" tppabs="https://kb.adguard.com/en/macos/features/ad-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Ad Blocker</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/privacy-protection">
+            <a href="privacy-protection.htm" tppabs="https://kb.adguard.com/en/macos/features/privacy-protection" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Privacy protection</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/browsing-security">
+            <a href="browsing-security-1.htm" tppabs="https://kb.adguard.com/en/macos/features/browsing-security" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Browsing security</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/extensions">
+            <a href="extensions-1.htm" tppabs="https://kb.adguard.com/en/macos/features/extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Extensions</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems">
+            <a href="solving-problems-1.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/solving-problems/install-cert">
+            <a href="install-cert.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/install-cert" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Manual certificate installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems/protection-cannot-be-enabled">
+            <a href="protection-cannot-be-enabled.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/protection-cannot-be-enabled" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>If AdGuard Protection cannot be enabled (for some reasons)</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems/high-sierra-compatibility">
+            <a href="high-sierra-compatibility.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/high-sierra-compatibility" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to install AdGuard on versions of macOS High Sierra and above</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android">
+            <a href="android.htm" tppabs="https://kb.adguard.com/en/android" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>4. </b>AdGuard for Android</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/android/overview">
+            <a href="overview-2.htm" tppabs="https://kb.adguard.com/en/android/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/installation">
+            <a href="installation-2.htm" tppabs="https://kb.adguard.com/en/android/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/features">
+            <a href="features-2.htm" tppabs="https://kb.adguard.com/en/android/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/faq">
+            <a href="faq.htm" tppabs="https://kb.adguard.com/en/android/faq" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>FAQ</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems">
+            <a href="solving-problems-2.htm" tppabs="https://kb.adguard.com/en/android/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/android/solving-problems/battery">
+            <a href="battery.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/battery" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Battery and traffic consumption issues</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/log">
+            <a href="log.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/log" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Collecting a log on AdGuard for Android</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/tasker">
+            <a href="tasker.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/tasker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to automate AdGuard for Android</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/logcat">
+            <a href="logcat.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/logcat" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to get logcat log</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/har">
+            <a href="har.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/har" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to get HAR files</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/low-level-settings">
+            <a href="low-level-settings.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/low-level-settings" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Low Level Settings guide</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/youtube-ads">
+            <a href="youtube-ads.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/youtube-ads" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to block ads in Youtube app</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/adguard-outbound-proxy">
+            <a href="adguard-outbound-proxy.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/adguard-outbound-proxy" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to setup an outbound proxy</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/background-work">
+            <a href="background-work.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/background-work" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to protect AdGuard from being disabled by the system</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/samsungpay-with-adguard-in-south-korea">
+            <a href="samsungpay-with-adguard-in-south-korea.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/samsungpay-with-adguard-in-south-korea" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to use Samsung Pay with AdGuard in South Korea</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios">
+            <a href="ios.htm" tppabs="https://kb.adguard.com/en/ios" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>5. </b>AdGuard for iOS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/ios/overview">
+            <a href="overview-3.htm" tppabs="https://kb.adguard.com/en/ios/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/installation">
+            <a href="installation-3.htm" tppabs="https://kb.adguard.com/en/ios/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/features">
+            <a href="features-3.htm" tppabs="https://kb.adguard.com/en/ios/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/solving-problems">
+            <a href="solving-problems-3.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/ios/solving-problems/dns-requests-log">
+            <a href="dns-requests-log.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems/dns-requests-log" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to collect DNS requests log on AdGuard Pro?</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/solving-problems/premium-activation">
+            <a href="premium-activation.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems/premium-activation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to activate Premium features?</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/safari">
+            <a href="safari.htm" tppabs="https://kb.adguard.com/en/safari" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>6. </b>AdGuard for Safari</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/safari/overview">
+            <a href="overview-4.htm" tppabs="https://kb.adguard.com/en/safari/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/safari/installation">
+            <a href="installation-4.htm" tppabs="https://kb.adguard.com/en/safari/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/content-blocker">
+            <a href="content-blocker.htm" tppabs="https://kb.adguard.com/en/content-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>7. </b>AdGuard Content Blocker</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/content-blocker/overview">
+            <a href="overview-5.htm" tppabs="https://kb.adguard.com/en/content-blocker/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/content-blocker/installation">
+            <a href="installation-5.htm" tppabs="https://kb.adguard.com/en/content-blocker/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns">
+            <a href="dns.htm" tppabs="https://kb.adguard.com/en/dns" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>8. </b>AdGuard DNS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/dns/overview">
+            <a href="overview-6.htm" tppabs="https://kb.adguard.com/en/dns/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns/setup-guide">
+            <a href="setup-guide.htm" tppabs="https://kb.adguard.com/en/dns/setup-guide" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Setup guide</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns/faq">
+            <a href="faq-1.htm" tppabs="https://kb.adguard.com/en/dns/faq" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>FAQ</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions">
+            <a href="browser-extensions.htm" tppabs="https://kb.adguard.com/en/browser-extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>9. </b>Browser Extensions</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/browser-extensions/overview">
+            <a href="overview-7.htm" tppabs="https://kb.adguard.com/en/browser-extensions/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/installation">
+            <a href="installation-6.htm" tppabs="https://kb.adguard.com/en/browser-extensions/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/features">
+            <a href="features-4.htm" tppabs="https://kb.adguard.com/en/browser-extensions/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/integration-mode">
+            <a href="integration-mode.htm" tppabs="https://kb.adguard.com/en/browser-extensions/integration-mode" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Integration mode</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/home">
+            <a href="home.htm" tppabs="https://kb.adguard.com/en/home" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>10. </b>AdGuard Home</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/home/overview">
+            <a href="overview-8.htm" tppabs="https://kb.adguard.com/en/home/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Home overview</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous">
+            <a href="miscellaneous.htm" tppabs="https://kb.adguard.com/en/miscellaneous" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>11. </b>Miscellaneous</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/miscellaneous/acknowledgments">
+            <a href="acknowledgments.htm" tppabs="https://kb.adguard.com/en/miscellaneous/acknowledgments" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Credits and Acknowledgments</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/updating-kb">
+            <a href="updating-kb.htm" tppabs="https://kb.adguard.com/en/miscellaneous/updating-kb" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Updating the Knowledgebase</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/plurals">
+            <a href="plurals.htm" tppabs="https://kb.adguard.com/en/miscellaneous/plurals" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Plural forms</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/taking-screenshots">
+            <a href="taking-screenshots.htm" tppabs="https://kb.adguard.com/en/miscellaneous/taking-screenshots" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to take a screenshot</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/writers-reward">
+            <a href="writers-reward.htm" tppabs="https://kb.adguard.com/en/miscellaneous/writers-reward" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Writing about AdGuard</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/filter-help">
+            <a href="filter-help.htm" tppabs="https://kb.adguard.com/en/miscellaneous/filter-help" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Contribute to AdGuard Filters</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support">
+            <a href="technical-support.htm" tppabs="https://kb.adguard.com/en/technical-support" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>12. </b>Technical support</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/technical-support/how-to-collect-har-file">
+            <a href="how-to-collect-har-file.htm" tppabs="https://kb.adguard.com/en/technical-support/how-to-collect-har-file" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to collect HAR file</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/adware">
+            <a href="adware.htm" tppabs="https://kb.adguard.com/en/technical-support/adware" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Adware/Viruses</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/how-to-install-certificate">
+            <a href="how-to-install-certificate.htm" tppabs="https://kb.adguard.com/en/technical-support/how-to-install-certificate" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Proxy certificate installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/reporting-tool">
+            <a href="reporting-tool.htm" tppabs="https://kb.adguard.com/en/technical-support/reporting-tool" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Report website</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+                            </ul>
+        
+        <div class="bottom-panel">
+            <a class="clear-history" href="#" data-clear-history-toggle>
+                <i class="fa fa-fw fa-history"></i> Clear History
+            </a>
+
+            <ul class="langswitcher">
+
+                            
+            <li><a href="how-to-create-your-own-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters" class="external active">English</a></li>
+    
+
+                                                    
+            <li><a href="how-to-create-your-own-ad-filters-1.htm" tppabs="https://kb.adguard.com/ru/general/how-to-create-your-own-ad-filters" class="external">–†—É—Å—Å–∫–∏–π</a></li>
+    
+</ul>
+        </div>
+        <section id="footer">
+            <p>Built with <a href="javascript:if(confirm('http://getgrav.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://getgrav.org/'" tppabs="http://getgrav.org/">Grav</a> - The Modern Flat File CMS</p>
+        </section>
+    </div>
+</div>
+
+    </nav>
+    
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle><i class="fa fa-2x fa-bars"></i></a>
+
+                        <div id="top-bar">
+                                <div id="top-github-link">
+                <a class="github-link" href="javascript:if(confirm('https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/02.how-to-create-your-own-ad-filters/docs.en.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/02.how-to-create-your-own-ad-filters/docs.en.md'" tppabs="https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/02.how-to-create-your-own-ad-filters/docs.en.md"><i class="fa fa-github-square"></i> edit this page</a>
+                </div>
+                
+                                
+<div id="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="en.htm" tppabs="https://kb.adguard.com/en" itemid="/en">
+                    <span itemprop="name">General questions</span>
+                </a>
+                        <i class="fa fa-angle-right"></i>
+                <meta itemprop="position" content="1" />
+    </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <span itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="/en/general/how-to-create-your-own-ad-filters">
+                    <span itemprop="name">How to create your own ad filters</span>
+                </span>
+                            <meta itemprop="position" content="2" />
+    </span>
+    </div>
+                            </div>
+            
+                <div id="body-inner">
+    <h1>How to create your own ad filters</h1>
+    <p>
+    	<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#example-blocking-by-domain-name">Example: Blocking by domain name</a></li>
+<li><a href="#example-blocking-exact-address">Example: Blocking exact address</a></li>
+<li><a href="#example-basic-rule-modifiers">Example: Basic rule modifiers</a></li>
+<li><a href="#example-unblocking-an-address">Example: Unblocking an address</a></li>
+<li><a href="#example-unblocking-website">Example: Unblocking everything on a website</a></li>
+<li><a href="#example-cosmetic-rule">Example: Cosmetic rule</a></li>
+</ul></li>
+<li><a href="#basic-rules">Basic rules</a>
+<ul>
+<li><a href="#basic-rules-syntax">Basic rules syntax</a></li>
+<li><a href="#basic-rules-special-characters">Special characters</a></li>
+<li><a href="#regexp-support">Regular expressions support</a></li>
+<li><a href="#wildcard-for-tld">Wildcard support for TLD</a></li>
+<li><a href="#basic-rules-examples">Basic rules examples</a></li>
+<li><a href="#basic-rules-modifiers">Modifiers</a>
+<ul>
+<li><a href="#basic-rules-common-modifiers">Basic modifiers</a>
+<ul>
+<li><a href="#domain-modifier">$domain</a></li>
+<li><a href="#third-party-modifier">$third-party</a></li>
+<li><a href="#popup-modifier">$popup</a></li>
+<li><a href="#match-case-modifier">$match-case</a></li>
+</ul></li>
+<li><a href="#content-type-modifiers">Content type modifiers</a>
+<ul>
+<li><a href="#content-type-modifiers-examples">Content type modifiers examples</a></li>
+<li><a href="#image-modifier">$image</a></li>
+<li><a href="#stylesheet-modifier">$stylesheet</a></li>
+<li><a href="#script-modifier">$script</a></li>
+<li><a href="#object-modifier">$object</a></li>
+<li><a href="#object-subrequest-modifier">$object-subrequest</a></li>
+<li><a href="#font-modifier">$font</a></li>
+<li><a href="#media-modifier">$media</a></li>
+<li><a href="#subdocument-modifier">$subdocument</a></li>
+<li><a href="#ping-modifier">$ping</a></li>
+<li><a href="#xmlhttprequest-modifier">$xmlhttprequest</a></li>
+<li><a href="#websocket-modifier">$websocket</a></li>
+<li><a href="#webrtc-modifier">$webrtc</a></li>
+<li><a href="#other-modifier">$other</a></li>
+</ul></li>
+<li><a href="#exceptions-modifiers">Exception rules modifiers</a>
+<ul>
+<li><a href="#elemhide-modifier">$elemhide</a></li>
+<li><a href="#content-modifier">$content</a></li>
+<li><a href="#jsinject-modifier">$jsinject</a></li>
+<li><a href="#urlblock-modifier">$urlblock</a></li>
+<li><a href="#extension-modifier">$extension</a></li>
+<li><a href="#document-modifier">$document</a></li>
+<li><a href="#stealth-modifier">$stealth</a></li>
+<li><a href="#generic-rules">Generic rules</a>
+<ul>
+<li><a href="#generichide-modifier">$generichide</a></li>
+<li><a href="#genericblock-modifier">$genericblock</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#advanced-modifiers">Advanced capabilites</a>
+<ul>
+<li><a href="#removeparam-modifier">$removeparam</a></li>
+<li><a href="#important-modifier">$important</a></li>
+<li><a href="#badfilter-modifier">$badfilter</a></li>
+<li><a href="#empty-modifier">$empty</a></li>
+<li><a href="#mp4-modifier">$mp4</a></li>
+<li><a href="#replace-modifier">$replace</a></li>
+<li><a href="#csp-modifier">$csp</a></li>
+<li><a href="#cookie-modifier">$cookie</a></li>
+<li><a href="#network-modifier">$network</a></li>
+<li><a href="#app-modifier">$app</a></li>
+<li><a href="#redirect-modifier">$redirect</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#non-basic-rules">Non-basic rules</a>
+<ul>
+<li><a href="#cosmetic-rules">Cosmetic rules</a>
+<ul>
+<li><a href="#cosmetic-elemhide-rules">Element hiding rules</a></li>
+<li><a href="#cosmetic-css-rules">CSS rules</a></li>
+<li><a href="#extended-css-selectors">Extended CSS selectors</a>
+<ul>
+<li><a href="#extended-css-has">Pseudo-class <code>:has()</code></a></li>
+<li><a href="#extended-css-has">Pseudo-class <code>:if-not()</code></a></li>
+<li><a href="#extended-css-contains">Pseudo-class <code>:contains()</code></a></li>
+<li><a href="#extended-css-matches-css">Pseudo-class <code>:matches-css()</code></a></li>
+<li><a href="#extended-css-xpath">Pseudo-class <code>:xpath()</code></a></li>
+<li><a href="#extended-css-nth-ancestor">Pseudo-class <code>:nth-ancestor()</code></a></li>
+<li><a href="#extended-css-upward">Pseudo-class <code>:upward()</code></a></li>
+<li><a href="#selectors-debugging-mode">Selectors debugging mode</a></li>
+<li><a href="#pseudo-property-remove">Pseudo-property <code>remove</code></a></li>
+<li><a href="#testing-extended-selectors">Testing extended selectors</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#html-filtering-rules">HTML filtering rules</a>
+<ul>
+<li><a href="#html-filtering-rules-syntax">Syntax</a></li>
+<li><a href="#html-filtering-rules-attributes">Special attributes</a>
+<ul>
+<li><a href="#tag-content-attribute">tag-content</a></li>
+<li><a href="#wildcard-attribute">wildcard</a></li>
+<li><a href="#max-length-attribute">max-length</a></li>
+<li><a href="#min-length-attribute">min-length</a></li>
+</ul></li>
+<li><a href="#html-filtering-rules-exceptions">Exceptions</a></li>
+</ul></li>
+<li><a href="#javascript-rules">JavaScript rules</a></li>
+<li><a href="#scriptlets">Scriptlets</a></li>
+<li><a href="#non-basic-rules-modifiers">Modifiers</a>
+<ul>
+<li><a href="#non-basic-rules-modifiers-syntax">Syntax</a></li>
+<li><a href="#non-basic-rules-modifiers-app">$app</a></li>
+<li><a href="#non-basic-rules-modifiers-domain">$domain</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#for_maintainers">Information for filters maintainers</a>
+<ul>
+<li><a href="#pre_processor">Pre-processor directives</a></li>
+<li><a href="#hints">Hints</a>
+<ul>
+<li><a href="#hints_syntax">Hints syntax</a></li>
+<li><a href="#not_optimized">NOT_OPTIMIZED hint</a></li>
+<li><a href="#platform_not_platform">PLATFORM and NOT_PLATFORM hints</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#good-luck">Good luck with creating filters!</a></li>
+</ul>
+<p><a id="introduction"></a></p>
+<h2>Introduction</h2>
+<p>A filter is a set of filtering rules applied to specific content (banners, popups, etc).  AdGuard has a list of standard filters created by our team. Our team constantly improves and updates them, and we hope our filters meet the needs of most of our users.</p>
+<p>At the same time, AdGuard allows you to create your own custom filters, using the same type of rules that we have in our filters.</p>
+<p>To describe the syntax of our filtering rules we use <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc5234  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://tools.ietf.org/html/rfc5234'" tppabs="https://tools.ietf.org/html/rfc5234">Augmented BNF for Syntax Specifications</a>, but we do not always strictly follow this specification.</p>
+<blockquote>
+<p>AdGuard syntax is originally based on syntax of Adblock Plus rules, but it was extended with new types of rules for better ad filtering.  Some parts of this article's content about the rules common to both AdGuard and ABP was taken from <a href="javascript:if(confirm('https://adblockplus.org/en/filters  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://adblockplus.org/en/filters'" tppabs="https://adblockplus.org/en/filters">this article</a>.</p>
+</blockquote>
+<p><a id="comments"></a></p>
+<h2>Comments</h2>
+<p>Any line that starts with an exclamation mark is a comment. In the list of rules it is displayed in gray color. AdGuard will ignore this line, so you can write anything you want. Comments are usually placed above the rules and used to describe what a rule does.</p>
+<p>For example:</p>
+<pre><code>! This is the comment. Under this line there is an actual filtering rule.
+||example.org^</code></pre>
+<p><a id="examples"></a></p>
+<h2>Examples</h2>
+<p><a id="example-blocking-by-domain-name"></a></p>
+<h3>Example: Blocking by domain name</h3>
+<object data="0_blocking_domain.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/0_blocking_domain.svg" type="image/svg+xml">
+    <img src="0_blocking_domain.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/0_blocking_domain.svg"></object>
+<p><strong>This rule blocks:</strong></p>
+<ul>
+<li><code>http://example.org/ad1.gif</code></li>
+<li><code>http://subdomain.example.org/ad1.gif</code></li>
+<li><code>https://ads.example.org:8000/</code></li>
+</ul>
+<p><strong>This rule does not block:</strong></p>
+<ul>
+<li><code>http://ads.example.org.us/ad1.gif</code></li>
+<li><code>http://example.org/redirect/http://ads.example.org/</code></li>
+</ul>
+<p><a id="example-blocking-exact-address"></a></p>
+<h3>Example: Blocking exact address</h3>
+<object data="1_exact_address.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/1_exact_address.svg" type="image/svg+xml">
+    <img src="1_exact_address.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/1_exact_address.svg"></object>
+<p><strong>This rule blocks:</strong></p>
+<ul>
+<li><code>http://example.org/</code></li>
+</ul>
+<p><strong>This rule does not block:</strong></p>
+<ul>
+<li><code>https://example.org/banner/img</code></li>
+</ul>
+<p><a id="example-basic-rule-modifiers"></a></p>
+<h3>Example: Basic rule modifiers</h3>
+<p>Filtering rules support numerous modifiers that allow you to fine-tune the rule behavior. Here is an example of a rule with some simple modifiers.</p>
+<object data="2_basic_rule_options.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/2_basic_rule_options.svg" type="image/svg+xml">
+    <img src="2_basic_rule_options.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/2_basic_rule_options.svg"></object>
+<p><strong>This rule blocks:</strong></p>
+<ul>
+<li><code>http://example.org/script.js</code> if this script is loaded from <code>example.com</code>.</li>
+</ul>
+<p><strong>This rule does not block:</strong></p>
+<ul>
+<li><code>https://example.org/script.js</code> if this script is loaded from <code>example.org</code>.</li>
+<li><code>https://example.org/banner.png</code> because it is not a script.</li>
+</ul>
+<p><a id="example-unblocking-an-address"></a></p>
+<h3>Example: Unblocking an address</h3>
+<object data="3_basic_exception.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/3_basic_exception.svg" type="image/svg+xml">
+    <img src="3_basic_exception.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/3_basic_exception.svg"></object>
+<p><strong>This rule unblocks:</strong></p>
+<ul>
+<li><code>http://example.org/banner.png</code> even if there is a blocking rule for this address.</li>
+</ul>
+<blockquote>
+<p>Blocking rules with <a href="#important-modifier"><code>$important</code></a> modifier can override exceptions.</p>
+</blockquote>
+<p><a id="example-unblocking-website"></a></p>
+<h3>Unblocking everything on a website</h3>
+<object data="4_unblock_entire_website.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/4_unblock_entire_website.svg" type="image/svg+xml">
+    <img src="4_unblock_entire_website.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/4_unblock_entire_website.svg"></object>
+<p><strong>This rule unblocks</strong></p>
+<ul>
+<li>It disables all cosmetic rules on <code>example.com</code>.</li>
+<li>It unblocks all requests sent from this website even if there is are blocking rules matching these requests.</li>
+</ul>
+<p><a id="example-cosmetic-rule"></a></p>
+<h3>Example: Cosmetic rule</h3>
+<object data="5_cosmetic_rules.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/5_cosmetic_rules.svg" type="image/svg+xml">
+    <img src="5_cosmetic_rules.svg" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/5_cosmetic_rules.svg"></object>
+<p>Cosmetic rules are based on using a special language named CSS, which every browser understands. Basically, it adds a new CSS style to the website which purpose is to hide particular elements. You can learn more about CSS in general <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'" tppabs="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors">here</a>.</p>
+<blockquote>
+<p>AdGuard <a href="#extended-css-selectors">extends CSS</a> and lets filters developers handle much more complicated cases. However, to use these extended rules, you need to be fluent in regular CSS.</p>
+</blockquote>
+<p><a id="example-popular-css-selectors"></a></p>
+<h4>Popular CSS selectors</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>CSS selector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID selector</td>
+<td><code>#banners</code></td>
+<td>Matches all elements with <code>id</code> attribute equal to <code>banners</code>.<br/><img src="css_id_selector.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_id_selector.png" alt="" /></td>
+</tr>
+<tr>
+<td>Class selector</td>
+<td><code>.banners</code></td>
+<td>Matches all elements with <code>class</code> attribute containing <code>banners</code>.<br/><img src="css_class_selector.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_class_selector.png" alt="" /></td>
+</tr>
+<tr>
+<td>Attribute selector</td>
+<td><code>div[class="banners"]</code></td>
+<td>Matches all <code>div</code> elements with <code>class</code> attribute <strong>exactly equal</strong> to <code>banners</code>.<br/><img src="css_class_attr.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_class_attr.png" alt="" /></td>
+</tr>
+<tr>
+<td>Attribute substring selector</td>
+<td><code>div[class^="advert1"]</code></td>
+<td>Matches all <code>div</code> elements which <code>class</code> attribute <strong>starts with</strong> the <code>advert1</code> string.<br/><img src="css_class_attr_start.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_class_attr_start.png" alt="" /></td>
+</tr>
+<tr>
+<td>Attribute substring selector</td>
+<td><code>div[class$="banners_ads"]</code></td>
+<td>Matches all <code>div</code> elements which <code>class</code> attribute <strong>ends with</strong> the <code>banners_ads</code> string.<br/><img src="css_class_attr_end.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_class_attr_end.png" alt="" /></td>
+</tr>
+<tr>
+<td>Attribute substring selector</td>
+<td><code>a[href^="http://example.com/"]</code></td>
+<td>Matches all links that are loaded from <code>http://example.com/</code> domain.<br/><img src="css_attr_start.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_attr_start.png" alt="" /></td>
+</tr>
+<tr>
+<td>Attribute selector</td>
+<td><code>a[href="http://example.com/"]</code></td>
+<td>Matches all links to <strong>exactly</strong> the <code>http://example.com/</code> address.<br/><img src="css_attr_equal.png" tppabs="https://cdn.adguard.com/public/Adguard/kb/en/rules_syntax/css_attr_equal.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+<p><a id="basic-rules"></a></p>
+<h2>Basic rules</h2>
+<p>The most simple rules are so-called <em>"Basic rules".</em> They are used to block requests to specific URLs. Or to unblock it, if there is a special marker "@@" at the beginning of the rule. The basic principle for this type of rules is quite simple: you have to specify the address and additional parameters that limit or expand the scope of the rule.</p>
+<blockquote>
+<h4>Sub-requests</h4>
+<p>Basic rules for blocking requests are applied only to <strong>sub-requests</strong>. That means they will not block the loading of the page.</p>
+<h4>Response status</h4>
+<p>Browser detects a blocked request as completed with an error.</p>
+</blockquote>
+<p><a id="basic-rules-syntax"></a></p>
+<h3>Basic rules syntax</h3>
+<pre><code>      rule = ["@@"] pattern [ "$" modifiers ]
+modifiers = [modifier0, modifier1[, ...[, modifierN]]]</code></pre>
+<ul>
+<li><strong><code>pattern</code></strong> ‚Äî address mask. Every request's URL is collated to this mask. You can also use special characters in the template, their description is <a href="#basic-rules-special-characters">below</a>.</li>
+<li><strong><code>@@</code></strong> ‚Äî A marker that is used in rules of exception. To turn off filtering for a request, start your rule with this marker.</li>
+<li><strong><code>modifiers</code></strong> ‚Äî Parameters that "clarify" the basic rule. Some of them limit the scope of the rule and some can completely change they way it works.</li>
+</ul>
+<p><a id="basic-rules-special-characters"></a></p>
+<h3>Special characters</h3>
+<ul>
+<li><code>*</code> ‚Äî Wildcard character. It is used to represent "any set of characters". This can also be an empty string or a string of any length.</li>
+<li><strong><code>||</code></strong> ‚Äî Matching the beginning of an address. With this character you don't have to specify a particular protocol and subdomain in address mask. It means, <code>||</code> stands for <code>http://*.</code>, <code>https://*.</code>, <code>ws://*.</code>, <code>wss://*.</code> at once.</li>
+<li><strong><code>^</code></strong> ‚Äî Separator character mark. Separator character is any character, but a letter, a digit, or one of the following: <code>_</code> <code>-</code> <code>.</code> <code>%</code>. In this example separator characters are shown in bold: <code>http:</code><strong><code>//</code></strong><code>example.com</code><strong><code>/?</code></strong><code>t=1</code><strong><code>&amp;</code></strong><code>t2=t3</code>. The end of the address is also accepted as separator.</li>
+<li><strong><code>|</code></strong> ‚Äî A pointer to the beginning or the end of address. The value depends on the character placement in the mask. For example, a rule <code>swf|</code> corresponds to <code>http://example.com/annoyingflash.swf</code> , but not to <code>http://example.com/swf/index.html</code>. <code>|http://example.org</code> corresponds to <code>http://example.org</code>, but not to <code>http://domain.com?url=http://example.org</code>.</li>
+</ul>
+<blockquote>
+<h4>Visual representation</h4>
+<p>We recommend to get acquainted with <a href="javascript:if(confirm('https://adblockplus.org/filter-cheatsheet  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://adblockplus.org/filter-cheatsheet#blocking'" tppabs="https://adblockplus.org/filter-cheatsheet#blocking">this article</a>, for better understanding of how such rules should be made.</p>
+</blockquote>
+<p><a id="regexp-support"></a></p>
+<h3>Regular expressions support</h3>
+<p>If you want even more flexibility in making rules, you can use <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular expressions</a> instead of a default simplified mask with special characters. </p>
+<blockquote>
+<h4>Performance</h4>
+<p>Rules with regular expressions work more slowly, therefore it is recommended to avoid them or to limit their scope to specific domains.</p>
+</blockquote>
+<p>If you want a blocker to determine a regular expression, the <code>pattern</code> has to look like this:</p>
+<pre><code>pattern = "/" regexp "/"</code></pre>
+<p>For example, <code>/banner\d+/$third-party</code> this rule will apply the regular expression <code>banner\d+</code> to all third-party requests. Exclusion rule with regular expression looks like this: <code>@@/banner\d+/</code>.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>AdGuard browser extension for Safari and AdGuard for iOS do not fully support regular expressions because of <a href="javascript:if(confirm('https://webkit.org/blog/3476/content-blockers-first-look/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://webkit.org/blog/3476/content-blockers-first-look/'" tppabs="https://webkit.org/blog/3476/content-blockers-first-look/">Content Blocking API restrictions</a> (look for "The Regular expression format" section).</p>
+</blockquote>
+<p><a id="wildcard-for-tld"></a></p>
+<h3>Wildcard support for TLD (top-level domains)</h3>
+<p>Wildcard characters are supported for TLDs of the domains in patterns of cosmetic, html and javascript rules.<br />
+For example, the cosmetic rule <code>example.*##.banner</code> will match any <code>example.TLD</code> request (<code>example.ru</code>, <code>example.com</code>, <code>example.net</code>, <code>example.org</code>, etc.).<br />
+For the basic rules the described logic will be applicable only for the domains specified in <code>$domain</code> modifier (for example, <code>||*/banners/*$image,domain=example.*</code>).</p>
+<p><a id="basic-rules-examples"></a></p>
+<h3>Basic rules examples</h3>
+<ul>
+<li>
+<p><code>||example.com/ads/*</code> ‚Äî a simple rule, which corresponds to addresses like <code>http://example.com/ads/banner.jpg</code> and even <code>http://subdomain.example.com/ads/otherbanner.jpg</code>.</p>
+</li>
+<li>
+<p><code>||example.org^$third-party</code> ‚Äî  a rule that blocks third-party requests to<code>example.org</code> and it's subdomains.</p>
+</li>
+<li><code>@@||example.com$document</code> ‚Äî general exception rule. It completely disables filtering for <code>example.com</code> and all subdomains. There is a number of modifiers which can be used in exception rules. For more details, please follow the link <a href="#exceptions-modifiers">below</a>.</li>
+</ul>
+<p><a id="basic-rules-modifiers"></a></p>
+<h3>Modifiers</h3>
+<blockquote>
+<h4>Attention</h4>
+<p>The features described in this section are intended for experienced users. They extend capabilities of "Basic rules", but in order to use them you need to have a basic undestanding of the way your browser works.</p>
+</blockquote>
+<p>You can change the behavior of a "basic rule" by using additional modifiers. Modifiers should be located in the end of the rule after a <code>$</code> sign and be separated by commas.</p>
+<p>Example:</p>
+<pre><code>||domain.com^$popup,third-party</code></pre>
+<p><a id="basic-rules-common-modifiers"></a></p>
+<h4>Basic modifiers</h4>
+<p>The following modifiers are the most simple and frequently used.</p>
+<p><a id="domain-modifier"></a></p>
+<h5><strong><code>domain</code></strong></h5>
+<p><code>domain</code> limits the rule application area to a list of domains (and their subdomains). To add multiple domains to one rule, use the <code>|</code>  character as a separator.</p>
+<h6><code>domain</code> examples</h6>
+<ul>
+<li><code>||baddomain.com^$domain=example.org</code> ‚Äî a rule to block requests that match the specified mask, and are sent from domain <code>example.org</code> or its subdomains.</li>
+<li><code>||baddomain.com^$domain=example.org|example.com</code> ‚Äî the same rule, but it works for both <code>example.org</code> and <code>example.com</code>.</li>
+</ul>
+<p>If you want the rule not to be applied to certain domains, start a domain name with <code>~</code> sign.</p>
+<h6><code>domain</code> and <code>~</code> examples</h6>
+<ul>
+<li><code>||baddomain.com^$domain=~example.org</code> ‚Äî a rule to block requests that match the specified mask, and are sent from any domain except <code>example.org</code> or it's subdomains.</li>
+<li><code>||baddomain.com^$domain=example.org|~foo.example.org</code> ‚Äî this rule blocks requests that are sent from <code>example.org</code> and all it's subdomains, except the subdomain <code>foo.example.org</code>.</li>
+</ul>
+<p><a id="third-party-modifier"></a></p>
+<h5><strong><code>third-party</code></strong></h5>
+<p>A restriction of third-party and own requests. A third-party request is a request from different domain. For example, a request to <code>example.org</code>, from <code>domain.com</code> is a third-party request. </p>
+<blockquote>
+<h4>Subdomains</h4>
+<p>Please note that request from domain to it's subdomain (or vice versa) is not considered a third-party request. For example, a request to <code>subdomain.example.org</code>, sent from the domain<code>example.org</code> is not a third-party request. </p>
+</blockquote>
+<p>If there is a <code>third-party</code> modifier, the rule is only applied to third-party request.</p>
+<h6><code>third-party</code> examples</h6>
+<ul>
+<li><code>||domain.com^$third-party</code> ‚Äî rule is applied to all domains, except <code>domain.com</code> and it's subdomains. Third-party request example: <code>http://example.org/banner.jpg</code>.</li>
+</ul>
+<p>If there is a <code>~third-party</code> modifier, the rule is only applied to the requests that are not from third-party. Which means, they have to be sent from the same domain.</p>
+<h6><code>~third-party</code> examples</h6>
+<ul>
+<li><code>||domain.com$~third-party</code> ‚Äî this rule is applied to <code>domain.com</code>, but not to the other domains. Example of a request that is not a third-party request: <code>http://domain.com/icon.ico</code>.</li>
+</ul>
+<p><a id="popup-modifier"></a></p>
+<h5><strong><code>popup</code></strong></h5>
+<p>AdGuard will try to close the browser tab with any address that matches a blocking rule with this modifier. Please note, that not all the tabs can be closed.</p>
+<h6><code>popup</code>examples</h6>
+<ul>
+<li><code>||domain.com^$popup</code> ‚Äî if you try to go to <code>http://domain.com/</code> from any page in the browser, a new tab in which specified site has to be opened will be closed by this rule.</li>
+</ul>
+<p><a id="match-case-modifier"></a></p>
+<h5><strong><code>match-case</code></strong></h5>
+<p>This modifier defines a rule which applies only to addresses that match the case. Default rules are case-insensitive.</p>
+<h6><code>match-case</code> examples</h6>
+<ul>
+<li><code>*/BannerAd.gif$match-case</code> ‚Äî this rule will block <code>http://example.com/BannerAd.gif</code>, but not <code>http://example.com/bannerad.gif</code>.</li>
+</ul>
+<p><a id="content-type-modifiers"></a></p>
+<h4>Restriction by content type</h4>
+<p>There is a set of modifiers, which can be used to limit the rule's application area to certain type of content. These modifiers can also be combined to cover, for example, both images and scripts.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Please note that there is a big difference in how AdGuard determines the content type on different platforms. For browser extensions, content type for every request is provided by browser. AdGuard for Windows, Mac and Android use following method: first we try to determine the type of request by filename extension. If the request is not blocked at this stage, the type will be determined using the <code>Content-Type</code> header at the beginning of the server response.</p>
+</blockquote>
+<p><a id="content-type-modifiers-examples"></a></p>
+<h5>Content type modifiers examples</h5>
+<ul>
+<li><code>||example.org^$image</code> ‚Äî corresponds to all images from <code>example.org</code>.</li>
+<li><code>||example.org^$script,stylesheet</code> ‚Äî corresponds to all the scripts and styles from <code>example.org</code>.</li>
+<li><code>||example.org^$~image,~script,~stylesheet</code> ‚Äî corresponds to all requests to <code>example.org</code> except for the images, scripts and styles.</li>
+</ul>
+<p><a id="image-modifier"></a></p>
+<h5><strong><code>image</code></strong></h5>
+<p>The rule corresponds to images requests.</p>
+<p><a id="stylesheet-modifier"></a></p>
+<h5><strong><code>stylesheet</code></strong></h5>
+<p>The rule corresponds to CSS files requests.</p>
+<p><a id="script-modifier"></a></p>
+<h5><strong><code>script</code></strong></h5>
+<p>The rule corresponds to script requests (e.g. javascript, vbscript).</p>
+<p><a id="object-modifier"></a></p>
+<h5><strong><code>object</code></strong></h5>
+<p>The rule corresponds to browser plugins resourses. (e.g. Java or Flash).</p>
+<p><a id="object-subrequest-modifier"></a></p>
+<h5><strong><code>object-subrequest</code></strong></h5>
+<p>The rule corresponds to requests by browser plugins (it's usually Flash).</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>AdGuard for Windows, macOS and Android often can't accurately determine this type and defines it as <code>other</code>.</p>
+</blockquote>
+<p><a id="font-modifier"></a></p>
+<h5><strong><code>font</code></strong></h5>
+<p>The rule corresponds to requests for fonts (e.g. .woff filename extension).</p>
+<p><a id="media-modifier"></a></p>
+<h5><strong><code>media</code></strong></h5>
+<p>The rule corresponds to requests for media files (music and video, e.g. .mp4 files).</p>
+<p><a id="subdocument-modifier"></a></p>
+<h5><strong><code>subdocument</code></strong></h5>
+<p>The rule corresponds to requests for built-in pages (HTML tags <code>frame</code> and <code>iframe</code>).</p>
+<p><a id="ping-modifier"></a></p>
+<h5><strong><code>ping</code></strong></h5>
+<p>The rule corresponds to requests caused by either <code>navigator.sendBeacon()</code> or the <code>ping</code> attribute on links.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>This modifier is only supported in AdGuard browser extension.</p>
+</blockquote>
+<p><a id="xmlhttprequest-modifier"></a></p>
+<h5><strong><code>xmlhttprequest</code></strong></h5>
+<p>The rule applies only to ajax requests (requests sent via javascript object <code>XMLHttpRequest</code>).</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>AdGuard for Windows, macOS and Android often can't accurately determine this type and defines it as <code>other</code> or <code>script</code>.</p>
+</blockquote>
+<p><a id="websocket-modifier"></a></p>
+<h5><strong><code>websocket</code></strong></h5>
+<p>The rule applies only to WebSocket connections.</p>
+<p><a id="webrtc-modifier"></a></p>
+<h5><strong><code>webrtc</code></strong></h5>
+<p>The rule applies only to WebRTC connections.</p>
+<blockquote>
+<p>Please note that blocking WebRTC can interfere with the work of some browser applications, such as messengers, chats, cinemas, or games.</p>
+</blockquote>
+<h6><code>webrtc</code> example</h6>
+<ul>
+<li><code>||example.com^$webrtc,domain=example.org</code> - this rule blocks webRTC connectios to <code>example.com</code> for <code>example.org</code>.</li>
+<li><code>@@*$webrtc,domain=example.org</code> - this rule disables the RTC wrapper for <code>example.org</code>.</li>
+</ul>
+<p><a id="other-modifier"></a></p>
+<h5><strong><code>other</code></strong></h5>
+<p>The rule applies to requests for which the type has not been determined or doesn't match the types listed above.</p>
+<p><a id="exceptions-modifiers"></a></p>
+<h4>Exception modifiers</h4>
+<p>Exception rules disable the other basic rules for the addresses to which they correspond. They begin with a <code>@@</code> mark. All the basic modifiers listed above can be applied to them and they also have a few special modifiers.</p>
+<blockquote>
+<h4>Visual representation</h4>
+<p>We recommend to get acquainted with <a href="javascript:if(confirm('https://adblockplus.org/filter-cheatsheet  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://adblockplus.org/filter-cheatsheet#blocking'" tppabs="https://adblockplus.org/filter-cheatsheet#blocking">this article</a>, for better understanding of how exception rules should be made.</p>
+</blockquote>
+<p><a id="elemhide-modifier"></a></p>
+<h5><strong><code>elemhide</code></strong></h5>
+<p>Disables any cosmetic rules on the pages matching the rule. You will find the information about cosmetic rules <a href="#cosmetic-rules">further</a>.</p>
+<h6><code>elemhide</code> example</h6>
+<ul>
+<li><code>@@||example.com^$elemhide</code> ‚Äî disables all cosmetic rules on pages at <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="content-modifier"></a></p>
+<h5><strong><code>content</code></strong></h5>
+<p>Disables HTML filtering rules on the pages matching the rule. You will find the information about HTML filtering rules <a href="#html-filtering-rules">further</a>.</p>
+<h6><code>content</code> example</h6>
+<ul>
+<li><code>@@||example.com^$content</code> ‚Äî disables all HTML filtering rules on pages at <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="jsinject-modifier"></a></p>
+<h5><strong><code>jsinject</code></strong></h5>
+<p>Forbids adding of javascript code to the page. You can read about javascript rules further.</p>
+<h6><code>jsinject</code> example</h6>
+<ul>
+<li><code>@@||example.com^$jsinject</code> ‚Äî disables javascript on pages at <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="urlblock-modifier"></a></p>
+<h5><strong><code>urlblock</code></strong></h5>
+<p>Disables blocking of all requests sent from the pages matching the rule.</p>
+<h6><code>urlblock</code> example</h6>
+<ul>
+<li><code>@@||example.com^$urlblock</code> ‚Äî any requests sent from the pages at <code>example.com</code> and all subdomains are not going to be blocked.</li>
+</ul>
+<p><a id="extension-modifier"></a></p>
+<h5><strong><code>extension</code></strong></h5>
+<p>Disables all userscripts on the pages matching this rule.</p>
+<h6><code>extension</code> example</h6>
+<ul>
+<li><code>@@||example.com^$extension</code> ‚Äî userscripts won't work on all pages of the <code>example.com</code> website.</li>
+</ul>
+<p><a id="document-modifier"></a></p>
+<h5><strong><code>document</code></strong></h5>
+<p>Completely disables blocking on corresponding pages. It is equal to simultaneous use of <code>elemhide</code>, <code>content</code>, <code>urlblock</code>, <code>jsinject</code> and <code>extension</code>.</p>
+<h6><code>document</code> example</h6>
+<ul>
+<li><code>@@||example.com^$document</code> ‚Äî completely disables filtering on all pages at <code>example.com</code> and all subdomains.</li>
+<li><code>@@||example.com^$document,~extension</code> ‚Äî completely disables blocking on any pages at <code>example.com</code> and all subdomains, but continues to run userscripts there.</li>
+</ul>
+<p><a id="stealth-modifier"></a></p>
+<h5><strong><code>stealth</code></strong></h5>
+<p>Disables the Stealth Mode for all corresponding pages and requests.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Stealth Mode is currently available in AdGuard for Windows, Mac, Android and AdGuard browser extension. For now, the products that do not support Stealth Mode will ignore the rules with this modifier.</p>
+</blockquote>
+<h6><code>stealth</code> examples</h6>
+<ul>
+<li><code>@@||example.com^$stealth</code> ‚Äî disables <code>Stealth Mode</code> for <code>example.com</code> (and subdomains) requests.</li>
+<li><code>@@||domain.com^$script,stealth,domain=example.com</code> ‚Äî disables <code>Stealth Mode</code> only for script <code>domain.com</code> (and subdomains) requests on <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="generic-rules"></a></p>
+<h5>Generic rules</h5>
+<p>Before we can proceed to the next modifiers, we have to make a definition of <em>generic rules</em>. The rule is generic if it is not limited to specific domains.</p>
+<p>For example, these rules are generic:</p>
+<pre><code>###banner
+~domain.com###banner
+||domain.com^
+||domain.com^$domain=~example.com</code></pre>
+<p>And these are not:</p>
+<pre><code>domain.com###banner
+||domain.com^$domain=example.com</code></pre>
+<p><a id="generichide-modifier"></a></p>
+<h6><strong><code>generichide</code></strong></h6>
+<p>Disables all generic <a href="#cosmetic-rules">cosmetic rules</a> on pages that correspond to exception rule.</p>
+<ul>
+<li><code>@@||example.com^generichide</code> ‚Äî disables generic cosmetic rules on any pages at <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="genericblock-modifier"></a></p>
+<h6><strong><code>genericblock</code></strong></h6>
+<p>Disables generic basic rules on pages that correspond to exception rule.</p>
+<ul>
+<li><code>@@||example.com^$genericblock</code> ‚Äî disables generic basic rules on any pages at <code>example.com</code> and all subdomains.</li>
+</ul>
+<p><a id="advanced-modifiers"></a></p>
+<h3>Advanced capabilities</h3>
+<p>These modifiers are able to completely change the behaviour of basic rules.</p>
+<p><a id="removeparam-modifier"></a></p>
+<h4><strong><code>removeparam</code></strong></h4>
+<p>Rules with <code>$removeparam</code> modifier are intended to effectively extend Stealth Mode's capabilities to strip tracking parameters from pages‚Äô URLs. <em>Please note</em>, that such rules are only applied to <code>GET</code> requests.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Rules with <code>$removeparam</code> modifier are supported by AdGuard for Windows, Mac, and Android.</p>
+<h4>Multiple rules matching a single request</h4>
+<p>In case if multiple <code>$removeparam</code> rules match a single request, we will apply each of them one by one.</p>
+<h4>Restrictions</h4>
+<p>Please note that this type of rules can be used <strong>only in trusted filters</strong>. This category includes your own <strong>User filter</strong> and all the filters created by AdGuard Team.</p>
+<h4>Compatibility with other modifiers</h4>
+<p><code>$removeparam</code> rules are not compatible with any other modifiers except <code>$domain</code>, <code>$third-party</code>, <code>$app</code>, <code>$important</code> and <code>$match-case</code>. The rules which have any other modifiers are considered invalid and will be rejected.</p>
+</blockquote>
+<h5>Syntax</h5>
+<p>To specify a parameter affected by the rule one should use the following syntax:</p>
+<ul>
+<li><code>$removeparam=param</code> -- removes parameter with name <code>param</code> from URL queries of any request, e.g. a request to <code>http://example.com/page?param=1&amp;another=2</code> will be transformed to<br />
+<code>http://example.com/page?another=2</code>.</li>
+</ul>
+<p>Use <code>|</code> to separate parameters:</p>
+<ul>
+<li><code>$removeparam=p1|p2</code> -- removes parameters <code>p1</code> and <code>p2</code> from URL queries of any request, e.g. a request to <code>http://example.com/page?p1=1&amp;p2&amp;p3</code> will be transformed to <code>http://example.com/page?p3</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Please note</strong> that a blocking rule with <code>$removeparam</code> parameter must have at least one parameter specified. For example, rule such as <code>example.com$removeparam</code> is considered invalid and will be rejected.</p>
+</blockquote>
+<p>Parameters are matched lexicographically. It means that the rule <code>$removeparam=param</code> won't strip the parameter named <code>Param</code> or <code>some_param</code>. If you want to overcome this behavior, you can use regular expressions:</p>
+<pre><code>removeparam = "/" regex "/" options</code></pre>
+<p>, where </p>
+<ul>
+<li><code>regex</code> - a regular expression according to <a href="javascript:if(confirm('http://perldoc.perl.org/perlrequick.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://perldoc.perl.org/perlrequick.html#Search-and-replace'" tppabs="http://perldoc.perl.org/perlrequick.html#Search-and-replace">Perl syntax</a>,</li>
+<li><code>options</code> - regular expression options.</li>
+</ul>
+<p>The list of supported options for regular expressions:</p>
+<ul>
+<li><code>i</code> - makes matching case-insensitive.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>$removeparam=/param/</code> -- removes parameters matching the pattern <code>param</code> from URL queries of any request, e.g. a request to <code>http://example.com/page?param=1&amp;some_pArAm=2</code> will be transformed to <code>http://example.com/page?some_pArAm=2</code></li>
+<li><code>$removeparam=/param/i</code> -- removes parameters matching the pattern <code>param</code> case-insensitively from URL queries of any request, e.g. a request to <code>http://example.com/page?param=1&amp;some_pArAm=2</code> will be transformed to <code>http://example.com/page</code></li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> don't forget to escape special characters like <code>,</code>, <code>/</code> and <code>$</code> in regular expressions. Use <code>\</code> character for it. For example, escaped comma should look like this: <code>\,</code>.</p>
+</blockquote>
+<p><code>|</code>-separated lists also support regular expressions: <code>$removeparam=p1|/p2/i|/p3/|p4</code>.</p>
+<p>Use exceptions if you don't want to strip some URLs:</p>
+<p>1) Example 1:</p>
+<pre><code>```
+$removeparam=gclid|yclid|fbclid
+@@||example.com^$removeparam=gclid
+```</code></pre>
+<p>With these rules Google, Yandex and Facebook Click IDs will be stripped out, except that requests to <code>example.com</code> won't be stripped of Google Click ID. E.g. <code>http://google.com/page?gclid=1&amp;fbclid=2&amp;yclid=3</code> will be transformed to <code>http://google.com/page</code>, but <code>http://example.com/page?gclid=1&amp;fbclid=2&amp;yclid=3</code> will be transformed to <code>http://example.com/page?gclid=1</code>.</p>
+<p>2) Example 2:</p>
+<pre><code>```
+$removeparam=utm_source|utm_medium|utm_term
+$removeparam=utm_content|utm_campaign|utm_referrer
+@@||example.com^$removeparam
+```</code></pre>
+<p>With these rules some <a href="javascript:if(confirm('https://en.wikipedia.org/wiki/UTM_parameters  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/UTM_parameters'" tppabs="https://en.wikipedia.org/wiki/UTM_parameters">UTM parameters</a> will be stripped out from any request, except that requests to <code>example.com</code> won't be stripped at all, e.g. <code>http://google.com/page?utm_source=s&amp;utm_referrer=fb.com&amp;utm_content=img</code> will be transformed to <code>http://google.com/page</code>, but <code>http://example.com/page?utm_source=s&amp;utm_referrer=fb.com&amp;utm_content=img</code> won't be affected by the blocking rule.</p>
+<blockquote>
+<p><strong>Please note</strong> that blocking <code>$removeparam</code> rules can also be disabled by <code>$document</code> and <code>$urlblock</code> exception rules. But basic exception rules without modifiers don't do that. For example, <code>@@||example.com^</code> will not disable <code>$removeparam=p</code> for requests to example.com, but <code>@@||example.com^$urlblock</code> will.</p>
+</blockquote>
+<p><a id="important-modifier"></a></p>
+<h4><strong><code>important</code></strong></h4>
+<p>The <code>$important</code> modifier applied to a rule increases its priority over any other rule without <code>$important</code> modifier. Even over basic exception rules.</p>
+<h5>Example 1:</h5>
+<pre><code>||example.org^$important
+@@||example.org^</code></pre>
+<p><code>||example.org^$important</code> will block all requests despite of the exception rule.</p>
+<h5>Example 2:</h5>
+<pre><code>||example.org^$important
+@@||example.org^$important</code></pre>
+<p>Now the exception rule also has <code>$important</code> modifier so it will prevail.</p>
+<h5>Example 3:</h5>
+<p>The <code>$important</code> modifier will be ignored if a document-level exception rule is applied to the document.</p>
+<pre><code>||example.org^$important
+@@||test.org^$document</code></pre>
+<p>If a request to <code>example.org</code> is sent from the <code>test.org</code> domain, the rule won't be applied despite it has the <code>$important</code> modifier.</p>
+<p><a id="badfilter-modifier"></a></p>
+<h4><strong><code>badfilter</code></strong></h4>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p><code>badfilter</code> modifier is currently only available in AdGuard browser extensions. It will be added to other AdGuard products later.</p>
+</blockquote>
+<p>The rules with the <code>badfilter</code> modifier disable other basic rules to which they refer. It means that the text of the disabled rule should match the text of the <code>badfilter</code> rule (without the <code>badfilter</code> modifier).</p>
+<h5><code>badfilter</code> examples</h5>
+<ul>
+<li><code>||example.com$badfilter</code> disables <code>||example.com</code></li>
+<li><code>||example.com$image,badfilter</code> disables <code>||example.com,image</code></li>
+<li><code>@@||example.com$badfilter</code> disables <code>@@||example.com</code></li>
+<li><code>||example.com$domain=domain.com,badfilter</code> disables <code>||example.com$domain=domain.com</code></li>
+</ul>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Below modifiers from this section are only available in AdGuard for Windows, macOS and Android. Browser extension capabilities are limited by browser itself and some methods are just not available to them.</p>
+</blockquote>
+<p><a id="empty-modifier"></a></p>
+<h4><strong><code>empty</code></strong></h4>
+<p>Usually, blocked requests look like a server error to browser. If you use <code>empty</code> modifier, AdGuard will emulate a blank response from the server with<code>200 OK</code> status.</p>
+<h5><code>empty</code> example</h5>
+<ul>
+<li><code>||example.org^$empty</code> ‚Äî returns an empty response to all requests to <code>example.org</code> and all subdomains.</li>
+</ul>
+<p><a id="mp4-modifier"></a></p>
+<h4><strong><code>mp4</code></strong></h4>
+<p>As a response to blocked request AdGuard returns a short video placeholder.</p>
+<h5><code>mp4</code> example</h5>
+<ul>
+<li><code>||example.com/videos/$mp4</code> ‚Äî block a video downloads from <code>||example.com/videos/*</code> and changes the response to a video placeholder.</li>
+</ul>
+<p><a id="replace-modifier"></a></p>
+<h4><strong><code>replace</code></strong></h4>
+<p>This modifier completely changes the rule behavior. If it is applied, the rule will not block the request. The response is going to be modified instead. </p>
+<blockquote>
+<h4>Please note</h4>
+<p>You will need some knowledge of regular expressions to use this modifier.</p>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Rules are supported by AdGuard for Windows, Mac, Android and by the AdGuard's Firefox add-on.<br />
+This type of rules don't work in extensions for other browsers because they are unable to modify content on the network level.</p>
+</blockquote>
+<h5><code>$replace</code> rules features</h5>
+<ul>
+<li><code>$replace</code> rules apply to any text response, but will not apply to binary (<code>media</code>, <code>image</code>, <code>object</code>, etc).</li>
+<li><code>$replace</code> rules do not apply if the size of the original response is more than 3MB.</li>
+<li><code>$replace</code> rules have a higher priority than other basic rules (<strong>including</strong> exception rules). So if a request corresponds to two different rules one of which has the <code>$replace</code> modifier, this rule will be applied.</li>
+<li>Document-level exception rules with <code>$content</code> or <code>$document</code> modifiers do disable <code>$replace</code> rules for requests matching them.</li>
+<li>Other document-level exception rules (<code>$generichide</code>, <code>$elemhide</code> or <code>$jsinject</code> modifiers) are applied alongside <code>$replace</code> rules. It means that you can modify the page's content with a <code>$replace</code> rule and disable cosmetic rules there at the same time.</li>
+</ul>
+<blockquote>
+<p><code>$replace</code> value can be empty in the case of exception rules. See examples section for further information.</p>
+<h4>Multiple rules matching a single request</h4>
+<p>In case if multiple <code>$replace</code> rules match a single request, we will apply each of them. <strong>The order is defined alphabetically.</strong></p>
+</blockquote>
+<h5><strong>$replace Syntax</strong></h5>
+<p>In general, <code>replace</code> syntax is similar to replacement with regular expressions <a href="javascript:if(confirm('http://perldoc.perl.org/perlrequick.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://perldoc.perl.org/perlrequick.html#Search-and-replace'" tppabs="http://perldoc.perl.org/perlrequick.html#Search-and-replace">in Perl</a>.</p>
+<pre><code>replace = "/" regex "/" replacement "/" modifiers</code></pre>
+<ul>
+<li><code>regex</code> ‚Äî regular expression.</li>
+<li><code>replacement</code> ‚Äî a string that will be used to replace the string corresponding to <code>regex</code>.</li>
+<li><code>modifiers</code> ‚Äî regular expression flags. For example, <code>i</code> - insensitive search, or <code>s</code> - single-line mode.</li>
+</ul>
+<p>In the <code>$replace</code> value, two characters must be escaped: comma (<code>,</code>) and (<code>$</code>). Use (<code>\</code>) for it. For example, an escaped comma looks like this: <code>\,</code>.</p>
+<h5><code>$replace</code> example</h5>
+<pre><code>||example.org^$replace=/(&lt;VAST[\s\S]*?&gt;)[\s\S]*&lt;\/VAST&gt;/\$1&lt;\/VAST&gt;/</code></pre>
+<p>There are three parts in this rule:</p>
+<ul>
+<li>Regular expression: <code>(&lt;VAST(.|\s)*?&gt;)(.|\s)*&lt;\/VAST&gt;</code></li>
+<li>Replacement: <code>\$1&lt;\/VAST&gt;</code> (please note, that <code>$</code> is escaped)</li>
+<li>Regular expression flags: <code>i</code> (insensitive search)</li>
+</ul>
+<p>You can see how this rule works here:<br />
+http://regexr.com/3cesk</p>
+<h5>Multiple <code>$replace</code> rules example</h5>
+<ol>
+<li><code>||example.org^$replace=/X/Y/</code></li>
+<li><code>||example.org^$replace=/Z/Y/</code></li>
+<li><code>@@||example.org/page/*$replace=/Z/Y/</code></li>
+</ol>
+<ul>
+<li>Both rule 1 and 2 will be applied to all requests sent to <code>example.org</code>.</li>
+<li>Rule 2 is disabled for requests matching <code>||example.org/page/</code>, <strong>but rule 1 still works!</strong>.</li>
+</ul>
+<h5>Disabling <code>$replace</code> rules</h5>
+<ul>
+<li><code>@@||example.org^$replace</code> will disable all <code>$replace</code> rules matching <code>||example.org^</code>.</li>
+<li><code>@@||example.org^$document</code> or <code>@@||example.org^$content</code> will disable all <code>$replace</code> rules <strong>originated from</strong> pages of <code>example.org</code> <strong>including the page itself</strong>.</li>
+</ul>
+<p><a id="csp-modifier"></a></p>
+<h4><strong><code>csp</code></strong></h4>
+<p>This modifier completely changes the rule behavior. If it is applied to a rule, it will not block the matching request. The response headers are going to be modified instead.</p>
+<blockquote>
+<p>In order to use this type of rules, it is required to have the basic understanding of the <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy'" tppabs="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content Security Policy</a> security layer.</p>
+</blockquote>
+<p>For the requests matching a <code>$csp</code> rule, we will strengthen response's security policy by adding additional content security policy equal to the <code>$csp</code> modifier contents. <code>$csp</code> rules are applied independently from any other rule type. Other basic rules have no influence on it <strong>save for document-level exceptions</strong> (see the examples section).</p>
+<blockquote>
+<p>Multiple rules matching a single request.<br />
+In case if multiple <code>$csp</code> rules match a single request, we will apply each of them.</p>
+</blockquote>
+<h5><strong><code>csp</code> syntax</strong></h5>
+<p><code>$csp</code> value syntax is similar to the Content Security Policy header syntax.</p>
+<p><code>$csp</code> value can be empty in the case of exception rules. See examples section for further information.</p>
+<blockquote>
+<p>Limitations</p>
+<ol>
+<li>Please note, that there're a few characters forbidden in the <code>$csp</code> value: (<code>,</code>), (<code>$</code>)</li>
+<li><code>csp</code> rules support limited list of modifiers: <code>domain</code>, <code>important</code>, <code>subdocument</code></li>
+<li>Rules with <code>report-*</code> directives are considered invalid.</li>
+</ol>
+</blockquote>
+<h5><code>csp</code> examples</h5>
+<ul>
+<li><code>||example.org^$csp=frame-src 'none'</code> ‚Äî prohibits all frames on example.org and it's subdomains.</li>
+<li><code>@@||example.org/page/*$csp=frame-src 'none'</code> ‚Äî disables all rules with the <code>$csp</code> modifier exactly matching <code>frame-src 'none'</code> on all the pages matching the rule pattern. For instance, the rule above.</li>
+<li><code>@@||example.org/page/*$csp</code> ‚Äî disables all the <code>$csp</code> rules on all the pages matching the rule pattern.</li>
+<li><code>||example.org^$csp=script-src 'self' 'unsafe-eval' http: https:</code> ‚Äî disables inline scripts on all the pages matching the rule pattern.</li>
+<li><code>@@||example.org^$document</code> or <code>@@||example.org^$urlblock</code> ‚Äî disables all the <code>$csp</code> rules on all the pages matching the rule pattern.</li>
+</ul>
+<p><a id="cookie-modifier"></a></p>
+<h4><strong><code>cookie</code></strong></h4>
+<p>The <code>$cookie</code> modifier completely changes rule behavior. Instead of blocking a request, this modifier makes us suppress or modify the <code>Cookie</code> and <code>Set-Cookie</code> headers.</p>
+<blockquote>
+<p><strong>Multiple rules matching a single request</strong><br />
+In case if multiple <code>$cookie</code> rules match a single request, we will apply each of them one by one.</p>
+</blockquote>
+<h5><code>$cookie</code> syntax</h5>
+<p>The rule syntax depends on whether we are going to block all cookies or to remove a single cookie. The rule behavior can be changed with <code>maxAge</code> and <code>sameSite</code> modifiers.</p>
+<ul>
+<li>
+<p><code>||example.org^$cookie=NAME;maxAge=3600;sameSite=lax</code> -- every time AdGuard encounters a cookie called <code>NAME</code> in a request to <code>example.org</code>, it will do the following:</p>
+<ul>
+<li>Set its expiration date to current time plus <code>3600</code> seconds</li>
+<li>Makes the cookie use <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies'" tppabs="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#SameSite_cookies">Same-Site</a> "lax" strategy.</li>
+</ul>
+</li>
+<li><code>||example.org^$cookie</code> -- blocks ALL cookies set by <code>example.org</code>. This is an equivalent to setting <code>maxAge</code> to zero.</li>
+<li><code>||example.org^$cookie=NAME</code> -- blocks a single cookie named <code>NAME</code></li>
+<li><code>||example.org^$cookie=/regular_expression/</code> -- blocks every cookie that matches a given regular expression</li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> in the case of a regular expression matching, two characters must be escaped: comma (<code>,</code>) and (<code>$</code>). Use (<code>\</code>) for it. For example, escaped comma looks like this: <code>\,</code>.</p>
+</blockquote>
+<p><code>$cookie</code> rules are not affected by regular exception rules (<code>@@</code>) unless it's a <code>$document</code> exception. In order to disable a <code>$cookie</code> rule, the exception rule should also have a <code>$cookie</code> modifier. Here's how it works:</p>
+<ul>
+<li><code>@@||example.org^$cookie</code> -- unblocks all cookies set by <code>example.org</code></li>
+<li><code>@@||example.org^$cookie=NAME</code> -- unblocks a single cookie named <code>NAME</code></li>
+<li><code>@@||example.org^$cookie=/regular_expression/</code> -- unblocks every cookie matching a given regular expression</li>
+</ul>
+<blockquote>
+<p><strong>Limitations</strong><br />
+<code>$cookie</code> rules support a limited list of modifiers: <code>domain</code>, <code>~domain</code>, <code>important</code>, <code>third-party</code>, <code>~third-party</code>.</p>
+</blockquote>
+<h5>Real-life examples</h5>
+<ul>
+<li><code>$cookie=__cfduid</code> -- blocks CloudFlare cookie everywhere</li>
+<li><code>$cookie=/__utm[a-z]/</code> -- blocks Google Analytics cookies everywhere</li>
+<li><code>||facebook.com^$third-party,cookie=c_user</code> -- prevents Facebook from tracking you even if you are logged in</li>
+</ul>
+<p><a id="network-modifier"></a></p>
+<h4><strong><code>network</code></strong></h4>
+<p>This is basically a Firewall-kind of rules allowing to fully block or unblock access to a specified remote address.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Only AdGuard for Windows, Mac, Android are technically capable of using this type of rules.</p>
+</blockquote>
+<ol>
+<li><code>$network</code> rules match <strong>IP addresses only</strong>! You cannot use it to block or unblock access to a domain.</li>
+<li>To match an IPv6 address, you have to use the collapsed syntax, e.g. use <code>[2001:4860:4860::8888]$network</code> instead of <code>[2001:4860:4860:0:0:0:0:8888]$network</code>.</li>
+<li>A whitelist <code>$network</code> rule makes AdGuard bypass data to the matching endpoint, e.g. there will be no further filtering at all.</li>
+</ol>
+<h5><code>network</code> examples</h5>
+<ul>
+<li><code>174.129.166.49:3478^$network</code> - blocks access to <code>174.129.166.49:3478</code> (but not to <code>174.129.166.49:34788</code>).</li>
+<li><code>[2001:4860:4860::8888]:443^$network</code> - blocks access to <code>[2001:4860:4860::8888]:443</code>.</li>
+<li><code>174.129.166.49$network</code> - blocks access to <code>174.129.166.49:*</code>.</li>
+<li><code>@@174.129.166.49$network</code> - makes AdGuard bypass data to the endpoint. No other rules will be applied.</li>
+</ul>
+<p><a id="app-modifier"></a></p>
+<h4><strong><code>app</code></strong></h4>
+<p>This modifier lets you narrow the rule coverage down to a specific application (or a list of applications). This might be not too important on Windows and Mac, but this is very important on Mobile where some of the filtering rules must be application-specific.</p>
+<ul>
+<li>Android - use the apps' package names (i.e. <code>org.example.app</code>).</li>
+<li>Windows - use the process name (i.e. <code>chrome.exe</code>).</li>
+<li>Mac - use the bundle ID or the process name (i.e. <code>com.google.Chrome</code>).</li>
+</ul>
+<blockquote>
+<p>For Mac, you can find out the bundle ID or the process name of the app by viewing the respective request details in the Filtering log</p>
+</blockquote>
+<p>In the case of Android, use the apps' package names (i.e. <code>org.example.app</code>). In the case of Windows</p>
+<h5><code>app</code> examples</h5>
+<ul>
+<li><code>||baddomain.com^$app=org.example.app</code> ‚Äî a rule to block requests that match the specified mask, and are sent from the <code>com.adguard.android</code> Android app.</li>
+<li><code>||baddomain.com^$app=org.example.app1|org.example.app2</code> ‚Äî the same rule, but it works for both <code>org.example.app1</code> and <code>org.example.app2</code> apps.</li>
+</ul>
+<p>If you want the rule not to be applied to certain apps, start the app name with <code>~</code> sign.</p>
+<h5><code>app</code> and <code>~</code> examples</h5>
+<ul>
+<li><code>||baddomain.com^$app=~org.example.app</code> ‚Äî a rule to block requests that match the specified mask, and are sent from any app save for the <code>org.example.app</code>.</li>
+<li><code>||baddomain.com^$domain=~org.example.app1|~org.example.app2</code> ‚Äî same as above, but now two apps are excluded: <code>org.example.app1</code> and <code>org.example.app2</code>.</li>
+</ul>
+<p><a id="redirect-modifier"></a></p>
+<h4><code>redirect</code></h4>
+<p>AdGuard is able to redirect web requests to a local "resource".</p>
+<h5><code>redirect</code> syntax</h5>
+<p>AdGuard uses the same filtering rules syntax as uBlock Origin. Also, it is compatible with ABP <code>$rewrite=abp-resource</code> modifier.</p>
+<p><code>$redirect</code> is a modifier for the <a href="how-to-create-your-own-ad-filters.htm#basic-rules" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#basic-rules">basic filtering rules</a> so rules with this modifier support all other basic modifiers like <code>$domain</code>, <code>$third-party</code>, <code>$script</code>, etc.</p>
+<blockquote>
+<p>The value of the <code>$redirect</code> modifier must be the name of the resource that will be used for redirection.</p>
+<p><code>$redirect</code> rules' priority is higher than the regular basic blocking rules' priority. This means that if there's a basic blocking rule (even with <code>$important</code> modifier), <code>$redirect</code> rule will prevail over it. If there's a whitelist (@@) rule matching the same URL, it will disable redirecting as well (unless the <code>$redirect</code> rule is also marked as <code>$important</code>).</p>
+</blockquote>
+<h5><code>redirect</code> examples</h5>
+<pre><code>||example.org/script.js$script,redirect=noopjs</code></pre>
+<p>This rule redirects all requests to script.js to the resource named noop.js.</p>
+<pre><code>||example.org/test.mp4$media,redirect=noopmp4-1s</code></pre>
+<p>This rule redirects all requests to example.org/test.mp4 to the resource named noopmp4-1s.</p>
+<blockquote>
+<p>More information on scriptlets, redirects, and their usage is available in <a href="javascript:if(confirm('https://github.com/AdguardTeam/Scriptlets  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/Scriptlets#redirect-resources'" tppabs="https://github.com/AdguardTeam/Scriptlets#redirect-resources">this GitHub section</a>.</p>
+</blockquote>
+<p><a id="non-basic-rules"></a></p>
+<h1>Non-basic rules</h1>
+<p>However, the capabilities of the basic rules may not be sufficient to block ads. Sometimes you need to hide an element or change part of the HTML code of a web page without breaking anything. The rules described in this section are created specifically for this purpose.</p>
+<p><a id="cosmetic-rules"></a></p>
+<h2>Cosmetic rules</h2>
+<blockquote>
+<p>Work with non-basic rules requires the basic knowledge of HTML and CSS. So, if you want to learn how to make such rules, we recommend to get acquainted with <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/What_is_CSS  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/What_is_CSS'" tppabs="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/What_is_CSS">this documentation</a>.</p>
+</blockquote>
+<p><a id="cosmetic-elemhide-rules"></a></p>
+<h3>Element hiding rules</h3>
+<p>Element hiding rules are used to hide the elements of web pages. It is similar to applying <code>{ display: none; }</code> style to selected element.</p>
+<p><a id="elemhide-syntax"></a></p>
+<h4>Syntax</h4>
+<pre><code>   rule = [domains] "##" selector
+domains = [domain0, domain1[, ...[, domainN]]]</code></pre>
+<ul>
+<li><strong><code>selector</code></strong> ‚Äî <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors'" tppabs="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">CSS selector</a>, defines the elements to be hidden.</li>
+<li><strong><code>domains</code></strong> ‚Äî domain restriction for the rule.</li>
+</ul>
+<p>If you want to limit the rule application area to certain domains, just enter them separated with commas. For example: <code>example.org,example.com##selector</code>.</p>
+<blockquote>
+<p>Please note that this rule will be also applied to all subdomains of <code>example.org</code> and <code>example.com</code>.</p>
+</blockquote>
+<p>If you want the rule not to be applied to certain domains, start a domain name with <code>~</code> sign. For example:<br />
+<code>~example.org##selector</code>.</p>
+<p>You can use both approaches in a single rule. For example, <code>example.org,~subdomain.example.org##domain</code> will work for <code>example.org</code> and all subdomains, <strong>except <code>subdomain.example.org</code></strong>.</p>
+<blockquote>
+<h4>Please note</h4>
+<p>Element hiding rules are not dependent on each other. If there is a rule <code>example.org##selector</code> in the filter and you add <code>~example.org##selector</code> both rules will be applied independently.</p>
+</blockquote>
+<p><a id="elemhide-examples"></a></p>
+<h4>Examples</h4>
+<ul>
+<li><code>example.com##.textad</code> ‚Äî hides a <code>div</code> with a class <code>textad</code> at <code>example.com</code> and all subdomains.</li>
+<li><code>example.com,example.org###adblock</code> - hides an element with attribute <code>id</code> equals <code>adblock</code> at <code>example.com</code>, <code>example.org</code> and all subdomains.</li>
+<li><code>~example.com##.textad</code> - hides a <code>div</code> with a class <code>textad</code> at all domains, except <code>example.com</code> and it's subdomains.</li>
+</ul>
+<p><a id="elemhide-exceptions"></a></p>
+<h4>Exceptions</h4>
+<p>Exceptions can disable some rules on particular domains. They are very similar to usual exception rules, but instead of <code>##</code> you have to use <code>#@#</code>.</p>
+<p>For example, there is a rule in filter:</p>
+<pre><code>##.textad</code></pre>
+<p>If you want to disable it for <code>example.com</code>, you can create an exception rule:</p>
+<pre><code>example.com#@#.textad</code></pre>
+<p>We recommend to use this kind of exceptions only if it is not possible to change the hiding rule itself. In other case it is better to change the original rule, using domain restrictions.</p>
+<blockquote>
+<h4>Please note</h4>
+<p>Exception rule without any particular domains in it does not make sense and will be ignored.</p>
+</blockquote>
+<p><a id="cosmetic-css-rules"></a></p>
+<h3>CSS rules</h3>
+<p>Sometimes, simple hiding of an element is not enough to deal with advertising. For example, blocking an advertising element can just break the page layout. In this case AdGuard can use rules that are much more flexible than hiding rules. With this rules you can basically add any CSS styles to the page.</p>
+<blockquote>
+<h4>Restrictions</h4>
+<p>Styles that lead to loading any resource are forbidden. Basically, it means that you cannot use any <code>&lt;url&gt;</code> type of value in the style.</p>
+</blockquote>
+<p><a id="cosmetic-css-rules-syntax"></a></p>
+<h4>Syntax</h4>
+<pre><code>   rule = [domains] "#$#" selector "{" style "}"
+domains = [domain0, domain1[, ...[, domainN]]]</code></pre>
+<ul>
+<li><strong><code>selector</code></strong> ‚Äî <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors'" tppabs="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">CSS selector</a>, defines the elements we want to apply the style to.</li>
+<li><strong><code>domains</code></strong> ‚Äî domain restriction for the rule. Same principles as in <a href="#elemhide-syntax">element hiding rules</a>.</li>
+<li><strong><code>style</code></strong> ‚Äî CSS style, that we want to apply to selected elements.</li>
+</ul>
+<p><a id="cosmetic-css-rules-examples"></a></p>
+<h4>Examples</h4>
+<pre><code>example.com#$#body { background-color: #333!important; }</code></pre>
+<p>This rule will apply a style <code>background-color: #333!important;</code> to the <code>body</code> element at <code>example.com</code> and all subdomains.</p>
+<p><a id="cosmetic-css-rules-exceptions"></a></p>
+<h4>Exceptions</h4>
+<p>Just like with element hiding, there is a type of rules that disable the selected CSS style rule for particular domains.<br />
+Exception rules syntax is almost the same, you just have to change <code>#$#</code> to <code>#@$#</code>.</p>
+<p>For example, there is a rule in filter:</p>
+<pre><code>#$#.textad { visibility: hidden; }</code></pre>
+<p>If you want to disable it for <code>example.com</code>, you can create an exception rule:</p>
+<pre><code>example.com#@$#.textad { visibility: hidden; }</code></pre>
+<p>We recommend to use this kind of exceptions only if it is not possible to change the CSS rule itself. In other case it is better to change the original rule, using domain restrictions.</p>
+<p><a id="extended-css-selectors"></a></p>
+<h3>Extended CSS selectors</h3>
+<p>CSS 3.0 is not always enough to block ads. To solve this problem AdGuard extends CSS capabilities by adding support for the new pseudo-elements. To use extended CSS selectors we have developed a separate open source <a href="javascript:if(confirm('https://github.com/AdguardTeam/ExtendedCss  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/ExtendedCss'" tppabs="https://github.com/AdguardTeam/ExtendedCss">module</a>.</p>
+<blockquote>
+<h4>Backward compatibility</h4>
+<p>In common filters we use so-called backward compatible syntax. The thing is, extended pseudo-classes can break cosmetic rules in previous versions of AdGuard or in other ad blockers that do not support extended CSS. For example, instead of pseudo-class <code>:has(selector)</code> it is possible to use <code>[-ext-has="selector"]</code> attribute.</p>
+<h4>Application area</h4>
+<p>Extended selectors can be used in any cosmetic rule, whether they are <a href="#cosmetic-elemhide-rules">element hiding rules</a> or <a href="#cosmetic-css-rules">CSS rules</a>.</p>
+</blockquote>
+<h4>Syntax</h4>
+<p>Regardless of the CSS pseudo-classes you are using in the rule, you can use special markers to make these rules use the "Extended CSS" engine. It is recommended to use these markers for all "extended CSS" cosmetic rules so that it was easier to find them.<br />
+The syntax for extended CSS rules:</p>
+<ul>
+<li><code>#?#</code> ‚Äî for element hiding (<code>#@?#</code> ‚Äî for exceptions )</li>
+<li><code>#$?#</code> ‚Äî for CSS injection (<code>#@$?#</code> ‚Äî for exceptions )</li>
+</ul>
+<h4>Examples</h4>
+<ul>
+<li><code>example.org#?#div:has(&gt; a[target="_blank"][rel="nofollow"])</code> ‚Äî this rule will block all <code>div</code> elements that contain link as a child node with <code>[target="_blank"][rel="nofollow"]</code> attributes. The rule will only work for <code>example.org</code> and all it's subdomains.</li>
+<li><code>example.com#$?#h3:contains(cookies) { display: none!important; }</code> ‚Äî this rule will set style  <code>display: none!important</code> for all <code>h3</code> elements that contain <code>cookies</code> word. The rule will only work for <code>example.com</code> and all it's subdomains.</li>
+<li><code>example.net#?#.banner:matches-css(width: 360px)</code> ‚Äî this rule will block all <code>.banner</code> elements that contain <code>width: 360px</code> style property. The rule will only work for <code>example.net</code> and all it's subdomains.</li>
+<li><code>example.net#@?#.banner:matches-css(width: 360px)</code> ‚Äî this rule will disable the previous rule.</li>
+</ul>
+<blockquote>
+<p>Please note, that now you can apply simple selectors using the ExtCss engine by using a rule like this:<br />
+<code>#?#div</code></p>
+</blockquote>
+<p><a id="extended-css-has"></a></p>
+<h5>Pseudo-class <code>:has()</code></h5>
+<p>Draft CSS 4.0 specification describes <a href="javascript:if(confirm('https://drafts.csswg.org/selectors/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://drafts.csswg.org/selectors/#relational'" tppabs="https://drafts.csswg.org/selectors/#relational">pseudo-class <code>:has</code></a>. Unfortunately, it is not yet supported by browsers.</p>
+<h6><code>:has()</code> syntax</h6>
+<pre><code>:has(selector)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>[-ext-has="selector"]</code></pre>
+<p>Supported synonyms for better compatibility: <code>:-abp-has</code>, <code>:if</code>.</p>
+<p>Pseudo-class <code>:has()</code> selects the elements that includes the elements that fit to <code>selector</code>.</p>
+<h6><code>:has()</code> examples</h6>
+<p>Selecting  all <code>div</code> elements, which contain an element with the <code>banner</code> class.</p>
+<p><strong>HTML code</strong></p>
+<pre><code class="language-html">&lt;div&gt;Do not select this div&lt;/div&gt;
+&lt;div&gt;Select this div&lt;span class="banner"&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+<p><strong>Selector</strong></p>
+<pre><code>div:has(.banner)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>div[-ext-has=".banner"]</code></pre>
+<p><a id="extended-css-if-not"></a></p>
+<h5>Pseudo-class <code>:if-not()</code></h5>
+<p>This pseudo-class is basically a shortcut for <code>:not(:has())</code>. It is supported by ExtendedCss for better compatibility with some filters subscriptions, but it is not recommended to use it in AdGuard filters. The rationale is that one day browsers will add <code>:has</code> native support, but it will never happen to this pseudo-class.</p>
+<p><a id="extended-css-contains"></a></p>
+<h5>Pseudo-class <code>:contains()</code></h5>
+<p>This pseudo-class principle is very simple: it allows to select the elements that contain specified text or which content matches a specified regular expression. Please note, that this pseudo-class uses <code>innerText</code> element property for matching (and not the <code>innerHTML</code>).</p>
+<h6><code>:contains()</code> syntax</h6>
+<pre><code>// matching by plain text
+:contains(text)
+
+// matching by a regular expression
+:contains(/regex/)
+:contains(/regex/gi)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>// matching by plain text
+[-ext-contains="text"]
+
+// matching by a regular expression
+[-ext-contains="/regex/"]</code></pre>
+<p>Supported synonyms for better compatibility: <code>:-abp-contains</code>, <code>:has-text</code>.</p>
+<h6><code>:contains()</code> examples</h6>
+<p>Selecting all <code>div</code> elements, which contain text <code>banner</code>.</p>
+<p><strong>HTML code</strong></p>
+<pre><code class="language-html">&lt;div&gt;Do not select this div&lt;/div&gt;
+&lt;div id="selected"&gt;Select this div (banner)&lt;/div&gt;
+&lt;div&gt;Do not select this div &lt;div class="banner"&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+<p><strong>Selector</strong></p>
+<pre><code>// matching by plain text
+div:contains(banner)
+
+// matching by a regular expression
+div:contains(/this .* banner/)
+// regex flags are supported
+div:contains(/this .* banner/gi)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>// matching by plain text
+div[-ext-contains="banner"]
+
+// matching by a regular expression
+div[-ext-contains="/this .* banner/"]</code></pre>
+<p>Please note that in this example only a <code>div</code> with <code>id=selected</code> will be selected, because the next element does not contain any text (<code>banner</code> is a part of code, not text).</p>
+<p><a id="extended-css-matches-css"></a></p>
+<h5>Pseudo-class <code>:matches-css()</code></h5>
+<p>These pseudo-classes allow to select an element by its current style property. The work of this pseudo-class is based on using the <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle'" tppabs="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle"><code>window.getComputedStyle</code></a> function.</p>
+<h6><code>:matches-css()</code> syntax</h6>
+<pre><code>/* element style matching */
+selector:matches-css(property-name ":" pattern)
+
+/* ::before pseudo-element style matching */
+selector:matches-css-before(property-name ":" pattern)
+
+/* ::after pseudo-element style matching */
+selector:matches-css-after(property-name ":" pattern)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>selector[-ext-matches-css="property-name ":" pattern"]
+selector[-ext-matches-css-after="property-name ":" pattern"]
+selector[-ext-matches-css-before="property-name ":" pattern"]</code></pre>
+<h6><code>property-name</code></h6>
+<p>A name of CSS property to check the element for.</p>
+<h6><code>pattern</code></h6>
+<p>This can be either a value pattern that is using the same simple wildcard matching as in the basic url filtering rules or it can be a regular expression. For this type of matching, AdGuard always does matching in a case insensitive manner.</p>
+<p>In the case of a regular expression, the pattern looks like <code>/regex/</code>.</p>
+<blockquote>
+<ul>
+<li>For non-regex patterns, (<code>,</code>),[<code>,</code>] must be unescaped, because we require escaping them in the filtering rules.</li>
+<li>For regex patterns, [<code>"</code>],[<code>,</code>],[<code>\</code>] should be escaped, because we manually escape those in extended-css-selector.js.</li>
+</ul>
+</blockquote>
+<h6><code>:matches-css()</code> examples</h6>
+<p>Selecting all <code>div</code> elements which contain pseudo-class <code>::before</code> with specified content.</p>
+<p><strong>HTML code</strong></p>
+<pre><code class="language-html">&lt;style type="text/css"&gt;
+    #to-be-blocked::before {
+        content: "Block me"
+    }
+&lt;/style&gt;
+&lt;div id="to-be-blocked" class="banner"&gt;&lt;/div&gt;
+&lt;div id="not-to-be-blocked" class="banner"&gt;&lt;/div&gt;</code></pre>
+<p><strong>Selector</strong></p>
+<pre><code>// Simple matching
+div.banner:matches-css-before(content: block me)
+
+// Regular expressions
+div.banner:matches-css-before(content: /block me/)</code></pre>
+<p>Backward compatible syntax:</p>
+<pre><code>// Simple matching
+div.banner[-ext-matches-css-before="content: block me"]
+
+// Regular expressions
+div.banner[-ext-matches-css-before="content: /block me/"]</code></pre>
+<p><a id="extended-css-xpath"></a></p>
+<h4>Pseudo-class <code>:xpath()</code></h4>
+<p>This pseudo-class allows to select an element by evaluating an XPath expression.</p>
+<blockquote>
+<p><strong>Limited to work properly only at the end of selector.</strong></p>
+</blockquote>
+<p>The <code>:xpath(...)</code> pseudo-class is different from other pseudo-classes. Whereas all other operators are used to filter down a resultset of elements, the <code>:xpath(...)</code> operator can be used both to create a new resultset or filter down an existing one. For this reason, subject <code>selector</code> is optional. For example, an <code>:xpath(...)</code> operator could be used to create a new resultset consisting of all ancestor elements of a subject element, something not otherwise possible with either plain CSS selectors or other procedural operators.</p>
+<h4><code>:xpath()</code> syntax</h4>
+<pre><code>[selector]:xpath(expression)</code></pre>
+<h5><code>selector</code></h5>
+<p>Optional. Can be a plain CSS selector, or a Sizzle compatible selector.</p>
+<h5><code>expression</code></h5>
+<p>A valid XPath expression.</p>
+<h5><code>:xpath()</code> examples</h5>
+<pre><code>// Filtering results from selector
+div:xpath(//*[@class="test-xpath-class"])
+div:has-text(/test-xpath-content/):xpath(../../..)
+// Use xpath only to select elements
+facebook.com##:xpath(//div[@id="stream_pagelet"]//div[starts-with(@id,"hyperfeed_story_id_")][.//h6//span/text()="People You May Know"])</code></pre>
+<p><a id="extended-css-nth-ancestor"></a></p>
+<h4>Pseudo-class <code>:nth-ancestor()</code></h4>
+<p>This pseudo-class allows to lookup the nth ancestor relative to the currently selected node.</p>
+<p>It is a low-overhead equivalent to <code>:xpath(..[/..]*)</code>.</p>
+<blockquote>
+<p><strong>Limited to work properly only at the end of selector.</strong></p>
+</blockquote>
+<h4><code>:nth-ancestor()</code> syntax</h4>
+<pre><code>selector:nth-ancestor(n)</code></pre>
+<h5><code>selector</code></h5>
+<p>Can be a plain CSS selector, or a Sizzle compatible selector.</p>
+<h5><code>n</code></h5>
+<p>Positive number &gt;= 1 and &lt; 256, distance from the currently selected node.</p>
+<h5><code>:nth-ancestor()</code> examples</h5>
+<pre><code>div.test:nth-ancestor(4)
+div:has-text(/test/):nth-ancestor(2)</code></pre>
+<p><a id="extended-css-upward"></a></p>
+<h4>Pseudo-class <code>:upward()</code></h4>
+<p>This pseudo-class allows to lookup the ancestor relative to the currently selected node.</p>
+<blockquote>
+<p><strong>Limited to work properly only at the end of selector.</strong></p>
+</blockquote>
+<h4><code>:upward()</code> syntax</h4>
+<pre><code>/* selector parameter */
+subjectSelector:upward(targetSelector)
+
+/* number parameter */
+subjectSelector:upward(n)</code></pre>
+<h5><code>subjectSelector</code></h5>
+<p>Can be a plain CSS selector, or a Sizzle compatible selector.</p>
+<h5><code>targetSelector</code></h5>
+<p>A valid plain CSS selector.</p>
+<h5><code>n</code></h5>
+<p>Positive number &gt;= 1 and &lt; 256, distance from the currently selected node.</p>
+<h5><code>:nth-ancestor()</code> examples</h5>
+<pre><code>div.child:upward(div[id])
+div:contains(test):upward(div[class^="parent-wrapper-")
+
+div.test:upward(4)
+div:has-text(/test/):upward(2)</code></pre>
+<p><a id="selectors-debugging-mode"></a></p>
+<h5>Selectors debugging mode</h5>
+<p>Sometimes, you might need to check the performance of a given selector or a stylesheet. In order to do it without interacting with javascript directly, you can use a special <code>debug</code> style property. When <code>ExtendedCss</code> meets this property, it enables the "debug"-mode either for a single selector or for all selectors depending on the <code>debug</code> value.</p>
+<p><strong>Debugging a single selector</strong></p>
+<pre><code>#$#.banner { display: none; debug: true; }</code></pre>
+<p><strong>Enabling global debug</strong></p>
+<pre><code>#$#.banner { display: none; debug: global; }</code></pre>
+<p><a id="pseudo-property-remove"></a></p>
+<h3>Pseudo-property <code>remove</code></h3>
+<p>Sometimes, it is necessary to remove a matching element instead of hiding it or applying custom styles. In order to do it, you can use a special style property: <code>remove</code>.</p>
+<p><code>.banner { remove: true; }</code></p>
+<blockquote>
+<p>Please note, that other style properties will be ignored if <code>remove</code> is specified.</p>
+</blockquote>
+<p><a id="testing-extended-selectors"></a></p>
+<h5>Testing extended selectors</h5>
+<p>To load ExtendedCss to a current page, copy and execute the following code in a browser console:</p>
+<pre><code>!function(E,x,t,C,s,s_){C=E.createElement(x),s=E.getElementsByTagName(x)[0],C.src=t,
+C.onload=function(){alert('ExtCss loaded successfully')},s.parentNode.insertBefore(C,s)}
+(document,'script','https://AdguardTeam.github.io/ExtendedCss/extended-css.min.js')</code></pre>
+<p>Alternatively, install an "ExtendedCssDebugger" userscript: https://github.com/AdguardTeam/Userscripts/blob/master/extendedCssDebugger/extended-css.debugger.user.js</p>
+<p>You can now use the <code>ExtendedCss</code> constructor in the global scope, and its method <code>ExtendedCss.query</code> as <code>document.querySelectorAll</code>.</p>
+<pre><code>var selectorText = "div.block[-ext-has='.header:matches-css-after(content: Anzeige)']";
+
+ExtendedCss.query(selectorText) // returns an array of Elements matching selectorText</code></pre>
+<p><a id="html-filtering-rules"></a></p>
+<h2>HTML filtering rules</h2>
+<p>In most cases, the basis and cosmetic rules are enough to filter ads. But sometimes it is necessary to change the HTML-code of the page itself before it is loaded. This is when you need filtering rules for HTML content. They allow to indicate the HTML elements to be cut out before the browser loads the page.</p>
+<blockquote>
+<h4>Compatibility with different versions of AdGuard</h4>
+<p>Rules are supported by AdGuard for Windows, Mac, Android and by the AdGuard's Firefox add-on.<br />
+This type of rules don't work in extensions for other browsers because they are unable to modify content on network level.</p>
+</blockquote>
+<p><a id="html-filtering-rules-syntax"></a></p>
+<h3>Syntax</h3>
+<pre><code>      rule = [domains] "$$" tagName [attributes]
+   domains = [domain0, domain1[, ...[, domainN]]]      
+attributes = "[" name0 = value0 "]" "[" name1 = value2 "]" ... "[" nameN = valueN "]"</code></pre>
+<ul>
+<li><strong><code>tagName</code></strong> ‚Äî name of the element in lower case, for example <code>div</code> or <code>script</code>.</li>
+<li><strong><code>domains</code></strong> ‚Äî domain restriction for the rule. Same principles as in <a href="#elemhide-syntax">element hiding rules syntax</a>.</li>
+<li><strong><code>attributes</code></strong> ‚Äî a list of attributes, that limit the elements selection. <code>name</code> - attribute name, <code>value</code> - substring, that is contained in attribute value.</li>
+</ul>
+<p><a id="html-filtering-rules-examples"></a></p>
+<h3>Example</h3>
+<p><strong>HTML code</strong></p>
+<pre><code class="language-html">&lt;script data-src="/banner.js"&gt;&lt;/script&gt;</code></pre>
+<p><strong>Rule</strong></p>
+<pre><code>example.org$$script[data-src="banner"]</code></pre>
+<p>This rule will delete all <code>script</code> elements with <code>data-src</code> attribute that contain <code>banner</code> substring. The rule will only work for <code>example.org</code> and all it's subdomains.</p>
+<p><a id="html-filtering-rules-attributes"></a></p>
+<h4>Special attributes</h4>
+<p>In addition to usual attribures, which value is every element checked for, there is a set of special attributes that change the way a rule works. Below there is a list of these attributes:</p>
+<p><a id="tag-content-attribute"></a></p>
+<h5><code>tag-content</code></h5>
+<p>This is the most frequently used special attribute. It limits selection with those elements whose innerHTML code contains the specified substring.</p>
+<blockquote>
+<p>You should use <code>""</code> to escape <code>"</code>, for instance:<br />
+<code>$$script[tag-content="alert(""this is ad"")"]</code></p>
+</blockquote>
+<p>For example, let's take a look at this HTML code:</p>
+<pre><code class="language-html">&lt;script type="text/javascript"&gt;
+    document.write('&lt;div&gt;banner text&lt;/div&gt;" /&gt;');
+&lt;/script&gt;</code></pre>
+<p>Following rule will delete all <code>script</code> elements with a <code>banner</code> substring in their code:</p>
+<pre><code>$$script[tag-content="banner"]</code></pre>
+<blockquote>
+<h4>Nested elements</h4>
+<p>If we are dealing with multiple nested elements and they all fall within the same HTML filtering rule, they all are going to be deleted.</p>
+</blockquote>
+<p><a id="wildcard-attribute"></a></p>
+<h5><code>wildcard</code></h5>
+<p>This special attribute works almost like <code>tag-content</code> and allows you to check the innerHTML code of the document. Rule will check if HTML code of the element fits to the <a href="javascript:if(confirm('https://en.wikipedia.org/wiki/Glob_(programming)  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/Glob_(programming)'" tppabs="https://en.wikipedia.org/wiki/Glob_(programming)">search pattern</a>.</p>
+<blockquote>
+<p>You should use <code>""</code> to escape <code>"</code>, for instance:<br />
+<code>$$script[wildcard=""banner""]</code></p>
+</blockquote>
+<p>For example:<br />
+<code>$$script[wildcard="*banner*text*"]</code></p>
+<p>It will check, if the element's code contains two consecutive substrings <code>banner</code> and <code>text</code>.</p>
+<p><a id="max-length-attribute"></a></p>
+<h5><code>max-length</code></h5>
+<p>Specifies the maximum length for content of HTML element. If this parameter is set and the content length exceeds the value - a rule does not apply to the element.</p>
+<blockquote>
+<h4>Default setting</h4>
+<p>If this parameter is not specified, the <code>max-length</code> is considered to be 8192.</p>
+</blockquote>
+<p>For example:</p>
+<pre><code>$$div[tag-content="banner"][max-length="400"]</code></pre>
+<p>This rule will remove all the <code>div</code> elements, whose code contains the substring<code>banner</code> and the length of which does not exceed <code>400</code> characters.</p>
+<p><a id="min-length-attribute"></a></p>
+<h5><code>min-length</code></h5>
+<p>Specifies the minimum length for content of HTML element. If this parameter is set and the content length is less than preset value - a rule does not apply to the element.</p>
+<p>For example:</p>
+<pre><code>$$div[tag-content="banner"][min-length="400"]</code></pre>
+<p>This rule will remove all the <code>div</code> elements, whose code contains the substring<code>banner</code> and the length of which exceeds <code>400</code> characters.</p>
+<p><a id="html-filtering-rules-exceptions"></a></p>
+<h4>Exceptions</h4>
+<p>Similar to hiding rules, there is a special type of rules that disable the selected HTML filtering rule for particular domains.<br />
+The syntax is the same, you just have to change <code>$$</code> to <code>$@$</code>.</p>
+<p>For example, there is a rule in filter:</p>
+<pre><code>$$script[tag-content="banner"]</code></pre>
+<p>If you want to disable it for <code>example.com</code>, you can create an exception rule:</p>
+<pre><code>example.com$@$script[tag-content="banner"]</code></pre>
+<p><a id="javascript-rules"></a></p>
+<h2>Javascript rules</h2>
+<p>AdGuard supports a special type of rules that allows you to inject any javascript code to websites pages.</p>
+<blockquote>
+<h4>Restrictions</h4>
+<p>Please note that this type of rules can be used <strong>only in trusted filters</strong>. This category includes your own <strong>User filter</strong> and all the filters created by AdGuard Team.</p>
+</blockquote>
+<p><a id="javascript-rules-syntax"></a></p>
+<h3>Syntax</h3>
+<pre><code>rule = [domains]  "#%#" script</code></pre>
+<ul>
+<li><strong><code>domains</code></strong> ‚Äî domain restriction for the rule. Same principles as in <a href="#elemhide-syntax">element hiding rules</a>.</li>
+<li><strong><code>script</code></strong> ‚Äî arbitrary javascript code <strong>in one string</strong>.</li>
+</ul>
+<p><a id="javascript-rules-examples"></a></p>
+<h3>Examples</h3>
+<ul>
+<li><code>example.org#%#window.__gaq = undefined;</code> ‚Äî executes the code <code>window.__gaq = undefined;</code> on all pages at <code>example.org</code> and all subdomains.</li>
+</ul>
+<p><a id="javascript-rules-exceptions"></a></p>
+<h3>Exceptions</h3>
+<p>Similar to hiding rules, there is a special type of rules that disable the selected javascript rule for particular domains.<br />
+The syntax is the same, you just have to change <code>#%#</code> to <code>#@%#</code>.</p>
+<p>For example, there is a rule in filter:</p>
+<pre><code>#%#window.__gaq = undefined;</code></pre>
+<p>If you want to disable it for <code>example.com</code>, you can create an exception rule:</p>
+<pre><code>example.com#@%#window.__gaq = undefined;</code></pre>
+<p><a id="scriptlets"></a></p>
+<h2>Scriptlet rules</h2>
+<p>Scriptlet is a JavaScript function that provides extended capabilities for content blocking. These functions can be used in a declarative manner in AdGuard filtering rules.</p>
+<blockquote>
+<p>AdGuard supports a lot of different scriptlets. Please note, that in order to achieve cross-blocker compatibility, we also support syntax of uBO and ABP.</p>
+</blockquote>
+<p><a id="scriptlets-syntax"></a></p>
+<h3>Syntax</h3>
+<pre><code>rule = [domains]  "#%#//scriptlet(" scriptletName arguments ")"</code></pre>
+<p><code>scriptletName</code> (mandatory) is a name of the scriptlet from AdGuard's scriptlets library<br />
+<code>arguments</code> (optional) is a list of String arguments (no other types of arguments are supported)</p>
+<p><a id="scriptlets-examples"></a></p>
+<h3>Examples</h3>
+<pre><code>example.org#%#//scriptlet("abort-on-property-read", "alert")</code></pre>
+<p>This rule will be applied to example.org pages (and its subdomains) and will execute the "abort-on-property-read" scriptlet with the "alert" parameter.</p>
+<p>More information about scriptlets can be found <a href="javascript:if(confirm('https://github.com/AdguardTeam/Scriptlets  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/Scriptlets#scriptlets'" tppabs="https://github.com/AdguardTeam/Scriptlets#scriptlets">on GitHub</a>.</p>
+<p><a id="non-basic-rules-modifiers"></a>(#)</p>
+<h2>Modifiers</h2>
+<p>Each rule can be modified using the modifiers described in the following paragraphs.</p>
+<p><a id="non-basic-rules-modifiers-syntax"></a></p>
+<h3>Syntax</h3>
+<pre><code>rule = "[$" modifiers "]" [rule text]
+modifiers = modifier0[, modifier1[, ...[, modifierN]]]</code></pre>
+<ul>
+<li><code>modifier</code> - set of the modifiers described below.</li>
+<li><code>rule text</code> - a rule to be modified.</li>
+</ul>
+<p>For example: <code>[$domain=example.com,app=test_app]##selector</code>.</p>
+<p>In the modifiers values of the following characters must be escaped: <code>[</code>, <code>]</code>, <code>,</code>, and <code>\</code> (unless<br />
+it's used for the escaping). Use <code>\</code> to escape them. For example, an escaped bracket looks like<br />
+this: <code>\]</code>.</p>
+<p><a id="non-basic-rules-modifiers-app"></a></p>
+<h3>app</h3>
+<p><code>app</code> lets you narrow the rule coverage down to a specific application (or a list of applications).<br />
+The modifier's behavior and syntax perfectly match the corresponding<br />
+<a href="how-to-create-your-own-ad-filters.htm#app" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#app">$app modifier</a> of basic<br />
+rules.</p>
+<p><code>app</code> examples:</p>
+<ul>
+<li><code>[$app=org.example.app]example.com##.textad</code> - hides a <code>div</code> with a class <code>textad</code> at <code>example.com</code> and all subdomains in requests sent from the <code>org.example.app</code> Android app.</li>
+<li><code>[$app=~org.example.app1|~org.example.app2]example.com##.textad</code> - hides a <code>div</code> with a class <code>textad</code> at <code>example.com</code> and all subdomains in requests sent from any app except <code>org.example.app1</code> and <code>org.example.app2</code>.</li>
+<li><code>[$app=com.apple.Safari]example.org#%#//scriptlet('prevent-setInterval', 'check', '!300')</code>. This rule will apply the corresponding scriptlet only in Safari browser on Mac. </li>
+</ul>
+<p><a id="non-basic-rules-modifiers-domain"></a></p>
+<h3>domain</h3>
+<p><code>domain</code> limits the rule application area to a list of domains (and their subdomains).<br />
+The modifier's behavior and syntax perfectly match the corresponding<br />
+<a href="how-to-create-your-own-ad-filters.htm#domain" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters#domain">$domain modifier</a> of<br />
+basic rules.</p>
+<p><code>domain</code> examples:</p>
+<ul>
+<li><code>[$domain=example.com]##.textad</code> ‚Äî hides a <code>div</code> with a class <code>textad</code> at <code>example.com</code> and all subdomains.</li>
+<li><code>[$domain=example.com|example.org]###adblock</code> - hides an element with attribute <code>id</code> equals <code>adblock</code> at <code>example.com</code>, <code>example.org</code> and all subdomains.</li>
+<li><code>[$domain=~example.com]##.textad</code> - hides a <code>div</code> with a class <code>textad</code> at all domains, except <code>example.com</code> and it's subdomains.</li>
+</ul>
+<p>Please note that there are 2 ways to specify domain restrictions for non-basic rules:<br />
+1) the "classic" way is to specify domains before rule mask and attributes: <code>example.com##.textad</code><br />
+2) the modifier approach is to specify domains via <code>domain</code> modifier: <code>[$domain=example.com]##.textad</code></p>
+<p>But rules with mixed style domains restriction are considered invalid. So, for example, the rule<br />
+<code>[$domain=example.org]example.com##.textad</code> will be rejected.</p>
+<p><a id="for_maintainers"></a></p>
+<h2>Information for filters maintainers</h2>
+<p>If you maintain a third-party filter that is known to AdGuard, you might be interested in the information presented in this section. Please note, that hints will be applied to registered filters only. The filter is considered to be registered and known by AdGuard, if it is present in the <a href="javascript:if(confirm('https://filters.adtidy.org/extension/chromium/filters.json  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/chromium/filters.json'" tppabs="https://filters.adtidy.org/extension/chromium/filters.json">known filters index</a>.  If you want your filter to be registered, please file an issue to <a href="javascript:if(confirm('https://github.com/AdguardTeam/AdguardFilters  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/AdguardFilters'" tppabs="https://github.com/AdguardTeam/AdguardFilters">AdguardFilters repo</a>.</p>
+<p><a id="pre_processor"></a></p>
+<h3>Pre-processor directives</h3>
+<p>We provide multiple pre-processor directives that can be used by filters maintainers to improve compatibility with different ad blockers.</p>
+<h4>Syntax</h4>
+<pre><code>!#if condition
+Anything goes here
+!#include URL_or_a_relative_path
+!#endif</code></pre>
+<ul>
+<li><code>!#if</code>, <code>!#endif</code> -- filters maintainers can use these conditions to supply different rules depending on the ad blocker type.</li>
+<li><code>condition</code> -- just like in some popular programming languages, pre-processor conditions are based on constants declared by ad blockers. Ad blocker authors define on their own what exact constants do they declare.</li>
+<li><code>!#include</code> -- this directive allows to include contents of a specified file into the filter.</li>
+</ul>
+<h4>Conditions</h4>
+<p>When an adblocker encounters an <code>!#if</code> directive, followed eventually by an <code>!#endif</code> directive, it will compile the code between the directives only if the specified condition is true. Condition supports all the basic logical operators.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>!#if (adguard &amp;&amp; !adguard_ext_safari)
+||example.org^$third-party
+!#endif</code></pre>
+<h4>Including a file</h4>
+<p>The <code>!#include</code> directive supports only files from the same origin to make sure that the filter maintainer is in control of the specified file. The included file can also contain pre-processor directives (even other <code>!#include</code> directives).</p>
+<p>Ad blockers should consider the case of recursive <code>!#include</code> and implement a protection mechanism.</p>
+<p><strong>Examples</strong></p>
+<p>Filter URL: <code>https://example.org/path/filter.txt</code></p>
+<pre><code>!
+! Valid (same origin):
+!#include https://example.org/path/includedfile.txt
+!
+! Valid (relative path):
+!#include /includedfile.txt
+!#include ../path2/includedfile.txt
+!
+! Invalid (another origin):
+!#include https://example.com/path/includedfile.txt</code></pre>
+<h4>Remarks</h4>
+<ul>
+<li>If included file is not found or unavailable, the whole filter update should fail.</li>
+<li>A conditional directive beginning with an <code>!#if</code> directive must explicitly be terminated with an <code>!#endif</code> directive.</li>
+<li>Whitespaces matter. <code>!#if</code> is a valid directive, while <code>!# if</code> is not.</li>
+</ul>
+<h4>AdGuard-specific</h4>
+<ul>
+<li>Any mistake in a pre-processor directive will lead to AdGuard failing the filter update in the same way as if the filter URL was unavailable.</li>
+<li>Pre-processor directives can be used in the user filter (or in the custom local filters). Same-origin limitation should be disabled for local filters.</li>
+</ul>
+<h4>What constants we declare</h4>
+<ul>
+<li><code>adguard</code> -- Declared always. Lets maintainers know that this is one of AdGuard products. Should be enough in 95% of cases.</li>
+</ul>
+<p>Product-specific constants for some rare cases when you need a rule to work (or not work) in a specific product only:</p>
+<ul>
+<li><code>adguard_app_windows</code> -- AG for Windows</li>
+<li><code>adguard_app_mac</code> -- AG for Mac</li>
+<li><code>adguard_app_android</code> -- AG for Android</li>
+<li><code>adguard_app_ios</code> -- AG for iOS</li>
+<li><code>adguard_ext_chromium</code> -- AG browser extension for Chrome</li>
+<li><code>adguard_ext_firefox</code> -- AG browser extension for Firefox</li>
+<li><code>adguard_ext_edge</code> -- AG browser extension for Edge</li>
+<li><code>adguard_ext_safari</code> -- AG browser extension for Safari</li>
+<li><code>adguard_ext_opera</code> -- AG browser extension for Opera</li>
+<li><code>adguard_ext_android_cb</code> -- AG content blocker for Samsung/Yandex</li>
+</ul>
+<blockquote>
+<p>Special case: <code>ext_ublock</code>. This constant is declared when a ublock version of a filter is compiled by the <a href="javascript:if(confirm('https://github.com/AdguardTeam/FiltersRegistry  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/FiltersRegistry'" tppabs="https://github.com/AdguardTeam/FiltersRegistry">FiltersRegistry</a>.</p>
+</blockquote>
+<p><a id="hints"></a></p>
+<h3>Hints</h3>
+<p>"Hint" is a special comment, instruction to the filters compiler used on the server side (see <a href="javascript:if(confirm('https://github.com/AdguardTeam/FiltersRegistry  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/FiltersRegistry'" tppabs="https://github.com/AdguardTeam/FiltersRegistry">FiltersRegistry</a>).</p>
+<p><a id="hints_syntax"></a></p>
+<h4>Syntax</h4>
+<pre><code>!+ HINT_NAME1(PARAMS) HINT_NAME2(PARAMS)</code></pre>
+<p>Note, that you can apply multiple hints. </p>
+<p><a id="not_optimized"></a></p>
+<h4>NOT_OPTIMIZED hint</h4>
+<p>For large filters, AdGuard compiles two versions: full and optimized. Optimized version is much smaller and does not contain rules which are not used at all or used rarely. More information about rules optimization you may find in <a href="javascript:if(confirm('https://adguard.com/en/filter-rules-statistics.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://adguard.com/en/filter-rules-statistics.html'" tppabs="https://adguard.com/en/filter-rules-statistics.html">this article</a>.</p>
+<p>Example of optimized version of the English filter: <a href="javascript:if(confirm('https://filters.adtidy.org/extension/edge/filters/2_optimized.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/edge/filters/2_optimized.txt'" tppabs="https://filters.adtidy.org/extension/edge/filters/2_optimized.txt">https://filters.adtidy.org/extension/edge/filters/2_optimized.txt</a>. </p>
+<p>Examples:</p>
+<p>This rule won't be optimized:</p>
+<pre><code>!+ NOT_OPTIMIZED
+||example.org^</code></pre>
+<p>This rule won't be optimized and will be available for Android only:</p>
+<pre><code>!+ NOT_OPTIMIZED PLATFORM(android)
+||example.org^
+</code></pre>
+<p><a id="platform_not_platform"></a></p>
+<h4>PLATFORM and NOT_PLATFORM hints</h4>
+<p>Specify which platforms can apply this rule. List of existing platforms:</p>
+<ul>
+<li>
+<p>windows - Example: English filter for Windows - <a href="javascript:if(confirm('https://filters.adtidy.org/windows/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/windows/filters/2.txt'" tppabs="https://filters.adtidy.org/windows/filters/2.txt">https://filters.adtidy.org/windows/filters/2.txt</a></p>
+</li>
+<li>
+<p>mac - Example: English filter for Mac - <a href="javascript:if(confirm('https://filters.adtidy.org/mac_v2/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/mac_v2/filters/2.txt'" tppabs="https://filters.adtidy.org/mac_v2/filters/2.txt">https://filters.adtidy.org/mac_v2/filters/2.txt</a></p>
+</li>
+<li>
+<p>android - Example: English filter for Android - <a href="javascript:if(confirm('https://filters.adtidy.org/android/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/android/filters/2.txt'" tppabs="https://filters.adtidy.org/android/filters/2.txt">https://filters.adtidy.org/android/filters/2.txt</a></p>
+</li>
+<li>
+<p>ios - Example: English filter for iOS - <a href="javascript:if(confirm('https://filters.adtidy.org/ios/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/ios/filters/2.txt'" tppabs="https://filters.adtidy.org/ios/filters/2.txt">https://filters.adtidy.org/ios/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_chromium - Example: AdGuard browser extension for Chrome - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/chromium/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/chromium/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/chromium/filters/2.txt">https://filters.adtidy.org/extension/chromium/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_ff - Example: AdGuard browser extension for Firefox - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/firefox/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/firefox/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/firefox/filters/2.txt">https://filters.adtidy.org/extension/firefox/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_edge - Example: AdGuard browser extension for Edge - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/edge/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/edge/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/edge/filters/2.txt">https://filters.adtidy.org/extension/edge/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_opera - Example: AdGuard browser extension for Opera - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/opera/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/opera/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/opera/filters/2.txt">https://filters.adtidy.org/extension/opera/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_ublock - Example: uBlock Origin - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/ublock/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/ublock/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/ublock/filters/2.txt">https://filters.adtidy.org/extension/ublock/filters/2.txt</a></p>
+</li>
+<li>
+<p>ext_safari - Example: AdGuard browser extension for Safari - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/safari/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/safari/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/safari/filters/2.txt">https://filters.adtidy.org/extension/safari/filters/2.txt</a></p>
+</li>
+<li>ext_android_cb - Example: AdGuard Content Blocker - <a href="javascript:if(confirm('https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt'" tppabs="https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt">https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt</a></li>
+</ul>
+<p>Examples:</p>
+<p>This rule will be available for Windows, Mac, and Android only:</p>
+<pre><code>!+ PLATFORM(windows,mac,android)
+||example.org^</code></pre>
+<p>This rule will be available for every platform except Safari extension, iOS, and Android content blocker:</p>
+<pre><code>!+ NOT_PLATFORM(ext_safari, ext_android_cb, ios)
+||example.org^</code></pre>
+<p><a id="good-luck"></a></p>
+<h2>Good luck with creating filters!</h2>
+<p>We wish you luck with creating you own ad filters.</p>
+<p>If you need an advice on how to create your own filters properly, our forum has a <a href="javascript:if(confirm('https://forum.adguard.com/index.php?forums%2F69%2F=1  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://forum.adguard.com/index.php?forums%2F69%2F=1'" tppabs="https://forum.adguard.com/index.php?forums%2F69%2F=1">special section</a> dedicated to writing your own filtering rules.</p>
+    </p>
+</div>
+
+                                        
+        </div>
+        	<div id="navigation">
+		    <a class="nav nav-prev" href="adguard-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/adguard-ad-filters"> <i class="fa fa-chevron-left"></i></a>
+	
+		    <a class="nav nav-next" href="adguard-filter-policy.htm" tppabs="https://kb.adguard.com/en/general/adguard-filter-policy"><i class="fa fa-chevron-right"></i></a>
+		</div>
+    </section>
+                <script type="text/javascript">
+    if (navigator.doNotTrack !== '1') {
+        var _paq = _paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+
+        (function() {
+            var u="https://matomo.adguard.com/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '5']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    }
+</script>
+     </body>
+</html>

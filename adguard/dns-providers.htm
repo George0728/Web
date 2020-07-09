@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset=UTF-8"utf-8" />
+    <title>Known DNS Providers | AdGuard Knowledgebase</title>
+    <meta name="description" content="AdGuard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="alternate" type="application/atom+xml" href="https://kb.adguard.com/en/feed:atom" title="Atom Feed" />
+    <link rel="alternate" type="application/rss+xml" href="https://kb.adguard.com/en/feed:rss" title="RSS Feed" />
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon.ico">
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-16x16.png" sizes=16x16>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-32x32.png" sizes=32x32>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-48x48.png" sizes=48x48>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-64x64.png" sizes=64x64>
+    <link rel="icon" type="image/png" href="/user/themes/adg/images/favicon-96x96.png" sizes=96x96>
+
+                                            
+        <link href="de169b0899efa746da86846e3e151b09.css" tppabs="https://kb.adguard.com/assets/de169b0899efa746da86846e3e151b09.css" type="text/css" rel="stylesheet">
+
+    
+                                                                    <script src="3bd2bf6338b9e2865e4262c3227fc79f.js" tppabs="https://kb.adguard.com/assets/3bd2bf6338b9e2865e4262c3227fc79f.js"></script>
+<script>
+$(document).ready(function() {
+                                anchors.options = {
+                                    visible: 'hover',
+                                    placement: 'right',
+                                    
+                                    
+                                    truncate: 64
+                                };
+                                anchors.add('#body h2, #body h3, #body h4, #body h5');
+                             });
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+    
+    </head>
+<body class="searchbox-hidden " data-url="/general/dns-providers">
+        <nav id="sidebar">
+        <div id="header-wrapper">
+            <div id="header">
+                <div class=wrap>
+                    <a id="logo" href="en.htm" tppabs="https://kb.adguard.com/en"><svg width="147" height="33" viewBox="0 0 147 33" xmlns="http://www.w3.org/2000/svg"><title>Group 10</title><g fill="none" fill-rule="evenodd"><path d="M115.2 23.244l-1.117-2.867h-5.565l-1.056 2.867h-3.777l6.031-14.602h3.372l5.97 14.602H115.2zm-3.86-10.704l-1.828 5.012h3.615l-1.787-5.012zm-8.224 5.198c0 .88-.146 1.68-.437 2.402a5.227 5.227 0 0 1-1.249 1.857 5.745 5.745 0 0 1-1.96 1.206c-.765.289-1.614.433-2.548.433-.948 0-1.801-.144-2.56-.433a5.546 5.546 0 0 1-1.929-1.206 5.244 5.244 0 0 1-1.218-1.857c-.285-.722-.427-1.522-.427-2.402V8.642h3.453v8.807c0 .399.05.777.152 1.134.102.358.257.677.467.96.21.281.488.504.833.67.345.165.762.247 1.249.247.487 0 .904-.082 1.249-.247.345-.166.626-.389.843-.67.216-.283.372-.602.467-.96a4.41 4.41 0 0 0 .142-1.134V8.642h3.473v9.096zm-14.25 4.62c-.704.37-1.527.673-2.468.907-.94.234-1.966.35-3.077.35-1.15 0-2.21-.185-3.178-.556a7.318 7.318 0 0 1-2.498-1.568 7.152 7.152 0 0 1-1.635-2.423c-.393-.942-.589-1.99-.589-3.145 0-1.17.2-2.228.6-3.177a7.057 7.057 0 0 1 1.654-2.423 7.312 7.312 0 0 1 2.478-1.537 8.618 8.618 0 0 1 3.067-.536c1.137 0 2.193.175 3.168.526.975.35 1.767.821 2.376 1.413l-2.193 2.537c-.339-.4-.785-.726-1.34-.98-.556-.254-1.185-.382-1.89-.382a4.053 4.053 0 0 0-3.026 1.29 4.31 4.31 0 0 0-.883 1.443 5.136 5.136 0 0 0-.315 1.826c0 .673.095 1.292.285 1.856.19.564.47 1.048.843 1.454a3.84 3.84 0 0 0 1.38.949c.549.226 1.175.34 1.88.34.405 0 .791-.031 1.157-.093a4.267 4.267 0 0 0 1.015-.299v-2.66h-2.742v-2.847h5.93v7.735zm57.4-6.456c0 1.279-.234 2.382-.7 3.31-.468.928-1.084 1.691-1.849 2.29a7.66 7.66 0 0 1-2.59 1.32 10.36 10.36 0 0 1-2.924.422h-5.361V8.642h5.199c1.015 0 2.017.12 3.005.36.989.241 1.869.64 2.64 1.197.772.557 1.395 1.303 1.87 2.238.473.935.71 2.09.71 3.465zm-3.615 0c0-.825-.132-1.51-.396-2.052a3.443 3.443 0 0 0-1.056-1.3 4.194 4.194 0 0 0-1.503-.69 7.279 7.279 0 0 0-1.736-.207h-1.727v8.539h1.645c.623 0 1.222-.072 1.798-.217a4.219 4.219 0 0 0 1.523-.711c.44-.33.792-.77 1.056-1.32s.396-1.23.396-2.042zm-68.753 0c0 1.279-.234 2.382-.7 3.31-.468.928-1.084 1.691-1.849 2.29a7.66 7.66 0 0 1-2.59 1.32 10.36 10.36 0 0 1-2.924.422h-5.361V8.642h5.199c1.015 0 2.017.12 3.005.36.989.241 1.869.64 2.64 1.197.772.557 1.395 1.303 1.87 2.238.473.935.71 2.09.71 3.465zm-3.615 0c0-.825-.132-1.51-.396-2.052a3.443 3.443 0 0 0-1.056-1.3 4.194 4.194 0 0 0-1.503-.69 7.279 7.279 0 0 0-1.736-.207h-1.727v8.539h1.645c.623 0 1.222-.072 1.798-.217a4.219 4.219 0 0 0 1.523-.711c.44-.33.792-.77 1.056-1.32s.396-1.23.396-2.042zm-14.765 7.342l-1.117-2.867h-5.564l-1.057 2.867h-3.777l6.032-14.602h3.371l5.97 14.602h-3.858zM51.66 12.54l-1.827 5.012h3.615L51.66 12.54zm76.192 10.704l-3.107-5.795h-1.178v5.795h-3.412V8.642h5.484c.69 0 1.364.072 2.02.216a5.209 5.209 0 0 1 1.767.733c.522.343.938.797 1.25 1.36.31.565.466 1.266.466 2.105 0 .99-.264 1.821-.792 2.495-.528.674-1.259 1.155-2.193 1.444l3.757 6.25h-4.062zm-.142-10.127c0-.343-.07-.622-.213-.835a1.469 1.469 0 0 0-.548-.495 2.356 2.356 0 0 0-.752-.237 5.459 5.459 0 0 0-.802-.062h-1.848v3.403h1.645c.284 0 .575-.024.873-.072.298-.048.569-.134.813-.258.243-.124.443-.302.599-.536.155-.234.233-.536.233-.908z" fill="#FFF"/><path d="M15.75 0C10.827 0 4.889 1.18 0 3.778c0 5.61-.067 19.589 15.75 29.14C31.568 23.366 31.5 9.387 31.5 3.777 26.613 1.18 20.674 0 15.75 0z" fill="#68BC71"/><path d="M15.734 0C10.814.003 4.884 1.183 0 3.778c0 5.609-.067 19.58 15.734 29.13V0z" fill="#67B279"/><path d="M15.176 21.964L24.7 8.876c-.698-.57-1.31-.167-1.647.144l-.013.001-7.94 8.423-2.993-3.671c-1.427-1.682-3.368-.4-3.821-.06l6.89 8.25" fill="#FFF"/></g></svg></a>
+                </div>
+                <div class="searchbox">
+                    <label for="search-by"><i class="fa fa-search"></i></label>
+                    <input id="search-by" type="text" placeholder="Search Documentation"
+                           data-search-input="/en/search.json/query"/>
+                    <span data-search-clear><i class="fa fa-close"></i></span>
+                </div>
+            </div>
+        </div>
+        
+
+<div class="scrollbar-inner">
+    <div class="highlightable">
+                    <ul class="topics">
+                                                                        <li class="dd-item parent" data-nav-id="/">
+            <a href="en.htm" tppabs="https://kb.adguard.com/en" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>1. </b>General questions</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/general/adguard-ad-filters">
+            <a href="adguard-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/adguard-ad-filters" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Ad Filters</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/how-to-create-your-own-ad-filters">
+            <a href="how-to-create-your-own-ad-filters.htm" tppabs="https://kb.adguard.com/en/general/how-to-create-your-own-ad-filters" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to create your own ad filters</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-filter-policy">
+            <a href="adguard-filter-policy.htm" tppabs="https://kb.adguard.com/en/general/adguard-filter-policy" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Filter Policy</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/userscripts">
+            <a href="userscripts.htm" tppabs="https://kb.adguard.com/en/general/userscripts" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Userscripts</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/how-ad-blocking-works">
+            <a href="how-ad-blocking-works.htm" tppabs="https://kb.adguard.com/en/general/how-ad-blocking-works" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How ad blocking works</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/how-malware-protection-works">
+            <a href="how-malware-protection-works.htm" tppabs="https://kb.adguard.com/en/general/how-malware-protection-works" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How malware protection works</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/license-key">
+            <a href="license-key.htm" tppabs="https://kb.adguard.com/en/general/license-key" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard license key</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/why-is-adguard-better">
+            <a href="why-is-adguard-better.htm" tppabs="https://kb.adguard.com/en/general/why-is-adguard-better" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Why is AdGuard better than other adblockers</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/https-filtering">
+            <a href="https-filtering.htm" tppabs="https://kb.adguard.com/en/general/https-filtering" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>HTTPS filtering</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/general/https-filtering/https-filtering-known-issues">
+            <a href="https-filtering-known-issues.htm" tppabs="https://kb.adguard.com/en/general/https-filtering/https-filtering-known-issues" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>HTTPS filtering: known issues</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/search-ads-and-self-promotion">
+            <a href="search-ads-and-self-promotion.htm" tppabs="https://kb.adguard.com/en/general/search-ads-and-self-promotion" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Search ads and self-promotion</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-beta-testing-program">
+            <a href="adguard-beta-testing-program.htm" tppabs="https://kb.adguard.com/en/general/adguard-beta-testing-program" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard beta testing program</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/filter-rules-statistics">
+            <a href="filter-rules-statistics.htm" tppabs="https://kb.adguard.com/en/general/filter-rules-statistics" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Tracking filter rules statistics</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/dns-filtering-android">
+            <a href="dns-filtering-android.htm" tppabs="https://kb.adguard.com/en/general/dns-filtering-android" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>DNS filtering</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/adguard-translations">
+            <a href="adguard-translations.htm" tppabs="https://kb.adguard.com/en/general/adguard-translations" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard translations</span>
+            </a>
+                    </li>
+                            <li class="dd-item active" data-nav-id="/general/dns-providers">
+            <a href="dns-providers.htm" tppabs="https://kb.adguard.com/en/general/dns-providers" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Known DNS Providers</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/stealth-mode">
+            <a href="stealth-mode.htm" tppabs="https://kb.adguard.com/en/general/stealth-mode" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Stealth Mode</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/dns-filtering-syntax">
+            <a href="dns-filtering-syntax.htm" tppabs="https://kb.adguard.com/en/general/dns-filtering-syntax" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>DNS filtering rules syntax</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/general/2fa">
+            <a href="2fa.htm" tppabs="https://kb.adguard.com/en/general/2fa" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Two-factor authentication</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows">
+            <a href="windows.htm" tppabs="https://kb.adguard.com/en/windows" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>2. </b>AdGuard for Windows</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/overview">
+            <a href="overview.htm" tppabs="https://kb.adguard.com/en/windows/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/installation">
+            <a href="installation.htm" tppabs="https://kb.adguard.com/en/windows/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Install/Uninstall</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features">
+            <a href="features.htm" tppabs="https://kb.adguard.com/en/windows/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/features/ad-blocker">
+            <a href="ad-blocker.htm" tppabs="https://kb.adguard.com/en/windows/features/ad-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Ad Blocker</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/browsing-security">
+            <a href="browsing-security.htm" tppabs="https://kb.adguard.com/en/windows/features/browsing-security" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Browsing Security</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/parental-control">
+            <a href="parental-control.htm" tppabs="https://kb.adguard.com/en/windows/features/parental-control" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Parental Control</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/features/extensions">
+            <a href="extensions.htm" tppabs="https://kb.adguard.com/en/windows/features/extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Extensions</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems">
+            <a href="solving-problems.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/windows/solving-problems/wfp-driver">
+            <a href="wfp-driver.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/wfp-driver" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>WFP driver</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/connection-not-trusted">
+            <a href="connection-not-trusted.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/connection-not-trusted" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>"Potential Security Risk" error</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/adguard-logs">
+            <a href="adguard-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/adguard-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find AdGuard logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/system-logs">
+            <a href="system-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/system-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find Windows logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/ie-edge-filtering">
+            <a href="ie-edge-filtering.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/ie-edge-filtering" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Internet Explorer and Edge filtering</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/installation-logs">
+            <a href="installation-logs.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/installation-logs" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to find AdGuard installation logs</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/yandex-warning">
+            <a href="yandex-warning.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/yandex-warning" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Yandex.Browser certificate warning</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/solving-problems/common-installer-errors">
+            <a href="common-installer-errors.htm" tppabs="https://kb.adguard.com/en/windows/solving-problems/common-installer-errors" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Common AdGuard installer errors</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/windows/documentation-for-admins">
+            <a href="documentation-for-admins.htm" tppabs="https://kb.adguard.com/en/windows/documentation-for-admins" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Documentation for administrators</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos">
+            <a href="macos.htm" tppabs="https://kb.adguard.com/en/macos" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>3. </b>AdGuard for macOS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/overview">
+            <a href="overview-1.htm" tppabs="https://kb.adguard.com/en/macos/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/installation">
+            <a href="installation-1.htm" tppabs="https://kb.adguard.com/en/macos/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Install/Uninstall</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features">
+            <a href="features-1.htm" tppabs="https://kb.adguard.com/en/macos/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/features/ad-blocker">
+            <a href="ad-blocker-1.htm" tppabs="https://kb.adguard.com/en/macos/features/ad-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Ad Blocker</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/privacy-protection">
+            <a href="privacy-protection.htm" tppabs="https://kb.adguard.com/en/macos/features/privacy-protection" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Privacy protection</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/browsing-security">
+            <a href="browsing-security-1.htm" tppabs="https://kb.adguard.com/en/macos/features/browsing-security" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Browsing security</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/features/extensions">
+            <a href="extensions-1.htm" tppabs="https://kb.adguard.com/en/macos/features/extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Extensions</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems">
+            <a href="solving-problems-1.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/macos/solving-problems/install-cert">
+            <a href="install-cert.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/install-cert" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Manual certificate installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems/protection-cannot-be-enabled">
+            <a href="protection-cannot-be-enabled.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/protection-cannot-be-enabled" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>If AdGuard Protection cannot be enabled (for some reasons)</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/macos/solving-problems/high-sierra-compatibility">
+            <a href="high-sierra-compatibility.htm" tppabs="https://kb.adguard.com/en/macos/solving-problems/high-sierra-compatibility" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to install AdGuard on versions of macOS High Sierra and above</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android">
+            <a href="android.htm" tppabs="https://kb.adguard.com/en/android" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>4. </b>AdGuard for Android</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/android/overview">
+            <a href="overview-2.htm" tppabs="https://kb.adguard.com/en/android/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/installation">
+            <a href="installation-2.htm" tppabs="https://kb.adguard.com/en/android/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/features">
+            <a href="features-2.htm" tppabs="https://kb.adguard.com/en/android/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/faq">
+            <a href="faq.htm" tppabs="https://kb.adguard.com/en/android/faq" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>FAQ</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems">
+            <a href="solving-problems-2.htm" tppabs="https://kb.adguard.com/en/android/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/android/solving-problems/battery">
+            <a href="battery.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/battery" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Battery and traffic consumption issues</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/log">
+            <a href="log.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/log" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Collecting a log on AdGuard for Android</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/tasker">
+            <a href="tasker.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/tasker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to automate AdGuard for Android</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/logcat">
+            <a href="logcat.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/logcat" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to get logcat log</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/har">
+            <a href="har.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/har" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to get HAR files</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/low-level-settings">
+            <a href="low-level-settings.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/low-level-settings" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Low Level Settings guide</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/youtube-ads">
+            <a href="youtube-ads.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/youtube-ads" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to block ads in Youtube app</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/adguard-outbound-proxy">
+            <a href="adguard-outbound-proxy.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/adguard-outbound-proxy" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to setup an outbound proxy</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/background-work">
+            <a href="background-work.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/background-work" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to protect AdGuard from being disabled by the system</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/android/solving-problems/samsungpay-with-adguard-in-south-korea">
+            <a href="samsungpay-with-adguard-in-south-korea.htm" tppabs="https://kb.adguard.com/en/android/solving-problems/samsungpay-with-adguard-in-south-korea" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to use Samsung Pay with AdGuard in South Korea</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios">
+            <a href="ios.htm" tppabs="https://kb.adguard.com/en/ios" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>5. </b>AdGuard for iOS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/ios/overview">
+            <a href="overview-3.htm" tppabs="https://kb.adguard.com/en/ios/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/installation">
+            <a href="installation-3.htm" tppabs="https://kb.adguard.com/en/ios/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/features">
+            <a href="features-3.htm" tppabs="https://kb.adguard.com/en/ios/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                        <ul>
+                                    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/solving-problems">
+            <a href="solving-problems-3.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Solving problems</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/ios/solving-problems/dns-requests-log">
+            <a href="dns-requests-log.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems/dns-requests-log" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to collect DNS requests log on AdGuard Pro?</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/ios/solving-problems/premium-activation">
+            <a href="premium-activation.htm" tppabs="https://kb.adguard.com/en/ios/solving-problems/premium-activation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to activate Premium features?</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/safari">
+            <a href="safari.htm" tppabs="https://kb.adguard.com/en/safari" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>6. </b>AdGuard for Safari</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/safari/overview">
+            <a href="overview-4.htm" tppabs="https://kb.adguard.com/en/safari/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/safari/installation">
+            <a href="installation-4.htm" tppabs="https://kb.adguard.com/en/safari/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/content-blocker">
+            <a href="content-blocker.htm" tppabs="https://kb.adguard.com/en/content-blocker" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>7. </b>AdGuard Content Blocker</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/content-blocker/overview">
+            <a href="overview-5.htm" tppabs="https://kb.adguard.com/en/content-blocker/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/content-blocker/installation">
+            <a href="installation-5.htm" tppabs="https://kb.adguard.com/en/content-blocker/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns">
+            <a href="dns.htm" tppabs="https://kb.adguard.com/en/dns" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>8. </b>AdGuard DNS</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/dns/overview">
+            <a href="overview-6.htm" tppabs="https://kb.adguard.com/en/dns/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns/setup-guide">
+            <a href="setup-guide.htm" tppabs="https://kb.adguard.com/en/dns/setup-guide" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Setup guide</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/dns/faq">
+            <a href="faq-1.htm" tppabs="https://kb.adguard.com/en/dns/faq" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>FAQ</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions">
+            <a href="browser-extensions.htm" tppabs="https://kb.adguard.com/en/browser-extensions" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>9. </b>Browser Extensions</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/browser-extensions/overview">
+            <a href="overview-7.htm" tppabs="https://kb.adguard.com/en/browser-extensions/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Overview</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/installation">
+            <a href="installation-6.htm" tppabs="https://kb.adguard.com/en/browser-extensions/installation" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/features">
+            <a href="features-4.htm" tppabs="https://kb.adguard.com/en/browser-extensions/features" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Features</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/browser-extensions/integration-mode">
+            <a href="integration-mode.htm" tppabs="https://kb.adguard.com/en/browser-extensions/integration-mode" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Integration mode</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/home">
+            <a href="home.htm" tppabs="https://kb.adguard.com/en/home" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>10. </b>AdGuard Home</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/home/overview">
+            <a href="overview-8.htm" tppabs="https://kb.adguard.com/en/home/overview" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>AdGuard Home overview</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous">
+            <a href="miscellaneous.htm" tppabs="https://kb.adguard.com/en/miscellaneous" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>11. </b>Miscellaneous</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/miscellaneous/acknowledgments">
+            <a href="acknowledgments.htm" tppabs="https://kb.adguard.com/en/miscellaneous/acknowledgments" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Credits and Acknowledgments</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/updating-kb">
+            <a href="updating-kb.htm" tppabs="https://kb.adguard.com/en/miscellaneous/updating-kb" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Updating the Knowledgebase</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/plurals">
+            <a href="plurals.htm" tppabs="https://kb.adguard.com/en/miscellaneous/plurals" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Plural forms</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/taking-screenshots">
+            <a href="taking-screenshots.htm" tppabs="https://kb.adguard.com/en/miscellaneous/taking-screenshots" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to take a screenshot</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/writers-reward">
+            <a href="writers-reward.htm" tppabs="https://kb.adguard.com/en/miscellaneous/writers-reward" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Writing about AdGuard</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/miscellaneous/filter-help">
+            <a href="filter-help.htm" tppabs="https://kb.adguard.com/en/miscellaneous/filter-help" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Contribute to AdGuard Filters</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support">
+            <a href="technical-support.htm" tppabs="https://kb.adguard.com/en/technical-support" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b>12. </b>Technical support</span>
+            </a>
+                        <ul>
+                                                            <li class="dd-item" data-nav-id="/technical-support/how-to-collect-har-file">
+            <a href="how-to-collect-har-file.htm" tppabs="https://kb.adguard.com/en/technical-support/how-to-collect-har-file" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>How to collect HAR file</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/adware">
+            <a href="adware.htm" tppabs="https://kb.adguard.com/en/technical-support/adware" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Adware/Viruses</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/how-to-install-certificate">
+            <a href="how-to-install-certificate.htm" tppabs="https://kb.adguard.com/en/technical-support/how-to-install-certificate" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Proxy certificate installation</span>
+            </a>
+                    </li>
+                            <li class="dd-item" data-nav-id="/technical-support/reporting-tool">
+            <a href="reporting-tool.htm" tppabs="https://kb.adguard.com/en/technical-support/reporting-tool" >
+                <i class="fa fa-check read-icon"></i>
+                <span><b></b>Report website</span>
+            </a>
+                    </li>
+    
+            </ul>
+                    </li>
+    
+                            </ul>
+        
+        <div class="bottom-panel">
+            <a class="clear-history" href="#" data-clear-history-toggle>
+                <i class="fa fa-fw fa-history"></i> Clear History
+            </a>
+
+            <ul class="langswitcher">
+
+                            
+            <li><a href="dns-providers.htm" tppabs="https://kb.adguard.com/en/general/dns-providers" class="external active">English</a></li>
+    
+
+                                                    
+            <li><a href="dns-providers-1.htm" tppabs="https://kb.adguard.com/ru/general/dns-providers" class="external">–†—É—Å—Å–∫–∏–π</a></li>
+    
+</ul>
+        </div>
+        <section id="footer">
+            <p>Built with <a href="javascript:if(confirm('http://getgrav.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://getgrav.org/'" tppabs="http://getgrav.org/">Grav</a> - The Modern Flat File CMS</p>
+        </section>
+    </div>
+</div>
+
+    </nav>
+    
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable">
+            <a href="#" id="sidebar-toggle" data-sidebar-toggle><i class="fa fa-2x fa-bars"></i></a>
+
+                        <div id="top-bar">
+                                <div id="top-github-link">
+                <a class="github-link" href="javascript:if(confirm('https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/17.dns-providers/docs.en.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/17.dns-providers/docs.en.md'" tppabs="https://github.com/AdguardTeam/AdguardKnowledgeBase/tree/master/02.general/17.dns-providers/docs.en.md"><i class="fa fa-github-square"></i> edit this page</a>
+                </div>
+                
+                                
+<div id="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="en.htm" tppabs="https://kb.adguard.com/en" itemid="/en">
+                    <span itemprop="name">General questions</span>
+                </a>
+                        <i class="fa fa-angle-right"></i>
+                <meta itemprop="position" content="1" />
+    </span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <span itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="/en/general/dns-providers">
+                    <span itemprop="name">Known DNS Providers</span>
+                </span>
+                            <meta itemprop="position" content="2" />
+    </span>
+    </div>
+                            </div>
+            
+                <div id="body-inner">
+    <h1>Known DNS Providers</h1>
+    <p>
+    	<p>AdGuard users can configure any DNS server to be used instead of the system default provided by the router or ISP. In this article you will find a list of popular DNS providers.</p>
+<ul>
+<li><a href="#adguard-dns">AdGuard DNS</a></li>
+<li><a href="#yandex-dns">Yandex DNS</a></li>
+<li><a href="#cleanbrowsing">CleanBrowsing</a></li>
+<li><a href="#neustar-recursive-dns">Neustar Recursive DNS</a></li>
+<li><a href="#cisco-opendns">Cisco OpenDNS</a></li>
+<li><a href="#google-dns">Google DNS</a></li>
+<li><a href="#cloudflare-dns">Cloudflare DNS</a></li>
+<li><a href="#quad9">Quad9 DNS</a></li>
+<li><a href="#verisign-public-dns">Verisign Public DNS</a></li>
+<li><a href="#dnswatch-dns">DNS.WATCH</a></li>
+<li><a href="#comodo-secure-dns">Comodo Secure DNS</a></li>
+<li><a href="#dyn-dns">Dyn DNS</a></li>
+<li><a href="#opennic-dns">OpenNIC DNS</a></li>
+<li><a href="#quad101">Quad101</a></li>
+<li><a href="#freenom-world">Freenom World</a></li>
+<li><a href="#fortinet-secure">Fortinet Secure</a></li>
+<li><a href="#safe-dns">Safe DNS</a></li>
+<li><a href="#strongarm-dns">Strongarm DNS</a></li>
+<li><a href="#safesurfer-dns">SafeSurfer DNS</a></li>
+<li><a href="#captnemo-dns">Captnemo DNS</a></li>
+<li><a href="#fvz-dns">fvz DNS</a></li>
+<li><a href="#nawala-childprotection-dns">Nawala Childprotection DNS</a></li>
+<li><a href="#blahdns.ger-dns">blahdns.com</a></li>
+<li><a href="#ffmuc.net">ffmuc.net</a></li>
+<li><a href="#ibksturm-dns">ibksturm</a></li>
+<li><a href="#switch.ch-dns">switch.ch</a></li>
+<li><a href="#cira.ca-dns">cira.ca</a></li>
+<li><a href="#dnsprivacy.org-dns">DNS-over-TLS by dnsprivacy.org</a></li>
+<li><a href="#evilvibes.com">evilvibes.com</a></li>
+</ul>
+<p><a name="adguard-dns"></a></p>
+<h3>AdGuard DNS</h3>
+<p><a href="javascript:if(confirm('https://adguard.com/adguard-dns/overview.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://adguard.com/adguard-dns/overview.html'" tppabs="https://adguard.com/adguard-dns/overview.html">AdGuard DNS</a> is an alternative solution for ad blocking, privacy protection, and parental control. It provides the number of necessary protection features against online ads, trackers, and phishing, no matter what platform and device you use.</p>
+<h4>Default</h4>
+<p>These servers provide blocking ads, tracking and phishing</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>176.103.130.130</code> and <code>176.103.130.131</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzE3Ni4xMDMuMTMwLjEzMA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a00:5a60::ad1:0ff</code> and <code>2a00:5a60::ad2:0ff</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFFsyYTAwOjVhNjA6OmFkMTowZmZd">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt.default.ns1.adguard.com</code> IP: <code>176.103.130.130:5443</code></td>
+<td><a href="sdns://AQIAAAAAAAAAFDE3Ni4xMDMuMTMwLjEzMDo1NDQzINErR_JS3PLCu_iZEIbq95zkSV2LFsigxDIuUso_OQhzIjIuZG5zY3J5cHQuZGVmYXVsdC5uczEuYWRndWFyZC5jb20">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt.default.ns2.adguard.com</code> IP: <code>[2a00:5a60::ad2:0ff]:5443</code></td>
+<td><a href="sdns://AQIAAAAAAAAAGVsyYTAwOjVhNjA6OmFkMjowZmZdOjU0NDMggdAC02pMpQxHO3R5ZQ_hLgKzIcthOFYqII5APf3FXpQiMi5kbnNjcnlwdC5kZWZhdWx0Lm5zMi5hZGd1YXJkLmNvbQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://dns.adguard.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAAAAAPZG5zLmFkZ3VhcmQuY29tCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td><code>tls://dns.adguard.com</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAVdGxzOi8vZG5zLmFkZ3VhcmQuY29t">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Family Protection</h4>
+<p>These servers provide the Default features + Blocking adult websites + Safe search</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>176.103.130.132</code> and <code>176.103.130.134</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzE3Ni4xMDMuMTMwLjEzMg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a00:5a60::bad1:0ff</code> and <code>2a00:5a60::bad2:0ff</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFVsyYTAwOjVhNjA6OmJhZDE6MGZmXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt.family.ns1.adguard.com</code> IP: <code>176.103.130.132:5443</code></td>
+<td><a href="sdns://AQIAAAAAAAAAFDE3Ni4xMDMuMTMwLjEzMjo1NDQzILgxXdexS27jIKRw3C7Wsao5jMnlhvhdRUXWuMm1AFq6ITIuZG5zY3J5cHQuZmFtaWx5Lm5zMS5hZGd1YXJkLmNvbQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt.family.ns2.adguard.com</code> IP: <code>[2a00:5a60::bad2:0ff]:5443</code></td>
+<td><a href="sdns://AQIAAAAAAAAAGlsyYTAwOjVhNjA6OmJhZDI6MGZmXTo1NDQzIIwhF6nrwVfW-2QFbwrbwRxdg2c0c8RuJY2bL1fU7jUfITIuZG5zY3J5cHQuZmFtaWx5Lm5zMi5hZGd1YXJkLmNvbQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://dns-family.adguard.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAAAAAWZG5zLWZhbWlseS5hZGd1YXJkLmNvbQovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td><code>tls://dns-family.adguard.com</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAcdGxzOi8vZG5zLWZhbWlseS5hZGd1YXJkLmNvbQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="yandex-dns"></a></p>
+<h3>Yandex DNS</h3>
+<p><a href="javascript:if(confirm('https://dns.yandex.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://dns.yandex.com/'" tppabs="https://dns.yandex.com/">Yandex.DNS</a> is a free recursive DNS service. Yandex.DNS' servers are located in Russia, CIS countries, and Western Europe. Users' requests are processed by the nearest data center which provides high connection speeds.</p>
+<h4>Basic</h4>
+<p>In "Basic" mode, there is no traffic filtering</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>77.88.8.8</code> and <code>77.88.8.1</code></td>
+<td><a href="sdns://AAAAAAAAAAAACTc3Ljg4LjguOA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a02:6b8::feed:0ff</code> and <code>2a02:6b8:0:1::feed:0ff</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFFsyYTAyOjZiODo6ZmVlZDowZmZd">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.browser.yandex.net</code> IP: <code>77.88.8.78:15353</code></td>
+<td><a href="sdns://AQQAAAAAAAAAEDc3Ljg4LjguNzg6MTUzNTMg04TAccn3RmKvKszVe13MlxTUB7atNgHhrtwG1W1JYyciMi5kbnNjcnlwdC1jZXJ0LmJyb3dzZXIueWFuZGV4Lm5ldA">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Safe</h4>
+<p>In "Safe" mode, protection from infected and fraudulent sites is provided</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>77.88.8.88</code> and <code>77.88.8.2</code></td>
+<td><a href="sdns://AAAAAAAAAAAACjc3Ljg4LjguODg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a02:6b8::feed:bad</code> and <code>2a02:6b8:0:1::feed:bad</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFFsyYTAyOjZiODo6ZmVlZDpiYWRd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Family</h4>
+<p>In "Family" mode, protection from infected, fraudulent and adult sites is provided </p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>77.88.8.3</code> and <code>77.88.8.7</code></td>
+<td><a href="sdns://AAAAAAAAAAAACTc3Ljg4LjguMw">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a02:6b8::feed:a11</code> and <code>2a02:6b8:0:1::feed:a11</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFFsyYTAyOjZiODo6ZmVlZDphMTFd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cleanbrowsing"></a></p>
+<h3>CleanBrowsing</h3>
+<p><a href="javascript:if(confirm('https://cleanbrowsing.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://cleanbrowsing.org/'" tppabs="https://cleanbrowsing.org/">Cleanbrowsing</a> is a DNS service which provides customizable filtering. This service offers a safe way to browse the web without inappropriate content.</p>
+<h4>Family Filter</h4>
+<p>Blocks access to all adult, pornographic and explicit sites, including proxy &amp; VPN domains and mixed content sites</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>185.228.168.168</code> and <code>185.228.169.168</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzE4NS4yMjguMTY4LjE2OA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a0d:2a00:1::1</code> and <code>2a0d:2a00:2::1</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEFsyYTBkOjJhMDA6MTo6MV0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>cleanbrowsing.org</code> IP: <code>185.228.168.168:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAFDE4NS4yMjguMTY4LjE2ODo4NDQzILysMvrVQ2kXHwgy1gdQJ8MgjO7w6OmflBjcd2Bl1I8pEWNsZWFuYnJvd3Npbmcub3Jn">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>cleanbrowsing.org</code> IP: <code>[2a0d:2a00:1::]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAFFsyYTBkOjJhMDA6MTo6XTo4NDQzILysMvrVQ2kXHwgy1gdQJ8MgjO7w6OmflBjcd2Bl1I8pEWNsZWFuYnJvd3Npbmcub3Jn">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://doh.cleanbrowsing.org/doh/family-filter/</code></td>
+<td><a href="sdns://AgMAAAAAAAAAAAAVZG9oLmNsZWFuYnJvd3Npbmcub3JnEy9kb2gvZmFtaWx5LWZpbHRlci8">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Adult Filter</h4>
+<p>Less restrictive than the Family filter, it only blocks access to adult content and malicious and phishing domains</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>185.228.168.10</code> and <code>185.228.169.10</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzE4NS4yMjguMTY4LjE2OA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a0d:2a00:1::</code> and <code>2a0d:2a00:2::</code></td>
+<td><a href="sdns://AAAAAAAAAAAAD1syYTBkOjJhMDA6MTo6XQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>cleanbrowsing.org</code> IP: <code>185.228.168.10:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAEzE4NS4yMjguMTY4LjEwOjg0NDMgvKwy-tVDaRcfCDLWB1AnwyCM7vDo6Z-UGNx3YGXUjykRY2xlYW5icm93c2luZy5vcmcc">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>cleanbrowsing.org</code> IP: <code>[2a0d:2a00:1::1]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAFVsyYTBkOjJhMDA6MTo6MV06ODQ0MyC8rDL61UNpFx8IMtYHUCfDIIzu8Ojpn5QY3HdgZdSPKRFjbGVhbmJyb3dzaW5nLm9yZw">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://doh.cleanbrowsing.org/doh/adult-filter/</code></td>
+<td><a href="sdns://AgMAAAAAAAAAAAAVZG9oLmNsZWFuYnJvd3Npbmcub3JnEi9kb2gvYWR1bHQtZmlsdGVyLw">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Security Filter</h4>
+<p>Blocks phishing, spam and malicious domains</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>185.228.168.9</code> and <code>185.228.169.9</code></td>
+<td><a href="sdns://AAAAAAAAAAAADTE4NS4yMjguMTY4Ljk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a0d:2a00:1::2</code> and <code>2a0d:2a00:2::2</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEFsyYTBkOjJhMDA6MTo6Ml0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://doh.cleanbrowsing.org/doh/security-filter/</code></td>
+<td><a href="sdns://AgMAAAAAAAAAAAAVZG9oLmNsZWFuYnJvd3Npbmcub3JnFS9kb2gvc2VjdXJpdHktZmlsdGVyLw">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="neustar-recursive-dns"></a></p>
+<h3>Neustar Recursive DNS</h3>
+<p><a href="javascript:if(confirm('https://www.security.neustar/digital-performance/dns-services/recursive-dns  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.security.neustar/digital-performance/dns-services/recursive-dns'" tppabs="https://www.security.neustar/digital-performance/dns-services/recursive-dns">Neustar Recursive DNS</a> is a free cloud-based recursive DNS service that delivers fast and reliable access to sites and online applications with built-in security and threat intelligence.</p>
+<h4>Reliability &amp; Performance 1</h4>
+<p>These servers provide reliable and fast DNS lookups without blocking any specific categories</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>156.154.70.1</code> and <code>156.154.71.1</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE1Ni4xNTQuNzAuMQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2610:a1:1018::1</code> and <code>2610:a1:1019::1</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjEwOmExOjEwMTg6OjFd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Reliability &amp; Performance 2*</h4>
+<p>These servers provide reliable and fast DNS lookups without blocking any specific categories and also prevent redirecting NXDomain (Non-existent Domain) responses to a landing page</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>156.154.70.5</code> and <code>156.154.71.5</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE1Ni4xNTQuNzAuNQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2610:a1:1018::5</code> and <code>2610:a1:1019::5</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjEwOmExOjEwMTg6OjVd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Threat Protection</h4>
+<p>These servers provide protection against malicious domains and also include "Reliability &amp; Performance" features</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>156.154.70.2</code> and <code>156.154.71.2</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE1Ni4xNTQuNzAuMg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2610:a1:1018::2</code> and <code>2610:a1:1019::2</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjEwOmExOjEwMTg6OjJd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Family Secure</h4>
+<p>These servers provide blocking access to mature content and also include "Reliability &amp; Performance" + "Threat Protection" features</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>156.154.70.3</code> and <code>156.154.71.3</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE1Ni4xNTQuNzAuMw">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2610:a1:1018::3</code> and <code>2610:a1:1019::3</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjEwOmExOjEwMTg6OjNd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Business Secure</h4>
+<p>These servers provide blocking unwanted and time-wasting content and also include "Reliability &amp; Performance" + "Threat Protection" + "Family Secure" features</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>156.154.70.4</code> and <code>156.154.71.4</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE1Ni4xNTQuNzAuNA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2610:a1:1018::4</code> and <code>2610:a1:1019::4</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjEwOmExOjEwMTg6OjRd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cisco-opendns"></a></p>
+<h3>Cisco OpenDNS</h3>
+<p><a href="javascript:if(confirm('https://www.opendns.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.opendns.com/'" tppabs="https://www.opendns.com/">Cisco OpenDNS</a> is a service which extends the DNS by incorporating features such as content filtering and phishing protection with a zero downtime. </p>
+<h4>Standard</h4>
+<p>DNS servers with custom filtering that protects your device from malware</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>208.67.222.222</code> and <code>208.67.220.220</code></td>
+<td><a href="sdns://AAAAAAAAAAAADjIwOC42Ny4yMjIuMjIy">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2620:119:35::35</code> and <code>2620:119:53::53</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjIwOjExOTozNTo6MzVd">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.opendns.com</code> IP: <code>208.67.220.220</code></td>
+<td><a href="sdns://AQAAAAAAAAAADjIwOC42Ny4yMjAuMjIwILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.opendns.com</code> IP: <code>[2620:0:ccc::2]</code></td>
+<td><a href="sdns://AQAAAAAAAAAAD1syNjIwOjA6Y2NjOjoyXSC3NRFAIG8iXT4r2CLX_WkeocM8yNZmjQy-BL-rykP7eRsyLmRuc2NyeXB0LWNlcnQub3BlbmRucy5jb20">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>FamilyShield</h4>
+<p>OpenDNS servers that provide adult content blocking</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>208.67.222.123</code> and <code>208.67.220.123</code></td>
+<td><a href="sdns://AAAAAAAAAAAADjIwOC42Ny4yMjIuMTIz">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.opendns.com</code> IP: <code>208.67.220.123</code></td>
+<td><a href="sdns://AQAAAAAAAAAADjIwOC42Ny4yMjAuMTIzILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="google-dns"></a></p>
+<h3>Google DNS</h3>
+<p><a href="javascript:if(confirm('https://developers.google.com/speed/public-dns/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developers.google.com/speed/public-dns/'" tppabs="https://developers.google.com/speed/public-dns/">Google DNS</a> is a free, global DNS resolution service that you can use as an alternative to your current DNS provider.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>8.8.8.8</code> and <code>8.8.4.4</code></td>
+<td><a href="sdns://AAAAAAAAAAAABzguOC44Ljg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2001:4860:4860::8888</code> and <code>2001:4860:4860::8844</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFlsyMDAxOjQ4NjA6NDg2MDo6ODg4OF0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://dns.google/dns-query</code></td>
+<td><a href="sdns://AgUAAAAAAAAAACAe9iTP_15r07rd8_3b_epWVGfjdymdx-5mdRZvMAzBuQpkbnMuZ29vZ2xlCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td><code>tls://dns.google</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAANdGxzOi8vOC44LjguOA">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cloudflare-dns"></a></p>
+<h3>Cloudflare DNS</h3>
+<p><a href="javascript:if(confirm('https://1.1.1.1/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://1.1.1.1/'" tppabs="https://1.1.1.1/">Cloudflare DNS</a> is a free and fast DNS service which functions as a recursive name server providing domain name resolution for any host on the Internet.</p>
+<h4>Standard</h4>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>1.1.1.1</code> and <code>1.0.0.1</code></td>
+<td><a href="sdns://AAAAAAAAAAAABzEuMS4xLjE">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2606:4700:4700::1111</code> and <code>2606:4700:4700::1001</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFlsyNjA2OjQ3MDA6NDcwMDo6MTExMV0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>https://dns.cloudflare.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAABzEuMC4wLjGgENk8mGSlIfMGXMOlIlCcKvq7AVgcrZxtjon911-ep0cg63Ul-I8NlFj4GplQGb_TTLiczclX57DvMV8Q-JdjgRgSZG5zLmNsb3VkZmxhcmUuY29tCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv6</td>
+<td><code>https://dns.cloudflare.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAAGVsyNjA2OjQ3MDA6NDcwMDo6MTExMV06NTOgENk8mGSlIfMGXMOlIlCcKvq7AVgcrZxtjon911-ep0cg63Ul-I8NlFj4GplQGb_TTLiczclX57DvMV8Q-JdjgRgSZG5zLmNsb3VkZmxhcmUuY29tCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td><code>tls://1.1.1.1</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAANdGxzOi8vMS4xLjEuMQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Malware blocking only</h4>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>1.1.1.2</code> and <code>1.0.0.2</code></td>
+<td><a href="sdns://AAAAAAAAAAAABzEuMS4xLjI">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2606:4700:4700::1112</code> and <code>2606:4700:4700::1002</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFlsyNjA2OjQ3MDA6NDcwMDo6MTExMl0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS</td>
+<td><code>https://security.cloudflare-dns.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAAAAAbc2VjdXJpdHkuY2xvdWRmbGFyZS1kbnMuY29tCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Malware and adult content blocking</h4>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>1.1.1.3</code> and <code>1.0.0.3</code></td>
+<td><a href="sdns://AAAAAAAAAAAABzEuMS4xLjM">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2606:4700:4700::1113</code> and <code>2606:4700:4700::1003</code></td>
+<td><a href="sdns://AAAAAAAAAAAAFlsyNjA2OjQ3MDA6NDcwMDo6MTExM10">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>https://family.cloudflare-dns.com/dns-query</code></td>
+<td><a href="sdns://AgcAAAAAAAAAAAAZZmFtaWx5LmNsb3VkZmxhcmUtZG5zLmNvbQovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="quad9"></a></p>
+<h3>Quad9 DNS</h3>
+<p><a href="javascript:if(confirm('https://quad9.net/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://quad9.net/'" tppabs="https://quad9.net/">Quad9 DNS</a> is a free, recursive, anycast DNS platform that provides high-performance, privacy, and security protection from phishing and spyware. Quad9 servers don't provide a censoring component.</p>
+<h4>Standard</h4>
+<p>Regular and DNS-over-TLS servers which provide protection from phishing and spyware</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>9.9.9.9</code> and <code>149.112.112.112</code></td>
+<td><a href="sdns://AAAAAAAAAAAABzkuOS45Ljk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td><code>tls://dns.quad9.net</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAANdGxzOi8vOS45LjkuOQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Encrypted DNSSec/no-log/filter</h4>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>9.9.9.9:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAADDkuOS45Ljk6ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>149.112.112.9:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAEjE0OS4xMTIuMTEyLjk6ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>[2620:fe::9]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAEVsyNjIwOmZlOjo5XTo4NDQzIGfIR7jIdYzRICRVQ751Z0bfNN8dhMALjEcDaN-CHYY-GTIuZG5zY3J5cHQtY2VydC5xdWFkOS5uZXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>[2620:fe::fe:9]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAFFsyNjIwOmZlOjpmZTo5XTo4NDQzIGfIR7jIdYzRICRVQ751Z0bfNN8dhMALjEcDaN-CHYY-GTIuZG5zY3J5cHQtY2VydC5xdWFkOS5uZXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgMAAAAAAAAABzkuOS45LjmAABJkbnM5LnF1YWQ5Lm5ldDo0NDMKL2Rucy1xdWVyeQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgMAAAAAAAAADTE0OS4xMTIuMTEyLjmAABJkbnM5LnF1YWQ5Lm5ldDo0NDMKL2Rucy1xdWVyeQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv6</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgMAAAAAAAAADFsyNjIwOmZlOjo5XYAAEmRuczkucXVhZDkubmV0OjQ0MwovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv6</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgMAAAAAAAAAD1syNjIwOmZlOjpmZTo5XYAAEmRuczkucXVhZDkubmV0OjQ0MwovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Encrypted no-DNSSec/no-log/no-filter</h4>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>9.9.9.10:8443</code></td>
+<td><a href="sdns://AQYAAAAAAAAADTkuOS45LjEwOjg0NDMgZ8hHuMh1jNEgJFVDvnVnRt803x2EwAuMRwNo34Idhj4ZMi5kbnNjcnlwdC1jZXJ0LnF1YWQ5Lm5ldA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>149.112.112.10:8443</code></td>
+<td><a href="sdns://AQYAAAAAAAAAEzE0OS4xMTIuMTEyLjEwOjg0NDMgZ8hHuMh1jNEgJFVDvnVnRt803x2EwAuMRwNo34Idhj4ZMi5kbnNjcnlwdC1jZXJ0LnF1YWQ5Lm5ldA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>[2620:fe::9]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAEVsyNjIwOmZlOjo5XTo4NDQzIGfIR7jIdYzRICRVQ751Z0bfNN8dhMALjEcDaN-CHYY-GTIuZG5zY3J5cHQtY2VydC5xdWFkOS5uZXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.quad9.net</code> IP: <code>[2620:fe::fe:9]:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAFFsyNjIwOmZlOjpmZTo5XTo4NDQzIGfIR7jIdYzRICRVQ751Z0bfNN8dhMALjEcDaN-CHYY-GTIuZG5zY3J5cHQtY2VydC5xdWFkOS5uZXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgYAAAAAAAAACDkuOS45LjEwgAASZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgYAAAAAAAAADjE0OS4xMTIuMTEyLjEwgAASZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv6</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgYAAAAAAAAADVsyNjIwOmZlOjoxMF2AABJkbnM5LnF1YWQ5Lm5ldDo0NDMKL2Rucy1xdWVyeQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv6</td>
+<td><code>dns9.quad9.net:443/dns-query</code></td>
+<td><a href="sdns://AgYAAAAAAAAAEFsyNjIwOmZlOjpmZToxMF2AABJkbnM5LnF1YWQ5Lm5ldDo0NDMKL2Rucy1xdWVyeQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="verisign-public-dns"></a></p>
+<h3>Verisign Public DNS</h3>
+<p><a href="javascript:if(confirm('https://www.verisign.com/security-services/public-dns/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.verisign.com/security-services/public-dns/'" tppabs="https://www.verisign.com/security-services/public-dns/">Verisign Public DNS</a> is a free DNS service that offers improved DNS stability and security over other alternatives. Verisign respects users' privacy: it doesn't sell public DNS data to third parties and redirect users' queries to serve them any ads.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>64.6.64.6</code> or <code>64.6.65.6</code></td>
+<td><a href="sdns://AAAAAAAAAAAACTY0LjYuNjQuNg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2620:74:1b::1:1</code> or <code>2620:74:1c::2:2</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyNjIwOjc0OjFiOjoxOjFd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="dnswatch-dns"></a></p>
+<h3>DNS.WATCH</h3>
+<p><a href="javascript:if(confirm('https://dns.watch/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://dns.watch/'" tppabs="https://dns.watch/">DNS.WATCH</a> is a fast and free server without logging with a privacy protection feature.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>84.200.69.80</code> and <code>84.200.70.40</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDg0LjIwMC42OS44MA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2001:1608:10:25::1c04:b12f</code> and <code>2001:1608:10:25::9249:d69b</code></td>
+<td><a href="sdns://AAAAAAAAAAAAHFsyMDAxOjE2MDg6MTA6MjU6OjFjMDQ6YjEyZl0">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="comodo-secure-dns"></a></p>
+<h3>Comodo Secure DNS</h3>
+<p><a href="javascript:if(confirm('https://comodo.com/secure-dns/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://comodo.com/secure-dns/'" tppabs="https://comodo.com/secure-dns/">Comodo Secure DNS</a> is a domain name resolution service that resolves your DNS requests through worldwide network of DNS servers. Removes excessive ads and protects from phishing and spyware.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>8.26.56.26</code> and <code>8.20.247.20</code></td>
+<td><a href="sdns://AAAAAAAAAAAACjguMjYuNTYuMjY">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.shield-2.dnsbycomodo.com</code> IP: <code>8.20.247.2</code></td>
+<td><a href="sdns://AQAAAAAAAAAACjguMjAuMjQ3LjIg0sJUqpYcHsoXmZb1X7yAHwg2xyN5q1J-zaiGG-Dgs7AoMi5kbnNjcnlwdC1jZXJ0LnNoaWVsZC0yLmRuc2J5Y29tb2RvLmNvbQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="dyn-dns"></a></p>
+<h3>Dyn DNS</h3>
+<p><a href="javascript:if(confirm('https://help.dyn.com/internet-guide-setup/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://help.dyn.com/internet-guide-setup/'" tppabs="https://help.dyn.com/internet-guide-setup/">Dyn DNS</a> is a free alternative DNS service by Dyn</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>216.146.35.35</code> and <code>216.146.35.36</code></td>
+<td><a href="sdns://AAAAAAAAAAAADTIxNi4xNDYuMzUuMzU">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="opennic-dns"></a></p>
+<h3>OpenNIC DNS</h3>
+<p><a href="javascript:if(confirm('https://www.opennic.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.opennic.org/'" tppabs="https://www.opennic.org/">OpenNIC DNS</a> is a free alternative DNS service by OpenNIC Project</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>185.121.177.177</code> and <code>169.239.202.202</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzE4NS4xMjEuMTc3LjE3Nw">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2a05:dfc7:5::53</code> and <code>2a05:dfc7:5353::53</code></td>
+<td><a href="sdns://AAAAAAAAAAAAEVsyYTA1OmRmYzc6NTo6NTNd">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="quad101"></a></p>
+<h3>Quad101</h3>
+<p><a href="javascript:if(confirm('https://101.101.101.101/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://101.101.101.101/'" tppabs="https://101.101.101.101/">Quad101</a> is a free alternative DNS service without logging by TWNIC (Taiwan Network Information Center)</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>101.101.101.101</code> and <code>101.102.103.104</code></td>
+<td><a href="sdns://AAAAAAAAAAAADzEwMS4xMDEuMTAxLjEwMQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td><code>2001:de4::101</code> and <code>2001:de4::102</code></td>
+<td><a href="sdns://AAAAAAAAAAAAD1syMDAxOmRlNDo6MTAxXQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="freenom-world"></a></p>
+<h3>Freenom World</h3>
+<p><a href="javascript:if(confirm('https://freenom.world/en/index.htm  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://freenom.world/en/index.htm'" tppabs="https://freenom.world/en/index.htm">Freenom World</a> is a free anonymous DNS resolver by Freenom World</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>80.80.80.80</code> and <code>80.80.81.81</code></td>
+<td><a href="sdns://AAAAAAAAAAAACzgwLjgwLjgwLjgw">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="fortinet-secure"></a></p>
+<h3>Fortinet Secure</h3>
+<p><a href="javascript:if(confirm('https://cookbook.fortinet.com/dns-web-filtering/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://cookbook.fortinet.com/dns-web-filtering/'" tppabs="https://cookbook.fortinet.com/dns-web-filtering/">Fortinet Secure</a> is a free alternative DNS service by FortiGuard</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>208.91.112.220</code> and <code>80.85.69.54</code></td>
+<td><a href="sdns://AAAAAAAAAAAADjIwOC45MS4xMTIuMjIw">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="safe-dns"></a></p>
+<h3>Safe DNS</h3>
+<p><a href="javascript:if(confirm('https://www.safedns.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.safedns.com/'" tppabs="https://www.safedns.com/">Safe DNS</a> is a global anycast network which consists of servers located throughout the world ‚Äî both Americas, Europe, Africa, Australia, and the Far East to ensure a fast and reliable DNS resolving from any point worldwide.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>195.46.39.39</code> and <code>195.46.39.40</code></td>
+<td><a href="sdns://AAAAAAAAAAAADDE5NS40Ni4zOS4zOQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="strongarm-dns"></a></p>
+<h3>Strongarm DNS</h3>
+<p><a href="javascript:if(confirm('https://strongarm.io/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://strongarm.io/'" tppabs="https://strongarm.io/">Strongarm DNS</a> is a DNS service by Strongarm that prevents people from interacting with malicious content</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>54.174.40.213</code> and <code>52.3.100.184</code></td>
+<td><a href="sdns://AAAAAAAAAAAADTU0LjE3NC40MC4yMTM">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="safesurfer-dns"></a></p>
+<h3>SafeSurfer DNS</h3>
+<p><a href="javascript:if(confirm('https://www.safesurfer.co.nz/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.safesurfer.co.nz/'" tppabs="https://www.safesurfer.co.nz/">SafeSurfer DNS</a> is a DNS service by SafeSurfer that protects your device from harmful content</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td><code>104.155.237.225</code> and <code>104.197.28.121</code></td>
+<td><a href="dns://AAAAAAAAAAAADjA0LjE1NS4yMzcuMjI1">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="captnemo-dns"></a></p>
+<h3>Captnemo DNS</h3>
+<p><a href="javascript:if(confirm('https://captnemo.in/dnscrypt/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://captnemo.in/dnscrypt/'" tppabs="https://captnemo.in/dnscrypt/">Captnemo DNS</a> is a server running out of a Digital Ocean droplet in BLR1 region. Maintained by Abhay Rana aka Nemo. </p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.captnemo.in</code> IP: <code>139.59.48.222:4434</code></td>
+<td><a href="sdns://AQQAAAAAAAAAEjEzOS41OS40OC4yMjI6NDQzNCAFOt_yxaMpFtga2IpneSwwK6rV0oAyleham9IvhoceEBsyLmRuc2NyeXB0LWNlcnQuY2FwdG5lbW8uaW4">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="fvz-dns"></a></p>
+<h3>fvz DNS</h3>
+<p><a href="javascript:if(confirm('http://meo.ws/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://meo.ws/'" tppabs="http://meo.ws/">fvz DNS</a> is a Fusl's public primary OpenNIC Tier2 Anycast DNS Resolver</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.dnsrec.meo.ws</code> IP: <code>185.121.177.177:5353</code></td>
+<td><a href="sdns://AQYAAAAAAAAAFDE4NS4xMjEuMTc3LjE3Nzo1MzUzIBpq0KMrTFphppXRU2cNaasWkD-ew_f2TxPlNaMYsiilHTIuZG5zY3J5cHQtY2VydC5kbnNyZWMubWVvLndz">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.dnsrec.meo.ws</code> IP: <code>169.239.202.202:5353</code></td>
+<td><a href="sdns://AQYAAAAAAAAAFDE2OS4yMzkuMjAyLjIwMjo1MzUzIBpq0KMrTFphppXRU2cNaasWkD-ew_f2TxPlNaMYsiilHTIuZG5zY3J5cHQtY2VydC5kbnNyZWMubWVvLndz">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="nawala-childprotection-dns"></a></p>
+<h3>Nawala Childprotection DNS</h3>
+<p><a href="javascript:if(confirm('http://nawala.id/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://nawala.id/'" tppabs="http://nawala.id/">Nawala Childprotection DNS</a> is an anycast Internet filtering system that protects children from inappropriate websites and abusive contents.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.nawala.id</code> IP: <code>180.131.144.144</code></td>
+<td><a href="sdns://AQAAAAAAAAAADzE4MC4xMzEuMTQ0LjE0NCDGC-b_38Dj4-ikI477AO1GXcLPfETOFpE36KZIHdOzLhkyLmRuc2NyeXB0LWNlcnQubmF3YWxhLmlk">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="blahdns.ger-dns"></a></p>
+<h3>blahdns (germany)</h3>
+<p><a href="javascript:if(confirm('https://blahdns.com/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://blahdns.com/'" tppabs="https://blahdns.com/">blahdns (germany)</a> A small hobby ads block dns project with DNS-over-TLS, DNS-over-HTTPS and DNSCrypt support.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS-over-TLS, IPv4</td>
+<td>Hostname: <code>dot-de.blahdns.com</code>  IP: <code>159.69.198.101</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAYdGxzOi8vZG90LWRlLmJsYWhkbnMuY29t">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td>Hostname: <code>https://doh-de.blahdns.com/dns-query</code> IP: <code>159.69.198.101</code></td>
+<td><a href="sdns://AgMAAAAAAAAADjE1OS42OS4xOTguMTAxABJkb2gtZGUuYmxhaGRucy5jb20KL2Rucy1xdWVyeQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.blahdns.com</code> IP: <code>159.69.198.101:8443</code></td>
+<td><a href="sdns://AQMAAAAAAAAAEzE1OS42OS4xOTguMTAxOjg0NDMgyJjbSS4IgTY_2KH3NVGG0DNIgBPzLEqf8r00nAbcUxQbMi5kbnNjcnlwdC1jZXJ0LmJsYWhkbnMuY29t">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="ffmuc.net"></a></p>
+<h3>ffmuc.net</h3>
+<p><a href="javascript:if(confirm('https://https//ffmuc.net/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://https//ffmuc.net/'" tppabs="https://https//ffmuc.net/">ffmuc.net</a> DNS-over-TLS, DNS-over-HTTPS DNS Server by Freifunk M√ºnchen</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS-over-TLS, IPv4</td>
+<td>Hostname: <code>dot.ffmuc.net</code> IP: <code>195.30.94.28</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAATdGxzOi8vZG90LmZmbXVjLm5ldA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td>Hostname: <code>https://doh.ffmuc.net/dns-query</code> IP: <code>195.30.94.28</code></td>
+<td><a href="sdns://AgcAAAAAAAAADDE5NS4zMC45NC4yOAANZG9oLmZmbXVjLm5ldAovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="ibksturm-dns"></a></p>
+<h3>ibksturm</h3>
+<p><a href="javascript:if(confirm('https://kb.adguard.com/en/ibksturm.synology.me  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ ∑˛ŒÒ∆˜±®∏Ê∏√Œƒº˛Œ¥’“µΩ°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://kb.adguard.com/en/ibksturm.synology.me'" tppabs="https://kb.adguard.com/ibksturm.synology.me/">ibksturm</a> DNS-over-TLS, DNS-over-HTTPS and DNSCrypt Testing server by ibksturm. OPENNIC, DNSSEC, No Filter, No Logging</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS-over-TLS, IPv4</td>
+<td>Hostname: <code>ibksturm.synology.me</code> IP: <code>83.77.85.7</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAadGxzOi8vaWJrc3R1cm0uc3lub2xvZ3kubWU">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-HTTPS, IPv4</td>
+<td>Hostname: <code>https://ibksturm.synology.me/dns-query</code> IP: <code>178.82.102.190</code></td>
+<td><a href="sdns://AgcAAAAAAAAAACA-GhoPbFPz6XpJLVcIS1uYBwWe4FerFQWHb9g_2j24OBRpYmtzdHVybS5zeW5vbG9neS5tZQovZG5zLXF1ZXJ5">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.ibksturm</code> IP: <code>83.77.85.7</code></td>
+<td><a href="sdns://AQcAAAAAAAAADzgzLjc3Ljg1Ljc6ODQ0MyDBz1dQALBbwmxiH17PmqJWCs6_AH6-yzp_9LIN4LQ57hgyLmRuc2NyeXB0LWNlcnQuaWJrc3R1cm0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv6</td>
+<td>Provider: <code>2.dnscrypt-cert.ibksturm</code> IP: <code>83.77.85.7</code></td>
+<td><a href="sdns://AQcAAAAAAAAALlsyYTAyOjEyMDU6MzRkNTo1MDcwOmIyNmU6YmZmZjpmZTFkOmUxOWJdOjg0NDMgwc9XUACwW8JsYh9ez5qiVgrOvwB-vss6f_SyDeC0Oe4YMi5kbnNjcnlwdC1jZXJ0Lmlia3N0dXJt">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="switch.ch-dns"></a></p>
+<h3>DNS-over-TLS Servers by switch.ch</h3>
+<p><a href="javascript:if(confirm('https://www.switch.ch/security/info/public-dns/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.switch.ch/security/info/public-dns/'" tppabs="https://www.switch.ch/security/info/public-dns/">DNS-over-TLS Provider by switch.ch</a> swiss DNS-over-TLS and Plain DNS Server.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS, IPv4</td>
+<td>Provider: <code>dns.switch.ch</code> IP: <code>130.59.31.248</code></td>
+<td><a href="sdns://AAAAAAAAAAAADTEzMC41OS4zMS4yNDg">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS, IPv6</td>
+<td>Provider: <code>dns.switch.ch</code> IPv6: <code>2001:620:0:ff::2</code></td>
+<td><a href="sdns://AAAAAAAAAAAAElsyMDAxOjYyMDowOmZmOjoyXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname: <code>dns.switch.ch</code> IP: <code>130.59.31.248</code>  and IPv6: <code>2001:620:0:ff::2</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAATdGxzOi8vZG5zLnN3aXRjaC5jaA">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cira.ca-dns"></a></p>
+<h3>DNS-over-TLS and DNS-over-HTTPS Servers by cira.ca</h3>
+<p><a href="javascript:if(confirm('https://www.cira.ca/cybersecurity-services/canadianshield/how-works  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.cira.ca/cybersecurity-services/canadianshield/how-works'" tppabs="https://www.cira.ca/cybersecurity-services/canadianshield/how-works">DNS-over-TLS and DNS-over-HTTPS Servers by cira.ca</a> official canadian TLD provider. Offers different DoH and DoT DNS Servers.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>| DNS-over-TLS - Private | Hostname: <code>private.canadianshield.cira.ca</code> IP: <code>149.112.121.10</code>  and IPv6: <code>2620:10A:80BB::10</code> | <a href="sdns://AwAAAAAAAAAAAAAkdGxzOi8vcHJpdmF0ZS5jYW5hZGlhbnNoaWVsZC5jaXJhLmNh">Add to AdGuard</a>  |<br />
+| DNS-over-TLS - Protected | Hostname: <code>protected.canadianshield.cira.ca</code> IP: <code>149.112.121.20</code>  and IPv6: <code>2620:10A:80BB::20</code> | <a href="sdns://AwAAAAAAAAAAAAAmdGxzOi8vcHJvdGVjdGVkLmNhbmFkaWFuc2hpZWxkLmNpcmEuY2E">Add to AdGuard</a>  |<br />
+| DNS-over-TLS - Family | Hostname: <code>protected.canadianshield.cira.ca</code> IP: <code>149.112.121.30</code>  and IPv6: <code>2620:10A:80BB::30</code> | <a href="sdns://AwAAAAAAAAAAAAAjdGxzOi8vZmFtaWx5LmNhbmFkaWFuc2hpZWxkLmNpcmEuY2E">Add to AdGuard</a>  |</p>
+<p>| DNS-over-HTTPS - Private | Hostname: <code>https://private.canadianshield.cira.ca/dns-query</code> IP: <code>149.112.121.10</code>  and IPv6: <code>2620:10A:80BB::10</code> | <a href="sdns://AgEAAAAAAAAAAAAmaHR0cHM6Ly9wcml2YXRlLmNhbmFkaWFuc2hpZWxkLmNpcmEuY2EKL2Rucy1xdWVyeQ">Add to AdGuard</a>  |<br />
+| DNS-over-HTTPS - Protected | Hostname: <code>https://protected.canadianshield.cira.ca/dns-query</code> IP: <code>149.112.121.20</code>  and IPv6: <code>2620:10A:80BB::20</code> | <a href="sdns://AgEAAAAAAAAAAAAoaHR0cHM6Ly9wcm90ZWN0ZWQuY2FuYWRpYW5zaGllbGQuY2lyYS5jYQovZG5zLXF1ZXJ5">Add to AdGuard</a>  |<br />
+| DNS-over-HTTPS - Family | Hostname: <code>https://family.canadianshield.cira.ca/dns-query</code> IP: <code>149.112.121.30</code>  and IPv6: <code>2620:10A:80BB::30</code> | <a href="sdns://AgEAAAAAAAAAAAAlaHR0cHM6Ly9mYW1pbHkuY2FuYWRpYW5zaGllbGQuY2lyYS5jYQovZG5zLXF1ZXJ5">Add to AdGuard</a>  |</p>
+<p><a name="dnsprivacy.org-dns"></a></p>
+<h3>DNS-over-TLS Servers by dnsprivacy.org</h3>
+<p><a href="javascript:if(confirm('https://dnsprivacy.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://dnsprivacy.org/'" tppabs="https://dnsprivacy.org/">DNS-over-TLS Provider by dnsprivacy.org</a> List of PUblic DNS-over-TLS Testing Servers.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Provider: <code>Surfnet</code> Hostname <code>dnsovertls.sinodun.com</code> IP: <code>145.100.185.15</code> and IPv6: <code>2001:610:1:40ba:145:100:185:15</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAcdGxzOi8vZG5zb3ZlcnRscy5zaW5vZHVuLmNvbQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Provider: <code>Surfnet</code> Hostname <code>dnsovertls1.sinodun.com</code> IP: <code>145.100.185.16</code> and IPv6: <code>2001:610:1:40ba:145:100:185:16</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAddGxzOi8vZG5zb3ZlcnRsczEuc2lub2R1bi5jb20">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname: <code>getdnsapi.net</code> IP: <code>185.49.141.37</code> and IPv6: <code>2a04:b900:0:100::37</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAATdGxzOi8vZ2V0ZG5zYXBpLm5ldA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Provider: <code>UncensoredDNS</code> Hostname <code>unicast.censurfridns.dk</code> IP: <code>89.233.43.71</code> and IPv6: <code>2a01:3a0:53:53::0</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAddGxzOi8vdW5pY2FzdC5jZW5zdXJmcmlkbnMuZGs">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Provider: <code>Fondation RESTENA</code> Hostname <code>kaitain.restena.lu</code> IP: <code>158.64.1.29</code> and IPv6: <code>2001:a18:1::29</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAYdGxzOi8va2FpdGFpbi5yZXN0ZW5hLmx1">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Provider: <code>dkg</code> Hostname <code>dns.cmrg.net</code> IP: <code>199.58.81.218</code>and IPv6: <code>2001:470:1c:76d::53</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAASdGxzOi8vZG5zLmNtcmcubmV0t">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS, IPv4</td>
+<td>Hostname: <code>dns.larsdebruin.net</code> IP: <code>51.15.70.167</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAZdGxzOi8vZG5zLmxhcnNkZWJydWluLm5ldA">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname <code>dns-tls.bitwiseshift.net</code> IP: <code>81.187.221.24</code> and IPv6: <code>2001:8b0:24:24::24</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAedGxzOi8vZG5zLXRscy5iaXR3aXNlc2hpZnQubmV0">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname <code>ns1.dnsprivacy.at</code> IP: <code>94.130.110.185</code> and IPv6: <code>2a01:4f8:c0c:3c03::2</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAXdGxzOi8vbnMxLmRuc3ByaXZhY3kuYXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname <code>ns2.dnsprivacy.at</code> IP: <code>94.130.110.178</code> and IPv6: <code>2a01:4f8:c0c:3bfc::2</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAXdGxzOi8vbnMyLmRuc3ByaXZhY3kuYXQ">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS, IPv4</td>
+<td>Hostname: <code>dns.bitgeek.in</code> IP: <code>139.59.51.46</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAUdGxzOi8vZG5zLmJpdGdlZWsuaW4">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNS-over-TLS</td>
+<td>Hostname <code>dns.neutopia.org</code> IP: <code>89.234.186.112</code> and IPv6: <code>2a00:5884:8209::2</code></td>
+<td><a href="sdns://AwAAAAAAAAAAAAAWdGxzOi8vZG5zLm5ldXRvcGlhLm9yZw">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="evilvibes.com"></a></p>
+<h3>evilvibes.com</h3>
+<p><a href="javascript:if(confirm('https://github.com/evilvibes/dnscrypt_stamps  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/evilvibes/dnscrypt_stamps'" tppabs="https://github.com/evilvibes/dnscrypt_stamps">evilvibes.com</a> Non-logging, uncensored DNS resolver provided by evilvibes.com</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Address</th>
+<th>Location</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.evilvibes.com</code> IP: <code>23.111.74.205</code></td>
+<td>Location: <code>Vancouver, Canada</code></td>
+<td><a href="sdns://AQcAAAAAAAAADTIzLjExMS43NC4yMDUg_0RyX8kcAcMdtRk5SAX5RKs3yiLLS6kdJlnsUpVbnOEdMi5kbnNjcnlwdC1jZXJ0LmV2aWx2aWJlcy5jb20">Add to AdGuard</a></td>
+</tr>
+<tr>
+<td>DNSCrypt, IPv4</td>
+<td>Provider: <code>2.dnscrypt-cert.evilvibes.com</code> IP: <code>66.85.30.115</code></td>
+<td>Location: <code>Toronto, Canada</code></td>
+<td><a href="sdns://AQcAAAAAAAAADDY2Ljg1LjMwLjExNSDaDhJ4Dk4cHSiJstKoSd4DcSH8xm16_TSA1PBuamRNzB0yLmRuc2NyeXB0LWNlcnQuZXZpbHZpYmVzLmNvbQ">Add to AdGuard</a></td>
+</tr>
+</tbody>
+</table>
+    </p>
+</div>
+
+                                        
+        </div>
+        	<div id="navigation">
+		    <a class="nav nav-prev" href="adguard-translations.htm" tppabs="https://kb.adguard.com/en/general/adguard-translations"> <i class="fa fa-chevron-left"></i></a>
+	
+		    <a class="nav nav-next" href="stealth-mode.htm" tppabs="https://kb.adguard.com/en/general/stealth-mode"><i class="fa fa-chevron-right"></i></a>
+		</div>
+    </section>
+                <script type="text/javascript">
+    if (navigator.doNotTrack !== '1') {
+        var _paq = _paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+
+        (function() {
+            var u="https://matomo.adguard.com/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '5']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    }
+</script>
+     </body>
+</html>
