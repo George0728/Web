@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<form class="topform" action="https://zh.wikipedia.org/w/index.php" method="get"  target="_blank">
+<!-- 		https://zh.wikipedia.org/w/index.php -->
+			<input class="keywords_input" placeholder="维基搜索" autocomplete="off" name="search"
+				size="20" type="text" />
+			<!--        <input class="submit" type="submit" value="网盘搜索">-->
+		</form>
+		
+		<script type="text/javascript">
+            window.onload = function() {
+                
+                //组装查询地址
+                var sugurl = "http://suggestion.baidu.com/su?wd=#content#&cb=window.baidu.sug";
+                var content = "关键字";
+                sugurl = sugurl.replace("#content#", content);
+//定义回调函数
+                window.baidu = {
+                    sug: function(json) {
+                        console.log(json.s);
+                        alert(json.s);
+                        
+                    }
+                }
+//动态添加JS脚本
+                var script = document.createElement("script");
+                script.src = sugurl;
+                document.getElementsByTagName("head")[0].appendChild(script);
+}
+        </script>
+		
+
+</body>
+</html>

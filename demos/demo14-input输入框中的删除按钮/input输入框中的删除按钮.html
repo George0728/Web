@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input {
+            padding: 5px;
+            margin: 0;
+            border: 1px solid #beceeb;
+        }
+
+        .clear {
+            display: none;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            margin: 6px 0 0 -20px;
+            background: url(cleaa.png) no-repeat;
+            outline: none;
+        }
+
+        .input::-ms-clear {
+            display: none;
+        }
+
+        .input:valid + .clear {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+输入任意内容：<input type="text" class="input" required><a href="JavaScript:void(alert(123))" class="clear"></a>
+</body>
+</html>
